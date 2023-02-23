@@ -1,0 +1,33 @@
+
+
+<div class="container">
+  <hr class="hr">
+  <div class="title">תחקורים נוספים
+
+  </div>
+</div>
+
+
+
+<div class="graph-container">
+<app-generic-table *ngFor="let title of [
+'ממוצע מאומתים שבועי',
+'פילוח מדדים שונים על פי גיל ומין',
+'תחקור תחלואה לאור אירועים והתחסנות'
+]" [title]="title">
+
+
+</app-generic-table>
+
+</div>
+
+
+
+<app-links-list [pictureClass]="'littlePurpleIsrael'" [link]="'maps.arcgis.com'" [title]='"מבודדים לפי רשות מקומית וגיל"' [description]="'תמונת מצב אודות נתוני בידודים פעילים, לפי רשות מקומית וגיל'"></app-links-list>
+
+
+<app-links-list [pictureClass]="'exelPic'" [link]="'data.gov.il'" [title]='"נתוני מבודדים"' [description]="'נתונים אודות בדודים פעילים'"></app-links-list>
+
+
+
+<app-links-list [pictureClass]="'exelPic'" [link]="'health.gov.il'" [title]='"נתוני קורונה לפי אזורים"' [description]="'נתוני הלמ״ס לפי אזורים'"></app-links-list>

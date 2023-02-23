@@ -1,0 +1,9 @@
+<div class="container" >
+
+  <a  class="para"  *ngFor="let page  of ['רמזור בישובים', 'התחסנות האוכלוסיה', 'תחלואה חוזרת ומחלימים', 'תחקורים נוספים', 'בדיקות', 'נפטרים', 'חולים קשה ומאושפזים', 'השפעת התחסנות על התחלואה', 'תחלואה מחול', 'תחלואה ואשפוזי ילדים', 'מדדי תחלואה כללית', 'מדדים מרכזיים', 'מבט על' ] let i=index" (click)="onclick(page)" [id]="'a'+i" [href]="'#'+anchors[anchors.length-i] "  [ngClass]="{'white-background':this.componentNameActive===page}" [id]="page">{{page}}</a>
+
+</div>
+
+
+
+

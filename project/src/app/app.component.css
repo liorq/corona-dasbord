@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap");
+
+app-anchor-list{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+*{
+  box-sizing: border-box;
+  color: #222b45;
+  text-align: right;
+  font-family: "Assistant", sans-serif;
+
+}
+
+app-header{
+  height: 150px;
+}
+
+.scroll-container{
+  background:#e9edf5 ;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+
+<div class="container" (click)="isActiveShareAndDownload=(isActiveShareAndDownload?!isActiveShareAndDownload:true)">
+
+  <div class="table"
+  >
+<div class="little-container">
+  <div class="i-icon"></div>
+
+<span  class="title">{{title}}
+
+</span>
+<div class="select-box-container" (click)="toggleDropdown()">
+  <button class="selected-option">{{ selectedOption }}</button>
+  <ul class="options-list" [hidden]="!dropdownVisible">
+    <li *ngFor="let option of options">
+      <label class="option-label">
+        <input required type="radio" name="myOptions" class="option-button" (click)="selectOption(option)">
+        {{ option }}
+      </label>
+    </li>
+    <button (click)="confirmSelect('ok')">אישור</button>
+    <button (click)="confirmSelect('no')">ביטול</button>
+  </ul>
+</div>
+
+</div>
+<div class="dots-container"  (click)="isActiveShareAndDownload=!isActiveShareAndDownload">
+  <span class="dot" (click)="isActiveShareAndDownload=!isActiveShareAndDownload"></span>
+  <span class="dot" (click)="isActiveShareAndDownload=!isActiveShareAndDownload"></span>
+  <span class="dot" (click)="isActiveShareAndDownload=!isActiveShareAndDownload"></span>
+</div>
+<div class="share-and-download" [ngClass]="{ 'active': isActiveShareAndDownload }"></div>
+
+
+  <div class="graph-header" >
+    <ul class="ul">
+         <li class="li" *ngIf="this.graphName=='main'">ממוצע נע נפטרים
+
+          <div class="circle salmon"></div>
+      </li>
+      <li class="li" *ngIf="this.graphName=='main'">נפטרים
+        <div class="circle turkiz"></div>
+
+      </li>
+
+      <li  *ngIf="this.graphName=='main3'">מחוסנים
+        <div class="circle turkiz"></div>
+
+      </li>
+   <li *ngIf="this.graphName=='main3'">מחוסנים ללא תוקף
+        <div class="circle gold"></div>
+
+      </li>
+
+         <li *ngIf="this.graphName=='main3'">לא מחוסנים
+        <div class="circle blue"></div>
+      </li>
+
+
+    </ul>
+    <div class="testByDates" *ngIf="this.graphName=='main'">מספר נפטרים</div>
+    <div class="testByDates" *ngIf="this.graphName=='main3'">חולים פעילים</div>
+
+  </div>
+<div [ngClass]="{'container2':this.graphName=='main','container7':this.graphName=='main3'}">
+
+<div id={{this.graphName}} style="width: 100%; height: 315px;"></div>
+
+</div>
+</div>
+</div>

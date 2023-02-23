@@ -1,0 +1,64 @@
+<div class="container">
+  <div *ngFor="let data of dataToDisplay; let i = index" class="card" [id]="data.id">
+    <div class="title-container">
+<div class="i-icon">
+
+</div>
+
+<div class="text-i-icon">
+  <div class="text-i-icon-container">
+  {{openWindowsIIcon[i]}}
+</div>
+</div>
+<div> {{data.title}}</div>
+    </div>
+    <div class="bigNumber" *ngIf="data.bigNumber!=undefined">{{data.bigNumber}}</div>
+   <div class="container-little-line">
+
+    <div class="littleNumber" *ngIf="data.firstLittleNum!=undefined">{{data.firstLittleNum}}</div>
+    <div class="littleLine" *ngIf="data.firstLittleLine!=undefined">{{data.firstLittleLine}}</div>
+    <div *ngIf="data.title=='חולים קשה'" class="circle red"></div>
+   </div>
+
+   <div class="container-little-line-2">
+
+    <div class="littleNumber" *ngIf="data.secondLittleNum!=undefined">{{data.secondLittleNum}}</div>
+    <div class="littleLine" *ngIf="data.secondLittleNum!=undefined">{{data.secondLittleLine}}</div>
+    <div *ngIf="data.title=='חולים קשה'" class="circle red"></div>
+   </div>
+
+   <div *ngIf="data.title=='חולים קשה'" class="container-little-line-3">
+    <div  class="container-3">
+    <div class="littleNumber" >{{data.thirdLittleNum}}</div>
+    <div class="littleLine" >{{data.thirdLittleLine}}</div>
+    <div *ngIf="data.title=='חולים קשה'" class="circle yellow"></div>
+
+
+  </div>
+  <div  class="container-3 margin">
+
+    <div class="littleNumber" >{{data.fourLittleNum}}</div>
+    <div class="littleLine" >{{data.fourLittleLine}}</div>
+
+  </div>
+   <div  class="container-3 margin">
+
+    <div class="littleNumber" >{{data.fiveLittleNum}}</div>
+    <div class="littleLine" >{{data.fiveLittleLine}}</div>
+
+  </div>
+   </div>
+
+
+<div class="container-5-line-big">
+   <span class="container-5-line" *ngFor='let item of [  "firstNum", "firstLine",  "secondNum", "secondLine",  "thirdNum", "thirdLine",  "fourNum", "fourLine",  "fiveNum", "fiveLine"]
+   '>
+    <span class="line5" [ngClass]="changeNumberFont(item)"  *ngIf="data[item]!=undefined">{{data[item]}}</span>
+   </span>
+
+</div>
+
+
+  </div>
+  </div>
+

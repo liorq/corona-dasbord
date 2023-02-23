@@ -1,0 +1,30 @@
+
+
+
+
+<div class="container">
+  <hr class="hr">
+  <div class="title">חולים קשה ומאושפזים
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="graph-container">
+<app-generic-table *ngFor="let title of [
+'מאומתים יומי - התחסנות',
+'חולים קשה - התחסנות',
+'חולים פעילים - גיל והתחסנות'
+]
+;" [title]="title">
+</app-generic-table>
+
+</div>

@@ -1,0 +1,192 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  height: 100px;
+  margin-top: 50px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: #e6e6e6;
+}
+
+th:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  margin-left: 5px;
+
+}
+
+
+
+
+th.asc:after {
+  border-top: 0;
+  border-bottom: 4px dashed;
+}
+
+th.desc:after {
+  border-top: 4px dashed;
+  border-bottom: 0;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+/* triangle shape for the sort indicator */
+th.sortable:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+/* flipped triangle for descending sort */
+th.sortable.desc:after {
+  border-top: none;
+  border-bottom: 5px solid;
+}
+
+/* remove triangle for unsorted column */
+th.sortable.unsorted:after {
+  display: none;
+}
+
+
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-bottom: 5px solid #308bf6;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+
+  border-top: 4px solid #308bf6;
+}
+
+table{
+  box-sizing: 15px;
+  width: 90vw;
+  height: 500px;
+  margin-top: 50px;
+  font-weight: 400;
+  font-size: 14px;
+
+}
+
+th{
+  font-weight: 400;
+  font-size: 14px;
+
+}
+
+
+table{
+  border-radius: 15px;
+}
+
+.container{
+  width: fit-content;
+}
+
+.red {
+  background-color: #fa9e8f;
+}
+
+.orange {
+  background-color: #f2c580;
+}
+
+.yellow {
+  background-color: #fcfc70;
+}
+
+.green {
+  background-color: #b8de92;
+}
+.color{
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 20px;
+}
+.squre{
+  width: 20px;
+
+}
+.align-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+thead{
+  height: 20px;
+
+}
+
+@media screen  and (min-width:790px) {
+  table{
+    width: 50vw;
+
+
+  }
+  thead{
+    height: 20px;
+
+  }
+}

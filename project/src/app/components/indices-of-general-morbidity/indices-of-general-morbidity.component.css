@@ -1,0 +1,28 @@
+.title{
+  font-size: 19px;
+  font-weight: 700;
+  position: relative;
+  top: 15px;
+
+}
+.hr{
+  position: relative;
+  top: 15px;
+  background: #e1e6ecb6;
+}
+
+.container{
+  height: 62px;
+
+}
+@media screen and (min-width: 769px) {
+
+  app-generic-table{
+width: 30vw;
+  }
+  .graph-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+  }
+  }

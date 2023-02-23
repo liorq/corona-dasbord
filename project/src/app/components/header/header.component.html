@@ -1,0 +1,40 @@
+<div class="colorfull-line"></div>
+<div class="header-container">
+
+  <div [class]="!this.isDarkModeActive?'container-sun-gray':'container-sun-dark'">
+<button class="sun"></button>
+
+
+</div>
+
+
+
+
+<div class="conatiner-btn-and-logo">
+  <app-side-nav></app-side-nav>
+  <div class="logo"></div>
+
+<div (click)="this.coronaSvc.isNavBarOpen.next(!this.isNavBarOpen)" [class]="!this.coronaSvc.isNavBarOpen.getValue()?'hamburger-btn':'hamburger-btn-close'">
+
+</div>
+<div class="letters"></div>
+</div>
+
+<div class="para-container">
+<span class="p1">נגיף הקורונה בישראל - תמונת מצב כללית</span>
+<span class="line-up">|</span>
+<span class="p2">עדכון אחרון: 12 בפברואר 2023 | 16:43</span>
+ </div>
+</div>
+
+<!-- <div class="rectangle-with-circle">
+  <div class="rectangle"></div>
+  <div class="circle"></div>
+</div> -->
+
+
+
+
+
+
+

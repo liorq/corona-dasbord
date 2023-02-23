@@ -1,0 +1,150 @@
+
+
+
+
+
+.chart-container {
+  width: 100%;
+
+}
+#main {
+  width: 100vw;
+
+
+}
+.turkiz{
+  background-color: #237d7d;
+}
+.testByDates{
+  text-align: right;
+  top: 69px;
+  font-size: 14.4px;
+  width: 50px;
+  left: -5px;
+  color: #595d62;
+  z-index: 100;
+}
+.ul{
+position: absolute;
+top: 70px;
+right: 15px;
+z-index: 100;
+
+}
+.li{
+  font-size: 13.5px;
+  color: #595d62;
+  z-index: 100;
+
+}
+.big-container{
+  height: 350px;
+}
+.container{
+  position: absolute;
+  bottom: 0;
+}
+
+#main{
+  position: absolute;
+  bottom: -15px;
+}
+
+
+
+
+
+
+
+*{
+  direction: rtl;
+}
+*{
+  direction: rtl;
+}
+
+.chart-container {
+  width: 100%;
+}
+#main1 {
+  width: 90vw;
+
+}
+.container{
+  height: 350px;
+  width: 90vw;
+  border-radius: 15px;
+
+  background: #fff;
+}
+.big-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 350px;
+  background: #fff;
+   border-radius: 15px;
+   border:1px solid black;
+   position: relative;
+
+
+}
+
+ul{
+  display: flex;
+
+
+}
+li
+{
+  display: flex;
+  margin-left: 8px;
+  font-size: 12px;
+  list-style-type: none;
+}
+.testByDates{
+  position: absolute;
+  left: 5px;
+  top: 110px;
+  font-size: 12px;
+}
+.circle{
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.salmon
+{
+  background-color: #fe8672;
+}
+.gold{
+  background-color: #b6ca51;
+}
+.blue{
+  background-color: #50cbfd;
+}
+.testByDates{
+  top: 70px;
+  font-size: 14.4px;
+  width: 15px;
+}
+#main1{
+height: 244px;
+position: absolute;
+bottom: 25px;
+}
+.select-box{
+  height: 27.2px;
+  width: 168px;
+  position: absolute;
+  top: 25px;
+  border-radius: 15px;
+  z-index: 1000;
+}
+.big-container{
+  position: relative;
+}

@@ -1,0 +1,243 @@
+.i-icon{
+  background: url('../../../assets/images/i-icon1.png') no-repeat;
+  height: 20px;
+  width: 20px;
+  background-size: cover;
+  cursor: pointer;
+
+}
+.card{
+  text-align: right;
+  height: 184px;
+  width: 45vw;
+  background: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+position: relative;
+
+-webkit-box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
+box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
+  }
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content:center ;
+    align-items: center;
+  }
+.title-container{
+  position: absolute;
+  top: 12px;
+  right: 11px;
+  display: flex;
+  justify-content: end;
+   font-weight: 700;
+   font-size: 14.4px;
+   gap:8px;
+}
+.bigNumber{
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.littleNumber{
+  margin-left: 5px;
+  font-size: 12.8px;
+  font-weight: 700!important;
+}
+.littleLine{
+  font-size: 12px;
+  margin-left: 5px;
+}
+.container-little-line{
+  display: flex;
+  position: absolute;
+  top: 65px;
+  right: 10px;
+}
+.container-little-line-2{
+  display: flex;
+  position: absolute;
+  top:80px;
+  right: 10px;
+}
+.container-little-line-3{
+  position: absolute;
+  top:98px;
+  right: 10px;
+}
+.container-5-line{
+  display: flex;
+  justify-content: center;
+  font-size: 12.8px;
+}
+.line5{
+  font-size: 14.4px;
+}
+.container-3{
+  display: flex;
+  justify-content: flex-end;
+}
+.container-5-line-little{
+  display: flex;
+
+}
+.container-5-line{
+  height: 29px;
+
+}
+.container-5-line-big{
+  display: flex;
+  width: 125px;
+  height: 142px;
+  flex-wrap: wrap;
+  text-align: right;
+  position:absolute;
+  top: 31px;
+  right: 10px;
+  justify-content:right;
+}
+.line5{
+  margin-left: 10px;
+}
+.container-little-line-2{
+
+}
+
+#c6 .container-little-line-2{
+position: absolute;
+top: 100px;
+}
+
+
+#c1 .container-little-line,#c1 .container-little-line-2,#c2 .container-little-line{
+display: flex;
+flex-direction: row-reverse;
+}
+#c6 .container-little-line{
+top:79px;
+flex-direction: row-reverse;
+
+}
+#c6 .container-little-line-2{
+  top:108px;
+  flex-direction: row-reverse;
+
+}
+
+#c6 .bigNumber{
+  position: absolute;
+  top: 55px;
+}
+
+#c2{
+
+}#c3{
+
+}#c4{
+
+}#c5{
+
+}#c6{
+
+}#c7 .container-little-line{
+  flex-direction: row-reverse;
+
+}#c8 .container-little-line{
+  flex-direction: row-reverse;
+
+}#c9 .container-little-line{
+  flex-direction: row-reverse;
+
+}
+#c10 .container-little-line{
+  flex-direction: row-reverse;
+
+}
+
+#c10 .container-little-line-2{
+  flex-direction: row-reverse;
+
+}
+
+
+.my-list {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+
+
+.circle {
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+
+.yellow {
+  background:#e6b957;
+}
+
+.red {
+  background:#e21d48;
+  margin-left: 10px;
+}
+.margin{
+  margin-right: 30px;
+
+}
+.medium-num{
+  font-size: 14.4px;
+  font-weight: 600;
+}
+@media screen and (min-width: 769px) {
+
+.container{
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+}
+.text-i-icon{
+  display: none;
+
+}
+.i-icon{
+position: relative;
+}
+
+
+
+
+.text-i-icon{
+  display: none;
+}
+
+.i-icon:hover + .text-i-icon,
+.text-i-icon:hover {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+}
+
+.text-i-icon-container{
+  padding: 15px;
+  border: 1px solid gray;
+  width: 150px;
+  height: auto;
+  background: white;
+  border-radius: 10px;
+  font-size: 12px;
+  color: gray;
+  font-weight: 400;
+}

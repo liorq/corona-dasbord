@@ -1,0 +1,174 @@
+
+
+.logo{
+  background: url('../../../assets/images/logo-DAshboard-01.png');
+  height: 47px;
+  width: 247px;
+  background-size: cover;
+}
+
+.header-container{
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  display: flex;
+  gap: 1px;
+  font-size: 19px;
+  height: 121px;
+  align-items: flex-end;
+   position: relative;
+  }
+.sun{
+  height: 37px;
+  width: 37px;
+  background-size: cover;
+  border-right: 10px;
+  border: none;
+  background: url('../../../assets/images/brightness_light.png') no-repeat;
+  cursor: pointer;
+}
+.container-sun-gray{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  height: 40px;
+  height: fit-content;
+  position: absolute;
+  left: 0;
+  background: #d8d8d8;
+
+  top: 20px;
+
+}
+.container-sun-dark{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  display: flex;
+  left: 0;
+  background: #d8d8d8;
+}
+.p1{
+font-size: 16.16px;
+width:274px;
+}
+
+.p2{
+font-size: 12px;
+width: 202px;
+}
+.para-container{
+  display: flex;
+  flex-direction: column;
+  direction:rtl;
+  padding-right: 12px;
+  position: absolute;
+  bottom: 12px;
+}
+
+.conatiner-btn-and-logo{
+  display: flex;
+
+}
+
+.hamburger-btn{
+  background: url('../../../assets/images/first-btn-ham.png') no-repeat;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+
+
+}
+.hamburger-btn-close{
+  background: url('../../../assets/images/open-btn-ham.png') no-repeat;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.conatiner-btn-and-logo{
+  display: flex;
+  justify-content: space-between;
+  width: 264px;
+  align-items: center;
+}
+
+.letters{
+  background: url('../../../assets/images/letters.png');
+  height: 37px;
+  width: 40px;
+  position: absolute;
+  left: 50px;
+  top: 20px;
+}
+
+.colorfull-line{
+  height: 2px;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background:linear-gradient(90deg,#4bb887,#16b6d0,#d6e58a) ;
+}
+.line-up{
+  display: none;
+}
+
+
+@media only screen and (min-width: 490px) {
+  .conatiner-btn-and-logo{
+
+    width: 280px;
+  }
+  .logo{
+    height: 49px;
+    width: 247px;
+    position: absolute;
+    top: 4px;
+    right: 89px;
+  }
+  .header-container{
+
+    height: 125px;
+
+    }
+    .hamburger-btn{
+      position: absolute;
+      top: 25px;
+      right: 30px;
+    }
+    .hamburger-btn-close{
+      position: absolute;
+      top: 25px;
+      right: 30px;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 690px) {
+  .para-container{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top: 45px;
+    right: 30px;
+  }
+  .line-up{
+    display: block;
+    margin-right: 15px;
+    margin-left: 15px;
+   font-weight: 400;
+  }
+}
+
+@media only screen and (min-width: 790px) {
+}
+@media only screen and (max-width: 490px) {
+
+}

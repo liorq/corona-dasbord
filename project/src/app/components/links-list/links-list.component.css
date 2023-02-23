@@ -1,0 +1,191 @@
+.link{
+  text-align: right;
+  height: 116px;
+  width: 95vw;
+  background: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-weight:550;
+  display: flex;
+flex-direction: row-reverse;
+position: relative;
+-webkit-box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
+box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
+  }
+
+  .little-container{
+padding: 10px;
+display: flex;
+justify-content: right;
+gap: 8px;
+flex-direction: column;
+
+  }
+.title{
+
+}
+.greenEarth{
+  background-image: url('../../../assets/images/greenEarth.png');
+  height: 100px;
+  width: 100px;
+}
+.blueEarth{
+  background-image: url('../../../assets/images/blueEarth.png');
+  height: 100px;
+  width: 100px;
+}
+.orangeEarth{
+  background-image: url('../../../assets/images/orangeEarth.png');
+  height: 100px;
+  width: 100px;
+}
+.purpleIsrael{
+  background-image: url('../../../assets/images/purpleIsrael.png');
+  height: 100px;
+  width: 100px;
+}
+.orangeIsrael{
+  background-image: url('../../../assets/images/orangeIsrael.png');
+  height: 100px;
+  width: 100px;
+}
+.labPic{
+  background-image: url('../../../assets/images/labPic.png');
+  height: 100px;
+  width: 100px;
+}
+.littlePurpleIsrael{
+  background-image: url('../../../assets/images/littlePurpleIsrael.png');
+  height: 100px;
+  width: 100px;
+}
+.exelPic{
+  background-image: url('../../../assets/images/exelPic.png');
+  height: 100px;
+  width: 100px;
+}
+.Pic{
+  height: 100px;
+  width: 100px;
+}
+.blueIsrael{
+  height: 100px;
+  width: 100px;
+background: url('../../../assets/images/blueIsrael.png');
+}
+
+
+
+
+
+
+.turkizIsrael{
+  height: 100px;
+  width: 100px;
+background: url('../../../assets/images/turkizIsrael.png');
+}
+
+.greenIsrael{
+  height: 100px;
+  width: 100px;
+background: url('../../../assets/images/greenIsrael.png');
+}
+
+.pic{
+  position: relative;
+  right: 8px;
+  top:8px;
+
+}
+
+.real-link{
+  font-weight: 400;
+  font-size: 14px;
+  position: absolute;
+  bottom: 5px;
+  right: 19px;
+}
+
+
+.description{
+  font-weight: 400;
+  font-size: 14px;
+}
+.little-container{
+  position: relative;
+}
+.container{
+  margin-bottom: 22px;
+}
+.title{
+  font-size: 18px;
+  font-weight: 550;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

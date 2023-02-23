@@ -1,0 +1,10 @@
+#background-snow{
+  background: #ffffff;
+  width: 96vw;
+  border-radius: 15px;
+}
+.title{
+ font-size: 18px;
+  padding: 14px 22px;
+  font-weight: 550;
+}
