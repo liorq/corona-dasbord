@@ -49,8 +49,10 @@
           <div class="circle blue"></div>
         </li>
       </ul>
-      <div class="testByDates" *ngIf="this.graphName=='main'">מספר נפטרים</div>
-      <div class="testByDates" *ngIf="this.graphName=='main3'">חולים פעילים</div>
+      <div class="testByDates1" *ngIf="this.graphName=='main'">מספר נפטרים</div>
+      <div class="testByDates4" *ngIf="this.graphName=='main4'">קבוצת גיל</div>
+
+      <div class="testByDates2" *ngIf="this.graphName=='main3'">חולים פעילים</div>
     </div>
 
     <div [ngClass]="{'container2':this.graphName=='main','container7':this.graphName=='main3'}">
