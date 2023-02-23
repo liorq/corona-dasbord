@@ -154,9 +154,14 @@ gap: 8px;
 
 .ul{
   display: flex;
+  position: absolute;
+  top: 65px;
 }
 .li{
   margin:5px;
+}
+li{
+text-decoration: none;
 }
 
 .testByDates{
@@ -170,9 +175,33 @@ gap: 8px;
   font-weight: 400;
 }
 
+.salmon
+{
+  background-color: #fe8672;
+}
+.gold{
+  background-color: #b6ca51;
+}
+.blue{
+  background-color: #50cbfd;
+}
+.circle{
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+li{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.flex-items{
 
-
-
-
+}
 
 

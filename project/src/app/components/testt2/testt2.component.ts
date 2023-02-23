@@ -7,7 +7,7 @@ import { secondOption } from 'src/app/app.graphData';
 @Component({
   selector: 'app-testt2',
   templateUrl: './testt2.component.html',
-  styleUrls: ['./testt2.component.css','../testt54656552/testt54656552.component.css','../generic-table/generic-table.component.css']
+  styleUrls: ['./testt2.component.css','../testt54656552/testt54656552.component.css']
 })
 export class Testt2Component implements OnInit {
 
