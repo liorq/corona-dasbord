@@ -141,12 +141,6 @@ table{
   width: 20px;
 
 }
-.align-div{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row-reverse;
-}
 
 
 
@@ -222,4 +216,10 @@ thead{
   border-right: 5px solid transparent;
 
   border-bottom: 5px solid #308bf6;
+}
+.align-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
 }
