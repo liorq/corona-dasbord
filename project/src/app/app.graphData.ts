@@ -210,7 +210,9 @@ export function  secondOption(emphasisStyle:any){
     ]
   };
 }
-export function  threeOption(colors:string[]){
+export function  threeOption(){
+  const colors = ['#50cbfd', '#237d7d', '#b6ca51'];
+
   return {
     color: colors,
 

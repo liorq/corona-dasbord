@@ -58,6 +58,16 @@ export class GenericTableComponent {
     this.filteredData = this.data.filter(item => item.label === this.selectedOption);
   }
   ngAfterViewInit(): void {
+    if(this.graphName=="")
+    return
+    
+    const chartDom = document.getElementById(this.graphName)!;
+    const myChart = echarts.init(chartDom);
+    let option:any=this.optionObj
+    this.chart?.setOption(option);
+    option && myChart.setOption(option);
+    this.chart = myChart;
+
     // Attach resize event listener
     window.addEventListener('resize', () => {
       if (this.resizeTimeoutId) {
