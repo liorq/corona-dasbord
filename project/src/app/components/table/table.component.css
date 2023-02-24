@@ -116,31 +116,7 @@ table{
   flex-direction: column;
 }
 
-.red {
-  background-color: #fa9e8f;
-}
 
-.orange {
-  background-color: #f2c580;
-}
-
-.yellow {
-  background-color: #fcfc70;
-}
-
-.green {
-  background-color: #b8de92;
-}
-.color{
-  font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
-  width: 20px;
-}
-.squre{
-  width: 20px;
-
-}
 
 
 
@@ -192,6 +168,8 @@ thead{
 .cell {
   padding: 10px;
   flex: 1;
+  height: 18px;
+  font-size: 13px;
   text-align: center;
   border :1px solid black;
 }
@@ -222,4 +200,35 @@ thead{
   align-items: center;
   justify-content: center;
   flex-direction: row-reverse;
+}
+.red {
+  background-color: #fa9e8f;
+}
+
+.orange {
+  background-color: #f2c580;
+}
+
+.yellow {
+  background-color: #fcfc70;
+}
+
+.green {
+  background-color: #b8de92;
+}
+.color{
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 20px;
+}
+.squre{
+  width: 20px;
+
+}
+.title{
+  font-weight: 400;
+}
+.weight{
+  font-weight: 700;
 }

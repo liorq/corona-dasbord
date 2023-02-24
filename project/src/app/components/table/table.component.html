@@ -1,44 +1,4 @@
-<!-- <div class="container">
-  <div class="container-color">
 
-    <div class="squre red">אדום</div>
-    <div class="squre orange">כתום</div>
-    <div class="squre yellow">צהוב</div>
-    <div class="squre green">ירוק</div>
-
-  </div>
-  <div>
-    <div class="align-div" (click)="onSort('address')">
-      <div>חולים פעילים</div>
-      <div [ngClass]="{'arrow-down':clickCounterObj.address==1,'arrow-up':clickCounterObj.address==2}"></div>
-    </div>
-
-
-  </div>
-
-  <div *ngFor="let row of tableData let i=index" class="row-style">
-    <div>
-      <div>{{row.id}}</div>
-    </div>
-    <div>
-      <div>{{row.name}}</div>
-    </div>
-    <div>
-      <div>{{row.age}}</div>
-    </div>
-    <div>
-      <div>{{row.email}}</div>
-    </div>
-    <div>
-      <div class="color" [ngClass]="{'green':row.phone<4.5,'yellow':row.phone>4.5&&row.phone<6,'orange':row.phone>6&&row.phone<7.5,'red':row.phone>7.5}">
-        {{row.phone}}
-      </div>
-    </div>
-    <div>
-      <div>{{row.address}}</div>
-    </div>
-  </div>
-</div> -->
 
 
 <div class="table">
@@ -51,36 +11,33 @@
 
   </div>
   <div class="row header">
-    <div class="align-div cell" (click)="onSort('address')">
+    <div class="align-div cell title" (click)="onSort('address')">
       <div>חולים פעילים</div>
       <div [ngClass]="{'arrow-down':clickCounterObj.address==1,'arrow-up':clickCounterObj.address==2}"></div>
 
-
-
-
     </div>
 
-    <div class="align-div cell" (click)="onSort('phone')">
+    <div class="align-div cell title" (click)="onSort('phone')">
       <div>שיעור שינוי מאומתים</div>
       <div [ngClass]="{'arrow-down':clickCounterObj.phone==1,'arrow-up':clickCounterObj.phone==2}"></div>
     </div>
 
-    <div class="align-div cell" (click)="onSort('email')">
+    <div class="align-div cell title" (click)="onSort('email')">
       <div>% הבדיקות החיוביות</div>
       <div [ngClass]="{'arrow-down':clickCounterObj.email==1,'arrow-up':clickCounterObj.email==2}"></div>
     </div>
 
-    <div class="align-div cell" (click)="onSort('age')">
+    <div class="align-div cell title" (click)="onSort('age')">
       <div>חולים חדשים לכל 10,000 נפש</div>
       <div [ngClass]="{'arrow-down':clickCounterObj.age==1,'arrow-up':clickCounterObj.age==2}"></div>
     </div>
 
-    <div class="align-div cell" (click)="onSort('name')">
+    <div class="align-div cell title" (click)="onSort('name')">
       <div>ציון וצבע יומי</div>
       <div [ngClass]="{'arrow-down':clickCounterObj.name==1,'arrow-up':clickCounterObj.name==2}"></div>
     </div>
 
-    <div class="align-div cell" (click)="onSort('id')">
+    <div class="align-div cell title" (click)="onSort('id')">
       <div>ישוב</div>
       <div [ngClass]="{'arrow-down':clickCounterObj.id==1,'arrow-up':clickCounterObj.id==2}"> </div>
     </div>
@@ -90,12 +47,16 @@
   <div class="tbody">
     <ng-container *ngFor="let row of tableData">
       <div class="row">
-        <div class="cell">{{row.id}}</div>
+        <div class="cell ">{{row.id}}</div>
         <div class="cell">{{row.name}}</div>
         <div class="cell">{{row.age}}</div>
         <div class="cell">{{row.email}}</div>
-        <div class="cell">{{row.phone}}</div>
-        <div class="cell" >{{row.address}}</div>
+        <div  class="cell weight">
+        <div class="color" [ngClass]="{'green':row.phone<4.5,'yellow':row.phone>4.5&&row.phone<6,'orange':row.phone>6&&row.phone<7.5,'red':row.phone>7.5}">
+          {{row.phone}}
+        </div>
+        </div>
+        <div class="cell weight" >{{row.address}}</div>
       </div>
     </ng-container>
   </div>
