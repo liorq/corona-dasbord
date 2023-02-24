@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import * as echarts from 'echarts';
 import { fourOption } from 'src/app/app.graphData';
 

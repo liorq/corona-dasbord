@@ -23,9 +23,7 @@ export class Testt2Component implements OnInit {
   ngOnInit(){
     var chartDom = document.getElementById('main1') as HTMLElement;
     let myChart = echarts.init(chartDom, undefined, );
-
     let option: EChartsOption | any;
-
     let xAxisData = [];
     let data1 = [];
     let data2 = [];
@@ -38,10 +36,7 @@ export class Testt2Component implements OnInit {
       data3.push(+(Math.random() + 0.3).toFixed(2));
       data4.push(+Math.random().toFixed(2));
     }
-
     option = secondOption(this.emphasisStyle)
-
-
 
     myChart.on('brushSelected', function (params: any) {
       var brushed = [];
