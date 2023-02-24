@@ -26,8 +26,6 @@ import { LightsInSettlementsComponent } from './components/lights-in-settlements
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table'; // import MatTableModule
 
-import { SortedTableComponent } from './components/sorted-table/sorted-table.component';
-
 import { MatSortModule } from '@angular/material/sort';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -66,7 +64,7 @@ import { DataTablesModule } from "angular-datatables";
     RecurrentMorbidityAndRecoveryComponent,
     VaccinationOfThePopulationComponent,
     LightsInSettlementsComponent,
-    SortedTableComponent,
+
     LinksListComponent,
     Testt54656552Component,
     Testt2Component,
@@ -86,7 +84,7 @@ import { DataTablesModule } from "angular-datatables";
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    SortedTableComponent
+    
   ]
 })
 export class AppModule { }

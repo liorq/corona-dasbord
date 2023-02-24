@@ -1,4 +1,4 @@
-table {
+/* table {
   width: 100%;
   border-collapse: collapse;
   height: 100px;
@@ -31,7 +31,10 @@ th:after {
   margin-left: 5px;
 
 }
-
+div{
+  border: 1px solid black;
+  display: flex;
+}
 
 
 
@@ -57,7 +60,7 @@ tr:nth-child(even) {
 
 
 
-/* triangle shape for the sort indicator */
+
 th.sortable:after {
   content: "";
   display: inline-block;
@@ -70,36 +73,21 @@ th.sortable:after {
   border-left: 5px solid transparent;
 }
 
-/* flipped triangle for descending sort */
 th.sortable.desc:after {
   border-top: none;
   border-bottom: 5px solid;
 }
 
 /* remove triangle for unsorted column */
-th.sortable.unsorted:after {
+/* th.sortable.unsorted:after {
   display: none;
 }
 
 
 
-.arrow-up {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
 
-  border-bottom: 5px solid #308bf6;
-}
 
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
 
-  border-top: 4px solid #308bf6;
-}
 
 table{
   box-sizing: 15px;
@@ -124,6 +112,8 @@ table{
 
 .container{
   width: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
 .red {
@@ -189,4 +179,47 @@ thead{
     height: 20px;
 
   }
+} */
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid black;
+}
+
+.row.header {
+  font-weight: bold;
+}
+
+.cell {
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+  border :1px solid black;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black; /* adds a border around the entire table */
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+
+  border-top: 4px solid #308bf6;
+}
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-bottom: 5px solid #308bf6;
 }
