@@ -1,4 +1,8 @@
-export function  firstOption(){
+
+const timePeriod=0;
+///צריך לתת תקופה זמן ואז לעשות ספלייס וכל פעם שיש שינוי להשתמש בסאבגקט
+
+export function  firstOption(timePeriod?:number){
   const colors = ['#237d7d', '#ff9482', '#EE6666','#595d62'];
 
  return  {

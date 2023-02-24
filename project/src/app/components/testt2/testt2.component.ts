@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Colors } from 'chart.js';
 import * as echarts from 'echarts';
-import { EChartsOption } from 'echarts';
 import { secondOption } from 'src/app/app.graphData';
 
 @Component({
@@ -53,16 +51,5 @@ export class Testt2Component implements OnInit {
     this.option  && myChart.setOption(this.option);
 this.chart = myChart;
 }
-
-ngAfterViewInit(): void {
-    window.addEventListener('resize', () => {
-      if (this.resizeTimeoutId) {
-        clearTimeout(this.resizeTimeoutId);
-      }
-      this.resizeTimeoutId = setTimeout(() => {
-        this.chart?.resize();
-      }, 300);
-    });
-  }
 
 }
