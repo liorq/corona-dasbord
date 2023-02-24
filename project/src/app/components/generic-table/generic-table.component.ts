@@ -17,6 +17,8 @@ export class GenericTableComponent {
   @Input() resizeTimeoutId: any;
   @Input() graphName:string="";
   @Input()optionObj?:{};
+  @Input() graphSize:string="width: 100%; height: 315px;";
+
  isActiveShareAndDownload?:boolean=false;
   ngOnInit(): void {
     if(this.graphName=="")
@@ -60,7 +62,7 @@ export class GenericTableComponent {
   ngAfterViewInit(): void {
     if(this.graphName=="")
     return
-    
+
     const chartDom = document.getElementById(this.graphName)!;
     const myChart = echarts.init(chartDom);
     let option:any=this.optionObj

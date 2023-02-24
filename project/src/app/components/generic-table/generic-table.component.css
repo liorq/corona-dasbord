@@ -184,6 +184,12 @@ text-decoration: none;
   top: 90px;
   font-weight: 400;
 }
+.testByDates3{
+  position: absolute;
+  left: 0px;
+  top: 70px;
+  font-weight: 400;
+}
 .graph-header{
   font-weight: 400;
 }
@@ -218,4 +224,11 @@ li{
   justify-content: center;
   align-items: center;
 }
+#main1{
 
+}
+.align-graph{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

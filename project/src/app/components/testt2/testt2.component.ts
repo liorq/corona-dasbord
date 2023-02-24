@@ -20,10 +20,11 @@ export class Testt2Component implements OnInit {
       shadowColor: 'rgba(0,0,0,0.3)'
     }
   };
+  public option:any=secondOption(this.emphasisStyle);
+
   ngOnInit(){
     var chartDom = document.getElementById('main1') as HTMLElement;
-    let myChart = echarts.init(chartDom, undefined, );
-    let option: EChartsOption | any;
+    let myChart = echarts.init(chartDom);
     let xAxisData = [];
     let data1 = [];
     let data2 = [];
@@ -36,7 +37,6 @@ export class Testt2Component implements OnInit {
       data3.push(+(Math.random() + 0.3).toFixed(2));
       data4.push(+Math.random().toFixed(2));
     }
-    option = secondOption(this.emphasisStyle)
 
     myChart.on('brushSelected', function (params: any) {
       var brushed = [];
@@ -50,7 +50,7 @@ export class Testt2Component implements OnInit {
       });
     });
 
-option && myChart.setOption(option);
+    this.option  && myChart.setOption(this.option);
 this.chart = myChart;
 }
 
