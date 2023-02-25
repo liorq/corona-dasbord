@@ -41,6 +41,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { TableComponent } from './components/table/table.component';
 import { DataTablesModule } from "angular-datatables";
+import { GenericSortedTableComponent } from './components/generic-sorted-table/generic-sorted-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +73,7 @@ import { DataTablesModule } from "angular-datatables";
     Testt4Component,
     SideNavComponent,
     TableComponent,
+    GenericSortedTableComponent,
 
 
   ],
