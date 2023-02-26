@@ -1,8 +1,6 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-general-morbidity/indices-of-general-morbidity.component';
-import { MajorIndicatorsComponent } from './components/major-indicators/major-indicators.component';
-import { SummaryOf7DaysComponent } from './components/summary-of7-days/summary-of7-days.component';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import {  Router } from '@angular/router';
+
 import { CoronaService } from './corona.service';
 
 @Component({
@@ -10,15 +8,18 @@ import { CoronaService } from './corona.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-
-  constructor(private router: Router, private elementRef: ElementRef,private coronaSvc:CoronaService) {}
+export class AppComponent implements OnInit{
+  isDarkModeActive=this.coronaSvc.isDarkModeActive.getValue()
+  constructor(private router: Router, private elementRef: ElementRef,public coronaSvc:CoronaService) {}
   currentPosition: number = 0;
-
+  ngOnInit(){
+    this.coronaSvc.isDarkModeActive.subscribe((newStatus:boolean)=>{
+      this.isDarkModeActive=newStatus;
+    })
+  }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event:any) {
     this.currentPosition = window.scrollY;
-    // console.log(this.currentPosition)
     const num=this.currentPosition
 
   const ranges:any = [    [0, 400, "מבט על"],

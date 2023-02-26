@@ -1,6 +1,6 @@
 
 <app-header ></app-header>
-<div class="scroll-container">
+<div class="scroll-container" [ngClass]="{'dark-mode':this.isDarkModeActive}">
 <app-anchor-list></app-anchor-list>
 <app-view-on id="viewOn"></app-view-on>
 <hr>
