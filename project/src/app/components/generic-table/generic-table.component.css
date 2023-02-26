@@ -99,6 +99,7 @@ gap: 8px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
 }
 
 .options-list {
@@ -541,8 +542,8 @@ li{
   width: 20px;
 }
 .squre{
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 .title2{
   width: fit-content;
@@ -554,7 +555,9 @@ li{
 .lavender-background{
 background: #daeaee;
 }
-
+.input{
+  width: 116px;
+}
 .little-container-text-and-color{
 
   width: fit-content;
@@ -569,12 +572,12 @@ background: #daeaee;
   margin-left: 50px;
 }
 .box-search-value{
-  width: 100px;
+  width: 116px;
   height: 100px;
   border: 1px solid black;
   position: absolute;
-  top: 20px;
-  right: 35px;
+  top: 40px;
+  right: 0px;
   background-color: #fff;
 }
 .search-input{

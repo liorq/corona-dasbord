@@ -44,15 +44,27 @@
 
     <div class="align-graph" [ngClass]="{'container2':this.graphName=='main','container7':this.graphName=='main3'}">
       <div *ngIf="isTable">
-        <div class="search-input">
-        <label  for="search-input">Search:</label>
-        <input type="text" id="search-input" (keyup)="search()" [(ngModel)]="searchQuery">
-         <div class="box-search-value">
-          <div *ngFor="let item of this.filteredTablesData">
-         <div *ngIf="item"> {{item}}</div>
-          </div>
-         </div>
-      </div>
+
+        <div  class="select-box-container" (click)="toggleDropdown()">
+
+          <button class="selected-option">{{ selectedOption }}</button>
+          <ul class="options-list" [hidden]="!dropdownVisible">
+
+            <div class="search-input">
+              <label  for="search-input">Search:</label>
+              <input class="input" type="text" id="search-input" (keyup)="search()" [(ngModel)]="searchQuery">
+               <div class="box-search-value">
+
+                <div *ngFor="let item of this.filteredTablesData">
+               <div *ngIf="item"> {{item}}</div>
+                </div>
+               </div>
+            </div>
+            <button (click)="confirmSelect('ok')">אישור</button>
+            <button (click)="confirmSelect('no')">ביטול</button>
+          </ul>
+        </div>
+
 </div>
       <div *ngIf="!isTable" id={{this.graphName}} [style]="this.graphSize"></div>
     </div>
