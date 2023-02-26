@@ -2,8 +2,6 @@ import { Component, Input } from '@angular/core';
 import * as echarts from 'echarts';
 
 
-
-
 @Component({
   selector: 'app-generic-table',
   templateUrl: './generic-table.component.html',
@@ -43,15 +41,19 @@ export class GenericTableComponent {
     if (!this.tablesData) {
       return;
     }
-    if (!this.searchQuery) {
-      this.filteredTablesData = this.tablesData;
-    } else {
-      this.filteredTablesData = this.tablesData.filter((item:any) => item.address.toLowerCase().includes(this.searchQuery.toLowerCase()));
+    if(this.searchQuery.length==0){
+      this.filteredTablesData=this.tablesData.address
+    }
+  else {
+      if(this.searchQuery.length>0){
+         this.filteredTablesData = this.tablesData.filter((item:any) => item.address.toLowerCase().includes(this.searchQuery.toLowerCase()));
 
-      this.filteredTablesData= this.filteredTablesData.map((item:any)=>{
-      if(item.address.toLowerCase()&&this.searchQuery.length>0)
+       this.filteredTablesData= this.filteredTablesData.map((item:any)=>{
+
       return item.address.toLowerCase()
       })
+      }
+
     }
   }
 
@@ -83,9 +85,7 @@ export class GenericTableComponent {
     if(type==='ok')
     console.log(this.selectedOption)
   }
-  filterData() {
-    this.filteredData = this.data.filter(item => item.label === this.selectedOption);
-  }
+
   ngAfterViewInit(): void {
     if(this.graphName=="")
     return
@@ -123,9 +123,6 @@ export class GenericTableComponent {
   sortDirection: string="";
   tableColumns: any;
 
-
-
-
   // Define a function to handle column header clicks
   onSort(column: string) {
     if(this.clickCounterObj[column]==2)
@@ -152,14 +149,5 @@ export class GenericTableComponent {
       }
     });
   }
-  onColumnHeaderClick(column:any) {
-    if (column.clicked) {
-      column.clicked = false;
-      this.sortDirection = '';
-    } else {
-      this.tableColumns.forEach((col:any) => col.clicked = false);
-      column.clicked = true;
-      this.sortDirection = 'asc';
-    }
-  }
+
 }

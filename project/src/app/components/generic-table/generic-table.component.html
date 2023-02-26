@@ -48,7 +48,9 @@
         <label  for="search-input">Search:</label>
         <input type="text" id="search-input" (keyup)="search()" [(ngModel)]="searchQuery">
          <div class="box-search-value">
-          {{this.filteredTablesData}}
+          <div *ngFor="let item of this.filteredTablesData">
+         <div *ngIf="item"> {{item}}</div>
+          </div>
          </div>
       </div>
 </div>
