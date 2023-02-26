@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import * as echarts from 'echarts';
 // Import the dark theme
 import 'echarts/theme/dark';
+import { CoronaService } from 'src/app/corona.service';
 
 @Component({
   selector: 'app-generic-table',
@@ -20,7 +21,7 @@ export class GenericTableComponent {
     { name: 'ירוק', range: 'ציון עד 4.5', class: 'green' }
   ];
   searchQuery: string = '';
-
+  isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue();
   @Input()title?:string;
   @Input() chart: echarts.ECharts | null = null;
   @Input() resizeTimeoutId: any;
@@ -34,8 +35,10 @@ export class GenericTableComponent {
 
  isActiveShareAndDownload?:boolean=false;
   filteredTablesData: any;
-  ngOnInit(): void {
-
+  ngOnInit(){
+    this.coronaSvc.isDarkModeActive.subscribe((newStatus:boolean)=>{
+      this.isDarkModeActive=newStatus;
+    })
   }
 
   search(): void {
@@ -68,7 +71,7 @@ export class GenericTableComponent {
 
   filteredData: any[];
 
-  constructor() {
+  constructor(private coronaSvc:CoronaService) {
     this.filteredData = this.data;
   }
 
