@@ -123,7 +123,9 @@ background: url('../../../assets/images/greenIsrael.png');
   font-weight: 550;
 
 }
-
+*{
+  direction: ltr;
+}
 
 
 
