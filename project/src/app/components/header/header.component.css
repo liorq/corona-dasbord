@@ -26,6 +26,7 @@
   border: none;
   background: url('../../../assets/images/brightness_light.png') no-repeat;
   cursor: pointer;
+  margin-top: 5px;
 }
 .container-sun-gray{
   border-top-left-radius: 0px;
@@ -45,13 +46,21 @@
 .container-sun-dark{
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: absolute;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
   display: flex;
+  height: 40px;
+  display: flex;
+  height: fit-content;
+  position: absolute;
   left: 0;
-  background: #d8d8d8;
+  top: 2px;
+  background: #374f60;
+
+  top: 20px;
+
 }
+
 .p1{
 font-size: 16.16px;
 width:286px;
