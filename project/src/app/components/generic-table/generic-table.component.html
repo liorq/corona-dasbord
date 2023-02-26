@@ -44,10 +44,14 @@
 
     <div class="align-graph" [ngClass]="{'container2':this.graphName=='main','container7':this.graphName=='main3'}">
       <div *ngIf="isTable">
-        <label for="search-input">Search:</label>
-        <input type="text" id="search-input" [(ngModel)]="searchQuery">
+        <div class="search-input">
+        <label  for="search-input">Search:</label>
+        <input type="text" id="search-input" (keyup)="search()" [(ngModel)]="searchQuery">
+         <div class="box-search-value">
+          {{this.filteredTablesData}}
+         </div>
       </div>
-
+</div>
       <div *ngIf="!isTable" id={{this.graphName}} [style]="this.graphSize"></div>
     </div>
     <div *ngIf="isTable" class="container-color">

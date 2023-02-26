@@ -34,17 +34,24 @@ export class GenericTableComponent {
   @Input() tablesData:any=[];
 
  isActiveShareAndDownload?:boolean=false;
+  filteredTablesData: any;
   ngOnInit(): void {
 
   }
-  get filteredTablesData() {
-    if (this.searchQuery) {
-      return this.tablesData.filter((row:any) => {
-        // adjust this condition to match your search criteria
-        return row.name.toLowerCase().includes(this.searchQuery.toLowerCase());
-      });
+
+  search(): void {
+    if (!this.tablesData) {
+      return;
+    }
+    if (!this.searchQuery) {
+      this.filteredTablesData = this.tablesData;
     } else {
-      return this.tablesData;
+      this.filteredTablesData = this.tablesData.filter((item:any) => item.address.toLowerCase().includes(this.searchQuery.toLowerCase()));
+
+      this.filteredTablesData= this.filteredTablesData.map((item:any)=>{
+      if(item.address.toLowerCase()&&this.searchQuery.length>0)
+      return item.address.toLowerCase()
+      })
     }
   }
 

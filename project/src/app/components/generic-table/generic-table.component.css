@@ -554,11 +554,9 @@ li{
 .lavender-background{
 background: #daeaee;
 }
-.text-color{
 
-}
 .little-container-text-and-color{
-  
+
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -569,6 +567,18 @@ background: #daeaee;
   display: flex;
   margin-bottom: 50px;
   margin-left: 50px;
+}
+.box-search-value{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  background-color: #fff;
+}
+.search-input{
+  position: relative;
 }
 .little-text-color{
   font-size: 11px;
