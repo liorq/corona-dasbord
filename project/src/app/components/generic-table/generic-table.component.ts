@@ -12,6 +12,12 @@ import * as echarts from 'echarts';
 
 
 export class GenericTableComponent {
+  colors = [
+    { name: 'אדום', range: 'ציון 7.5 ומעלה', class: 'red' },
+    { name: 'כתום', range: 'ציון בין 6 ל - 7.5', class: 'orange' },
+    { name: 'צהוב', range: 'ציון בין 4.5 ל - 6', class: 'yellow' },
+    { name: 'ירוק', range: 'ציון עד 4.5', class: 'green' }
+  ];
 
   @Input()title?:string;
   @Input() chart: echarts.ECharts | null = null;

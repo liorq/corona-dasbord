@@ -492,6 +492,10 @@ li{
   display: flex;
   flex-direction: row;
 }
+.flex-cloumn-color{
+  display: flex;
+  flex-direction: column;
+}
 
 .arrow-down {
   width: 0;
@@ -556,10 +560,11 @@ background: #daeaee;
 .little-container-text-and-color{
   width: fit-content;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .container-color{
   display: flex;
+  margin-bottom: 50px;
 }

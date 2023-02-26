@@ -72,30 +72,15 @@
     <div class="align-graph" [ngClass]="{'container2':this.graphName=='main','container7':this.graphName=='main3'}">
       <div *ngIf="!isTable" id={{this.graphName}} [style]="this.graphSize"></div>
     </div>
-      <div *ngIf="isTable" class="container-color">
-        <div class="little-container-text-and-color">
-         <div class="text-color">אדום</div>
-        <div class="squre red"></div>
-       </div>
-
-
-        <div class="little-container-text-and-color">
-        <div class="text-color">כתום</div>
-        <div class="squre orange"></div>
+    <div *ngIf="isTable" class="container-color">
+      <div *ngFor="let color of colors" class="little-container-text-and-color">
+        <div class="flex-cloumn-color">
+          <div class="text-color">{{ color.name }}</div>
+          <div class="little-text-color">{{ color.range }}</div>
         </div>
-
-        <div class="little-container-text-and-color">
-        <div class="text-color">צהוב</div>
-        <div class="squre yellow"></div>
-         </div>
-
-
-        <div class="little-container-text-and-color">
-        <div class="text-color">ירוק</div>
-        <div class="squre green"></div>
-        </div>
-
+        <div class="squre {{ color.class }}"></div>
       </div>
+    </div>
       <div *ngIf="isTable" class="row header">
         <div class="align-div cell title" (click)="onSort('address')">
           <div>חולים פעילים</div>
