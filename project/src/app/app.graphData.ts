@@ -109,13 +109,13 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
        , itemStyle: {
 
           normal: {
-            color: '#ff9482',
-            borderColor: '#ff9482',
+            color: colors[1],
+            borderColor:  colors[1],
 
           },
           emphasis: {
             color: '#fff',
-            borderColor: '#ff9482',
+            borderColor:  colors[1],
             borderWidth: 6,
             shadowBlur: 10,
             shadowOffsetX: 0,

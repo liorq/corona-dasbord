@@ -11,9 +11,10 @@ export class FurtherInvestigationsComponent {
   option?: echarts.EChartsOption|any= fourOption(25,false);
   timePeriod?:number=25;
   constructor(private coronaSvc:CoronaService){}
+  
 ngOnInit(): void {
   this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
-    this.option=fourOption(this.timePeriod,newStatus)
+  this.option=fourOption(this.timePeriod,newStatus)
   })
 }
 }
