@@ -28,41 +28,14 @@
 
     <div class="graph-header" >
       <ul class="ul">
-
-        <li class="li" *ngIf="this.graphName=='main1'">
-          <div>ממוצע נע סך הבדיקות</div>
-          <div class="circle salmon"></div>
-        </li>
-        <li class="li" *ngIf="this.graphName=='main1'">
-          <div>אנטיגן מוסדי</div>
-          <div class="circle gold"></div>
-        </li>
-
-        <li class="li" *ngIf="this.graphName=='main1'">
-          <div>בדיקות PCR</div>
-          <div class="circle blue"></div>
-        </li>
-        <li class="li" *ngIf="this.graphName=='main'">
-          <div>ממוצע נע נפטרים</div>
-          <div class="circle salmon"></div>
-        </li>
-        <li class="li" *ngIf="this.graphName=='main'">
-          <div>נפטרים</div>
-          <div class="circle turkiz"></div>
-        </li>
-        <li *ngIf="this.graphName=='main3'">
-          <div>מחוסנים</div>
-          <div class="circle turkiz"></div>
-        </li>
-        <li *ngIf="this.graphName=='main3'">
-          <div>מחוסנים ללא תוקף</div>
-          <div class="circle gold"></div>
-        </li>
-        <li *ngIf="this.graphName=='main3'">
-          <div>לא מחוסנים</div>
-          <div class="circle blue"></div>
-        </li>
+        <ng-container *ngFor="let item of items">
+          <li class="li" *ngIf="item.graphName == graphName">
+            <div>{{ item.title }}</div>
+            <div class="circle {{ item.color }}"></div>
+          </li>
+        </ng-container>
       </ul>
+
       <div class="testByDates1" *ngIf="this.graphName=='main'">מספר נפטרים</div>
       <div class="testByDates4" *ngIf="this.graphName=='main4'">קבוצת גיל</div>
       <div class="testByDates3" *ngIf="this.graphName=='main1'">מספר הבדיקות </div>

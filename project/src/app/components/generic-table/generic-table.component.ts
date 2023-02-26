@@ -12,6 +12,8 @@ import * as echarts from 'echarts';
 
 
 export class GenericTableComponent {
+  items = [  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'salmon' },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'gold' },  { graphName: 'main1', title: 'בדיקות PCR', color: 'blue' },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'salmon' },  { graphName: 'main', title: 'נפטרים', color: 'turkiz' },  { graphName: 'main3', title: 'מחוסנים', color: 'turkiz' },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'gold' },  { graphName: 'main3', title: 'לא מחוסנים', color: 'blue' },];
+
   colors = [
     { name: 'אדום', range: 'ציון 7.5 ומעלה', class: 'red' },
     { name: 'כתום', range: 'ציון בין 6 ל - 7.5', class: 'orange' },
