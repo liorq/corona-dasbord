@@ -73,11 +73,27 @@
       <div *ngIf="!isTable" id={{this.graphName}} [style]="this.graphSize"></div>
     </div>
       <div *ngIf="isTable" class="container-color">
+        <div class="little-container-text-and-color">
+         <div class="text-color">אדום</div>
+        <div class="squre red"></div>
+       </div>
 
-        <div class="squre red">אדום</div>
-        <div class="squre orange">כתום</div>
-        <div class="squre yellow">צהוב</div>
-        <div class="squre green">ירוק</div>
+
+        <div class="little-container-text-and-color">
+        <div class="text-color">כתום</div>
+        <div class="squre orange"></div>
+        </div>
+
+        <div class="little-container-text-and-color">
+        <div class="text-color">צהוב</div>
+        <div class="squre yellow"></div>
+         </div>
+
+
+        <div class="little-container-text-and-color">
+        <div class="text-color">ירוק</div>
+        <div class="squre green"></div>
+        </div>
 
       </div>
       <div *ngIf="isTable" class="row header">
@@ -115,7 +131,7 @@
       </div>
 
       <div *ngIf="isTable" class="tbody">
-        <ng-container *ngFor="let row of tableData" >
+        <ng-container *ngFor="let row of tablesData" >
           <div *ngIf="isTable" class="row">
             <div class="cell ">{{row.id}}</div>
             <div class="cell">{{row.name}}</div>

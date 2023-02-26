@@ -12,6 +12,7 @@ import * as echarts from 'echarts';
 
 
 export class GenericTableComponent {
+
   @Input()title?:string;
   @Input() chart: echarts.ECharts | null = null;
   @Input() resizeTimeoutId: any;
@@ -19,10 +20,13 @@ export class GenericTableComponent {
   @Input()optionObj?:{};
   @Input() graphSize:string="width: 100%; height: 315px;";
   @Input() isTable?:boolean;
+  @Input() periodOfTime?:number=25;
+  @Input() tablesTitle?:{};
+  @Input() tablesData:any=[];
+
  isActiveShareAndDownload?:boolean=false;
   ngOnInit(): void {
-    if(this.graphName=="")
-    return
+
   }
 
 
@@ -89,15 +93,7 @@ export class GenericTableComponent {
     'phone':0,
     'address':0,
   }
-  tableData = [
-    { id: 34, name: '10%', age: '24%', email: 7.2, phone: 7.6, address: 'אילת' },
-    { id: 63, name: '30%', age: '24%', email: 4.2, phone: 2.2, address: 'מודיעין' },
-    { id: 257, name: '0%', age: '30%', email: 2.2, phone: 5.2, address: 'ירושלים' },
-    { id: 29, name: '20%', age: '24%', email: 4.2, phone: 4.2, address: 'תל אביב' },
-    // { id: 30, name: '20%', age: '26%', email: 2.2, phone: 7.2, address: 'ראש העין' },
-    // { id: 20, name: '20%', age: '24%', email: 1.2, phone: 9.2, address: 'פתח תקווה' },
 
-  ];
   currentSort = { column: 'id', direction: 'asc' };
   sortDirection: string="";
   tableColumns: any;
@@ -121,7 +117,7 @@ export class GenericTableComponent {
       this.currentSort.direction = 'asc';
     }
     // Sort the table data based on the current sort column and direction
-    this.tableData.sort((a:any, b:any) => {
+    this.tablesData.sort((a:any, b:any) => {
       if (a[this.currentSort.column] < b[this.currentSort.column]) {
         return this.currentSort.direction === 'asc' ? -1 : 1;
       } else if (a[this.currentSort.column] > b[this.currentSort.column]) {

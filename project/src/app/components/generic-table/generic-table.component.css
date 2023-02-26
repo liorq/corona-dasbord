@@ -61,7 +61,7 @@ gap: 8px;
  position: absolute;
  top:40px;
  left: 18px;
- z-index: 20000;
+  z-index: 20;
 }
 .active {
   display: block;
@@ -293,7 +293,7 @@ gap: 8px;
  position: absolute;
  top:40px;
  left: 18px;
- z-index: 20000;
+ /* z-index: 20000; */
 }
 .active {
   display: block;
@@ -486,7 +486,7 @@ li{
   height: 18px;
   font-size: 13px;
   text-align: center;
-  max-width: 45px;
+  /* max-width: 45px; */
 }
 .container {
   display: flex;
@@ -538,7 +538,7 @@ li{
 }
 .squre{
   width: 20px;
-
+  height: 20px;
 }
 .title2{
   width: fit-content;
@@ -549,4 +549,17 @@ li{
 }
 .lavender-background{
 background: #daeaee;
+}
+.text-color{
+
+}
+.little-container-text-and-color{
+  width: fit-content;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.container-color{
+  display: flex;
 }
