@@ -1,25 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 import { secondOption } from 'src/app/app.graphData';
+import { CoronaService } from 'src/app/corona.service';
 
 @Component({
   selector: 'app-tests',
   templateUrl: './tests.component.html',
   styleUrls: ['./tests.component.css']
 })
-export class TestsComponent {
+export class TestsComponent implements OnInit{
+
+
+
+  constructor(private coronaSvc:CoronaService){}
+  timePeriod?:number=25;
+
   options = ['Option 1', 'Option 2', 'Option 3'];
   private chart: echarts.ECharts | null = null;
-  private resizeTimeoutId: any;
+
   private emphasisStyle = {
     itemStyle: {
       shadowBlur: 0.5,
       shadowColor: 'rgba(0,0,0,0.3)'
     }
   };
-  public option:any=secondOption(this.emphasisStyle,25,false);
+  public option:any=secondOption(this.emphasisStyle,this.timePeriod,false);
 
   ngOnInit(){
+      this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
+        this.option=secondOption(this.emphasisStyle,this.timePeriod,newStatus)
+    })
+
+
+
     var chartDom = document.getElementById('main1') as HTMLElement;
     let myChart = echarts.init(chartDom);
     let xAxisData = [];
