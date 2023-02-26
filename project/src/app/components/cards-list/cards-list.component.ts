@@ -8,12 +8,13 @@ import { CoronaService } from 'src/app/corona.service';
   styleUrls: ['./cards-list.component.css']
 })
 export class CardsComponent implements OnInit{
+isDarkModeActive=this.coronaSvc.isDarkModeActive.getValue()
+
 ngOnInit(): void {
   this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
   this.isDarkModeActive=newStatus;
   })
 }
-isDarkModeActive=this.coronaSvc.isDarkModeActive.getValue()
 @Input()dataToDisplay?:any[]=[];
 constructor(private coronaSvc:CoronaService){}
 public openWindowsIIcon=openWindowIconI;

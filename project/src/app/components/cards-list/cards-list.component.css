@@ -231,13 +231,21 @@ position: relative;
   background-color: #fff;
 }
 .background-dark-mode{
-  background:   #384f5f;;
+  background:   hsl(205, 26%, 30%);;
+  color: white;
  }
 
 .text-i-icon{
   display: none;
 }
+.i-icon-dark{
+  background: url('../../../assets/images/i-icon1-dark.png') no-repeat;
+  height: 20px;
+  width: 20px;
+  background-size: cover;
+  cursor: pointer;
 
+}
 .i-icon:hover + .text-i-icon,
 .text-i-icon:hover {
   display: block;

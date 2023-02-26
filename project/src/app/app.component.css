@@ -9,12 +9,14 @@ app-anchor-list{
 
 *{
   box-sizing: border-box;
-  color: #222b45;
   text-align: right;
   font-family: "Assistant", sans-serif;
 
 }
+.blue-font{
+  color: #222b45;
 
+}
 app-header{
   height: 150px;
 }
@@ -23,10 +25,11 @@ app-header{
   background:#e9edf5 ;
 }
 .dark-mode{
-background-color:#49667a;
+  color: #fff;
+  background-color:#49667a;
 
 
-color:#fff;
+
 }
 
 

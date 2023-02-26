@@ -1,7 +1,7 @@
-<div class="container" [ngClass]="{'background-dark-mode':isDarkModeActive}">
-  <div *ngFor="let data of dataToDisplay; let i = index" class="card" [id]="data.id">
+<div class="container" >
+  <div [ngClass]="{'background-dark-mode':isDarkModeActive}" *ngFor="let data of dataToDisplay; let i = index" class="card" [id]="data.id">
     <div class="title-container">
-<div class="i-icon">
+<div [ngClass]="{'i-icon-dark':isDarkModeActive,'i-icon':!isDarkModeActive}">
 
 </div>
       <!-- <div [ngClass]="{'i-icon-dark':isDarkModeActive,'i-icon':!isDarkModeActive}"></div> -->
