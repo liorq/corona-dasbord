@@ -29,7 +29,7 @@
     <div class="graph-header" >
       <ul class="ul">
         <ng-container *ngFor="let item of items">
-          <li class="li" *ngIf="item.graphName == graphName">
+          <li class="li" *ngIf="item.graphName == graphName&&item.isDarkMode">
             <div>{{ item.title }}</div>
             <div class="circle {{ item.color }}"></div>
           </li>

@@ -40,6 +40,19 @@ box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
     align-items: center;
     max-width: 550px;
   }
+  .goldenrod{
+    background: #fcc537;
+  }
+  .lightgreen
+  {
+  background: #9be985;
+  }
+  .aqua{
+    background: #2cd2db;
+  }
+  .orange{
+    background: goldenrod;
+  }
   .little-container{
 padding: 10px;
 display: flex;

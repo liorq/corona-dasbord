@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 import 'echarts/theme/dark';
 
@@ -11,8 +11,10 @@ import { CoronaService } from 'src/app/corona.service';
 })
 
 
-export class GenericTableComponent {
-  items = [  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'salmon' },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'gold' },  { graphName: 'main1', title: 'בדיקות PCR', color: 'blue' },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'salmon' },  { graphName: 'main', title: 'נפטרים', color: 'turkiz' },  { graphName: 'main3', title: 'מחוסנים', color: 'turkiz' },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'gold' },  { graphName: 'main3', title: 'לא מחוסנים', color: 'blue' },];
+export class GenericTableComponent implements OnInit{
+  isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue();
+  items = [  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'salmon',isDarkMode:this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'blue',isDarkMode:this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'salmon' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'blue' ,isDarkMode:this.isDarkModeActive },
+  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'orange',isDarkMode:!this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'aqua',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'goldenrod' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'aqua' ,isDarkMode:!this.isDarkModeActive },];
 
   colors = [
     { name: 'אדום', range: 'ציון 7.5 ומעלה', class: 'red' },
@@ -21,7 +23,7 @@ export class GenericTableComponent {
     { name: 'ירוק', range: 'ציון עד 4.5', class: 'green' }
   ];
   searchQuery: string = '';
-  isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue();
+
   @Input()title?:string;
   @Input() chart: echarts.ECharts | null = null;
   @Input() resizeTimeoutId: any;
@@ -38,8 +40,13 @@ export class GenericTableComponent {
   ngOnInit(){
     this.coronaSvc.isDarkModeActive.subscribe((newStatus:boolean)=>{
       this.isDarkModeActive=newStatus;
+        this.items.forEach(item => {
+          item.isDarkMode = !item.isDarkMode;
+        });
+
     })
   }
+
 
   search(): void {
     if (!this.tablesData) {
@@ -70,12 +77,12 @@ export class GenericTableComponent {
   ];
 
   filteredData: any[];
+  dropdownVisible: boolean = false;
 
   constructor(private coronaSvc:CoronaService) {
     this.filteredData = this.data;
   }
 
-  dropdownVisible: boolean = false;
 
   toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
@@ -95,7 +102,9 @@ export class GenericTableComponent {
     return
 
     const chartDom = document.getElementById(this.graphName)!;
-    const myChart = echarts.init(chartDom,'dark');
+    // const myChart = echarts.init(chartDom,'dark');
+
+    const myChart = echarts.init(chartDom);
     let option:any=this.optionObj
     this.chart?.setOption(option);
     option && myChart.setOption(option);
