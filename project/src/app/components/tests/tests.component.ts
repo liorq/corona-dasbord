@@ -17,7 +17,7 @@ export class TestsComponent {
       shadowColor: 'rgba(0,0,0,0.3)'
     }
   };
-  public option:any=secondOption(this.emphasisStyle);
+  public option:any=secondOption(this.emphasisStyle,25,false);
 
   ngOnInit(){
     var chartDom = document.getElementById('main1') as HTMLElement;

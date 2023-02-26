@@ -7,6 +7,6 @@ import { firstOption } from 'src/app/app.graphData';
   styleUrls: ['./deads.component.css']
 })
 export class DeadsComponent {
-  option: echarts.EChartsOption | any = firstOption();;
+  option: echarts.EChartsOption | any = firstOption(25,false);;
 
 }

@@ -1,13 +1,14 @@
 
-const timePeriod=0;
 ///צריך לתת תקופה זמן ואז לעשות ספלייס וכל פעם שיש שינוי להשתמש בסאבגקט
 
-export function  firstOption(timePeriod?:number){
-  const colors = ['#237d7d', '#ff9482', '#EE6666','#595d62'];
+export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
+
+  let colors:string[]=!isDarkMode?['#237d7d', '#ff9482', '#EE6666','#595d62']
+  :['#9be985', '#fcc537'];
+
 
  return  {
     color: colors,
-
     tooltip: {
       trigger: 'axis',
       axisPointer: {
@@ -127,7 +128,16 @@ export function  firstOption(timePeriod?:number){
   };
 }
 
-export function  secondOption(emphasisStyle:any){
+
+
+
+
+export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:boolean){
+
+  let colors:string[]=!isDarkMode?['#50cbfd', '#b6ca51', '#ff9482']
+  :['#daa520', '#fe8672','#2cd2db'];
+
+
   return  {
     title: {
       subtext: 'מספר הבדיקות לפי תאריך',
@@ -214,8 +224,11 @@ export function  secondOption(emphasisStyle:any){
     ]
   };
 }
-export function  threeOption(){
-  const colors = ['#50cbfd', '#237d7d', '#b6ca51'];
+export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
+
+
+  let colors:string[]=!isDarkMode?['#50cbfd', '#237d7d', '#b6ca51']:['#9be985', '#fe8672','#2cd2db'];
+
 
   return {
     color: colors,
@@ -333,7 +346,9 @@ export function  threeOption(){
 }
 
 
-export function  fourOption(){
+export function  fourOption(timePeriod?:number,isDarkMode?:boolean){
+  // let colors:string[]=!isDarkMode?['#50cbfd', '#237d7d', '#b6ca51']:['#9be985', '#fe8672','#2cd2db'];
+
   return {
     title: {},
     tooltip: {

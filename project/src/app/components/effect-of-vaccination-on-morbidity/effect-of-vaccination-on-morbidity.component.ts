@@ -7,6 +7,6 @@ import { threeOption } from 'src/app/app.graphData';
   styleUrls: ['./effect-of-vaccination-on-morbidity.component.css']
 })
 export class EffectOfVaccinationOnMorbidityComponent {
-  option: echarts.EChartsOption|any=threeOption();
+  option: echarts.EChartsOption|any=threeOption(25,false);
 
 }

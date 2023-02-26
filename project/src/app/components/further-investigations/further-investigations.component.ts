@@ -7,6 +7,6 @@ import { fourOption } from 'src/app/app.graphData';
   styleUrls: ['./further-investigations.component.css','../deads/deads.component.css']
 })
 export class FurtherInvestigationsComponent {
-  option?: echarts.EChartsOption|any= fourOption();
+  option?: echarts.EChartsOption|any= fourOption(25,false);
 
 }
