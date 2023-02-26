@@ -8,7 +8,6 @@ import { fourOption } from 'src/app/app.graphData';
   styleUrls: ['../testt2/testt2.component.css','./testt4.component.css','../testt54656552/testt54656552.component.css','../generic-table/generic-table.component.css']
 })
 export class Testt4Component{
-  selectedOption?: string;
    option?: echarts.EChartsOption|any= fourOption();
 
 }

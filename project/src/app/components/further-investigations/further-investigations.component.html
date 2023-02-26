@@ -12,13 +12,19 @@
 <div class="graph-container">
 <app-generic-table *ngFor="let title of [
 'ממוצע מאומתים שבועי',
-'פילוח מדדים שונים על פי גיל ומין',
+
+]" [title]="title">
+</app-generic-table>
+
+<app-generic-table [graphSize]="'width: 90%; height: 290px;'" [title]="'פילוח מדדים שונים על פי גיל ומין'" [graphName]="'main4'" [optionObj]="this.option"></app-generic-table>
+
+
+<app-generic-table *ngFor="let title of [
 'תחקור תחלואה לאור אירועים והתחסנות'
 ]" [title]="title">
 
 
 </app-generic-table>
-
 </div>
 
 
