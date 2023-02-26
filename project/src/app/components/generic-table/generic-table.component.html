@@ -43,6 +43,11 @@
     </div>
 
     <div class="align-graph" [ngClass]="{'container2':this.graphName=='main','container7':this.graphName=='main3'}">
+      <div *ngIf="isTable">
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input" [(ngModel)]="searchQuery">
+      </div>
+
       <div *ngIf="!isTable" id={{this.graphName}} [style]="this.graphSize"></div>
     </div>
     <div *ngIf="isTable" class="container-color">

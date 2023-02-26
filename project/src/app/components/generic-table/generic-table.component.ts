@@ -20,6 +20,7 @@ export class GenericTableComponent {
     { name: 'צהוב', range: 'ציון בין 4.5 ל - 6', class: 'yellow' },
     { name: 'ירוק', range: 'ציון עד 4.5', class: 'green' }
   ];
+  searchQuery: string = '';
 
   @Input()title?:string;
   @Input() chart: echarts.ECharts | null = null;
@@ -36,7 +37,16 @@ export class GenericTableComponent {
   ngOnInit(): void {
 
   }
-
+  get filteredTablesData() {
+    if (this.searchQuery) {
+      return this.tablesData.filter((row:any) => {
+        // adjust this condition to match your search criteria
+        return row.name.toLowerCase().includes(this.searchQuery.toLowerCase());
+      });
+    } else {
+      return this.tablesData;
+    }
+  }
 
   selectedOption?: string='Option 1';
   options: string[] = ['Option 1', 'Option 2', 'Option 3'];
