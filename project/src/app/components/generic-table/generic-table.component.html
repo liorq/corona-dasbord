@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngClass]="{'white-color':isDarkModeActive}">
 
   <div class="table"  [ngClass]="{'background-dark-mode':isDarkModeActive}">
     <div class="little-container">
@@ -22,7 +22,7 @@
 
     </div>
     <div class="dots-container"  (click)="isActiveShareAndDownload=!isActiveShareAndDownload">
-      <span class="dot" *ngFor="let i of [1,2,3]" (click)="isActiveShareAndDownload=!isActiveShareAndDownload"></span>
+      <span [ngClass]="{'dot-dark-mode':isDarkModeActive,'dot':!isDarkModeActive}" *ngFor="let i of [1,2,3]" (click)="isActiveShareAndDownload=!isActiveShareAndDownload"></span>
     </div>
     <div class="share-and-download" [ngClass]="{ 'active': isActiveShareAndDownload }"></div>
 

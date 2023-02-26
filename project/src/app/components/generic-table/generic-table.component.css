@@ -1,5 +1,7 @@
 
-
+.white-color{
+  color: white;
+}
 .table{
   text-align: right;
   height: 347px;
@@ -83,7 +85,12 @@ gap: 8px;
   border-radius: 50%;
   background-color: #4b5267;
 }
-
+.dot-dark-mode {
+  width: 2.81px;
+  height: 2.81px;
+  border-radius: 50%;
+  background-color: #fff;
+}
 
 
 

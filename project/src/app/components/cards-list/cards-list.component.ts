@@ -1,13 +1,21 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { openWindowIconI } from 'src/app/app.data';
+import { CoronaService } from 'src/app/corona.service';
 
 @Component({
   selector: 'app-cards',
   templateUrl: './cards-list.component.html',
   styleUrls: ['./cards-list.component.css']
 })
-export class CardsComponent {
+export class CardsComponent implements OnInit{
+ngOnInit(): void {
+  this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
+  this.isDarkModeActive=newStatus;
+  })
+}
+isDarkModeActive=this.coronaSvc.isDarkModeActive.getValue()
 @Input()dataToDisplay?:any[]=[];
+constructor(private coronaSvc:CoronaService){}
 public openWindowsIIcon=openWindowIconI;
 changeNumberFont(word:string){
 return{'medium-num':word.includes('Num')}

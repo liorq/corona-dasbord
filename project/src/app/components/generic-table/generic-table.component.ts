@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import * as echarts from 'echarts';
-// Import the dark theme
-import 'echarts/theme/dark';
+
 import { CoronaService } from 'src/app/corona.service';
 
 @Component({
@@ -95,7 +94,7 @@ export class GenericTableComponent {
     return
 
     const chartDom = document.getElementById(this.graphName)!;
-    const myChart = echarts.init(chartDom,'dark');
+    const myChart = echarts.init(chartDom);
     let option:any=this.optionObj
     this.chart?.setOption(option);
     option && myChart.setOption(option);

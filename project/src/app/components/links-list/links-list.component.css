@@ -128,7 +128,10 @@ background: url('../../../assets/images/greenIsrael.png');
 }
 
 
-
+.background-dark-mode{
+  background: #384f5f;
+  color: #fff;
+ }
 
 
 
