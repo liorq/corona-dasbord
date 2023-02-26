@@ -22,21 +22,14 @@ import { FurtherInvestigationsComponent } from './components/further-investigati
 import { RecurrentMorbidityAndRecoveryComponent } from './components/recurrent-morbidity-and-recovery/recurrent-morbidity-and-recovery.component';
 import { VaccinationOfThePopulationComponent } from './components/vaccination-of-the-population/vaccination-of-the-population.component';
 import { LightsInSettlementsComponent } from './components/lights-in-settlements/lights-in-settlements.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table'; // import MatTableModule
-
 import { MatSortModule } from '@angular/material/sort';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { LinksListComponent } from './components/links-list/links-list.component';
-import { Testt54656552Component } from './components/testt54656552/testt54656552.component';
-import { Testt2Component } from './components/testt2/testt2.component';
-import { Testt333Component } from './components/testt333/testt333.component';
-import { Testt4Component } from './components/testt4/testt4.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
-
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { TableComponent } from './components/table/table.component';
@@ -65,12 +58,7 @@ import { GenericSortedTableComponent } from './components/generic-sorted-table/g
     RecurrentMorbidityAndRecoveryComponent,
     VaccinationOfThePopulationComponent,
     LightsInSettlementsComponent,
-
     LinksListComponent,
-    Testt54656552Component,
-    Testt2Component,
-    Testt333Component,
-    Testt4Component,
     SideNavComponent,
     TableComponent,
     GenericSortedTableComponent,
@@ -86,7 +74,7 @@ import { GenericSortedTableComponent } from './components/generic-sorted-table/g
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    
+
   ]
 })
 export class AppModule { }

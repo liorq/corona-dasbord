@@ -558,6 +558,7 @@ background: #daeaee;
 
 }
 .little-container-text-and-color{
+  
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -567,4 +568,10 @@ background: #daeaee;
 .container-color{
   display: flex;
   margin-bottom: 50px;
+  margin-left: 50px;
+}
+.little-text-color{
+  font-size: 11px;
+  color: gray;
+  font-weight: 400;
 }
