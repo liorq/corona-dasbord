@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-import 'echarts/theme/dark';
-
+// import 'echarts/theme/dark';
 import { CoronaService } from 'src/app/corona.service';
 
 @Component({
@@ -37,6 +36,31 @@ export class GenericTableComponent implements OnInit{
 
  isActiveShareAndDownload?:boolean=false;
   filteredTablesData: any;
+  selectedOption?: string='Option 1';
+  options: string[] = ['Option 1', 'Option 2', 'Option 3'];
+  data: any[] = [
+    { label: 'Option 1', value: 10 },
+    { label: 'Option 2', value: 20 },
+    { label: 'Option 3', value: 30 }
+  ];
+
+  filteredData: any[];
+  dropdownVisible: boolean = false;
+  clickCounterObj:any={
+    'id':0,
+    'name':0,
+    'age':0,
+    'email':0,
+    'phone':0,
+    'address':0,
+  }
+
+  currentSort = { column: 'id', direction: 'asc' };
+  sortDirection: string="";
+  tableColumns: any;
+
+
+
   ngOnInit(){
     this.coronaSvc.isDarkModeActive.subscribe((newStatus:boolean)=>{
       this.isDarkModeActive=newStatus;
@@ -68,16 +92,6 @@ export class GenericTableComponent implements OnInit{
     }
   }
 
-  selectedOption?: string='Option 1';
-  options: string[] = ['Option 1', 'Option 2', 'Option 3'];
-  data: any[] = [
-    { label: 'Option 1', value: 10 },
-    { label: 'Option 2', value: 20 },
-    { label: 'Option 3', value: 30 }
-  ];
-
-  filteredData: any[];
-  dropdownVisible: boolean = false;
 
   constructor(private coronaSvc:CoronaService) {
     this.filteredData = this.data;
@@ -123,20 +137,8 @@ export class GenericTableComponent implements OnInit{
 
 
 
-  clickCounterObj:any={
-    'id':0,
-    'name':0,
-    'age':0,
-    'email':0,
-    'phone':0,
-    'address':0,
-  }
 
-  currentSort = { column: 'id', direction: 'asc' };
-  sortDirection: string="";
-  tableColumns: any;
 
-  // Define a function to handle column header clicks
   onSort(column: string) {
     if(this.clickCounterObj[column]==2)
     this.clickCounterObj[column]=0;
@@ -144,14 +146,11 @@ export class GenericTableComponent implements OnInit{
     this.clickCounterObj[column]+=1
 
     if (column === this.currentSort.column) {
-      // If the clicked column is already the current sort column, reverse the sort direction
       this.currentSort.direction = this.currentSort.direction === 'asc' ? 'desc' : 'asc';
     } else {
-      // If the clicked column is a different column, set it as the new sort column with ascending direction
       this.currentSort.column = column;
       this.currentSort.direction = 'asc';
     }
-    // Sort the table data based on the current sort column and direction
     this.tablesData.sort((a:any, b:any) => {
       if (a[this.currentSort.column] < b[this.currentSort.column]) {
         return this.currentSort.direction === 'asc' ? -1 : 1;
