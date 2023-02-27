@@ -1,7 +1,6 @@
 
 ///צריך לתת תקופה זמן ואז לעשות ספלייס וכל פעם שיש שינוי להשתמש בסאבגקט
 
-import { color } from "highcharts";
 
 export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
 
@@ -136,8 +135,8 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
 
 export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:boolean){
 
-  let colors:string[]=!isDarkMode?['#50cbfd', '#b6ca51', '#ff9482']
-  :['#daa520', '#fe8672','#2cd2db'];
+  let colors:string[]=!isDarkMode?['#50cbfd', '#b6ca51', '#ff9482','#fe8672']
+  :['#50cbfd','#fe8672','#daa520'];
 
 
   return  {
@@ -182,7 +181,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
         data: [5, 7, 6, 8, 9, 10, 7, 8, 9, 10,5, 7, 6, 8, 9, 10, 7, 8, 9, 10,5, 7, 6, 8, 9, 10, 7, 8, 9, 10],
         emphasis: emphasisStyle,
         itemStyle: {
-          color: '#50cbfd',
+          color: colors[0],
         }
       },
       {
@@ -193,7 +192,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
         data: [6, 6.5, 7, 7, 7.5, 8, 8, 8.5, 9, 9,6, 6.5, 7, 7, 7.5, 8, 8, 8.5, 9, 9,6, 6.5, 7, 7, 7.5, 8, 8, 8.5, 9, 9],
         emphasis: emphasisStyle,
         itemStyle: {
-          color: '#b6ca51',
+          color: colors[1],
 
         }
       },
@@ -206,15 +205,15 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
         data: [1, 2, 3, 2, 2, 2, 2, 3, 3, 2,1, 2, 3, 2, 2, 2, 2, 3, 3, 2,1, 2, 3, 2, 2, 2, 2, 3, 3, 2],
         emphasis: emphasisStyle,
         itemStyle: {
-          color: '#fe8672',
+          color: colors[3],
           normal: {
-            color: '#ff9482',
-            borderColor: '#ff9482',
+            color: colors[2],
+            borderColor: colors[2],
 
           },
           emphasis: {
             color: '#fff',
-            borderColor: '#ff9482',
+            borderColor: colors[2],
             borderWidth: 6,
             shadowBlur: 10,
             shadowOffsetX: 0,
