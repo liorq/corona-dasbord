@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CoronaService } from 'src/app/corona.service';
 import { SummaryOf7DaysObj } from '../../app.data';
 
 @Component({
@@ -6,6 +7,14 @@ import { SummaryOf7DaysObj } from '../../app.data';
   templateUrl: './summary-of7-days.component.html',
   styleUrls: ['./summary-of7-days.component.css']
 })
-export class SummaryOf7DaysComponent {
-dataToDisplay:any[]=SummaryOf7DaysObj
+export class SummaryOf7DaysComponent implements OnInit{
+
+constructor(private coronaSvc:CoronaService){}
+dataToDisplay:any[]=SummaryOf7DaysObj;
+isDarkModeActive?:boolean;
+ngOnInit(){
+  this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
+    this.isDarkModeActive=newStatus;
+  })
+}
 }

@@ -1,8 +1,15 @@
-#background-snow{
+.background-snow{
   background: #ffffff;
   width: 96vw;
   border-radius: 15px;
 }
+
+
+.background-dark-mode{
+  background:   #384f5f;
+  width: 96vw;
+  border-radius: 15px;
+ }
 .title{
  font-size: 18px;
   padding: 14px 22px;

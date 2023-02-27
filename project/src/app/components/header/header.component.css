@@ -28,6 +28,16 @@
   cursor: pointer;
   margin-top: 5px;
 }
+.sun-dark{
+  height: 37px;
+  width: 37px;
+  background-size: cover;
+  border-right: 10px;
+  border: none;
+  background: url('../../../assets/images/brightness_dark.png') no-repeat;
+  cursor: pointer;
+  margin-top: 5px;
+}
 .container-sun-gray{
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
