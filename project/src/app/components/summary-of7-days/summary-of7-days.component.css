@@ -9,9 +9,13 @@
   background:   #384f5f;
   width: 96vw;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
  }
 .title{
  font-size: 18px;
   padding: 14px 22px;
   font-weight: 550;
+  padding-top: 10px;
+
 }

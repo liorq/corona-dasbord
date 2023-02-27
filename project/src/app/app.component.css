@@ -31,7 +31,22 @@ app-header{
 
 
 }
-
+#Summaryoflast7daysComponent{
+display: flex;
+justify-content: center;
+}
+/* 'viewOn',
+'MajorIndicatorsComponent',
+'IndicesofgeneralmorbidityComponent',
+'MorbidityandhospitalizationsComponent',
+'MorbidityfromabroadComponent',
+'EffectofvaccinationonmorbidityComponent',
+'DeadsComponent',
+'TestsComponent',
+'FurtherinvestigationsComponent',
+'RecurrentmorbidityandrecoveryComponent',
+'VaccinationofthepopulationComponent',
+'LightsinsettlementsComponent' */
 
 
 

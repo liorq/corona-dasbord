@@ -9,3 +9,8 @@ width: 30vw;
     justify-content: right;
   }
   }
+.title{
+  border-top: 1px solid rgba(161,170,177,.4);
+  padding-top: 10px;
+
+}

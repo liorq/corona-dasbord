@@ -84,3 +84,8 @@
 .lavender-background{
 background: #daeaee;
 }
+.graph-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
