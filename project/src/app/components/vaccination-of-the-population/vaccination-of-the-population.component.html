@@ -1,31 +1,41 @@
-
 <div class="container">
-  <div class="title">התחסנות האוכלוסיה
-
-  </div>
+  <div class="title">התחסנות האוכלוסיה</div>
 </div>
-
 
 <div class="graph-container">
-
-
-<app-generic-table *ngFor="let title of ['מספר התחסנויות - יומי', 'מתחסנים מצטבר', 'אחוז מתחסנים לפי קבוצות גיל', 'התחסנות לפי ישובים']
-
-
-" [title]="title">
-
-
-</app-generic-table>
+  <app-generic-table
+    *ngFor="
+      let title of [
+        'מספר התחסנויות - יומי',
+        'מתחסנים מצטבר',
+        'אחוז מתחסנים לפי קבוצות גיל',
+        'התחסנות לפי ישובים'
+      ]
+    "
+    [title]="title"
+  >
+  </app-generic-table>
 </div>
 
+<app-links-list
+  [pictureClass]="'blueIsrael'"
+  [link]="'experience.arcgis.com'"
+  [title]="'התחסנות לקורונה'"
+  [description]="'נתוני אוכלוסיית מחוסנים בתוקף, לפי יישובים'"
+></app-links-list>
 
+<app-links-list
+  [pictureClass]="'littlePurpleIsrael'"
+  [link]="'experience.arcgis.com'"
+  [title]="'מוקדי התחסנות'"
+  [description]="
+    'מפת מוקדי ההתחסנות נגד נגיף הקורונה, כולל נתונים אודות שעות פתיחה וניווט'
+  "
+></app-links-list>
 
-
-<app-links-list [pictureClass]="'blueIsrael'" [link]="'experience.arcgis.com'" [title]='"התחסנות לקורונה"' [description]="'נתוני אוכלוסיית מחוסנים בתוקף, לפי יישובים'"></app-links-list>
-
-
-<app-links-list [pictureClass]="'littlePurpleIsrael'" [link]="'experience.arcgis.com'" [title]='"מוקדי התחסנות"' [description]="'מפת מוקדי ההתחסנות נגד נגיף הקורונה, כולל נתונים אודות שעות פתיחה וניווט'"></app-links-list>
-
-
-
-<app-links-list [pictureClass]="'exelPic'" [link]="'data.gov.il'" [title]='"טבלת גילאי המתחסנים"' [description]="'מספר המתחסנים במנה הראשונה והשנייה לפי גילאים'"></app-links-list>
+<app-links-list
+  [pictureClass]="'exelPic'"
+  [link]="'data.gov.il'"
+  [title]="'טבלת גילאי המתחסנים'"
+  [description]="'מספר המתחסנים במנה הראשונה והשנייה לפי גילאים'"
+></app-links-list>

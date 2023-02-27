@@ -1,19 +1,43 @@
-
 <div class="title">בדיקות</div>
 <div class="graph-container">
-<app-generic-table *ngFor="let title of [  'תושבים שנכנסו לישראל - מצב התחסנות',  'מגמת מאומתים שנכנסו לישראל',  'מאומתים הנכנסים לישראל לפי מדינות']
-" [title]="title">
-
-
-</app-generic-table>
-<app-generic-table [graphSize]="'width: 80%; height: 240px;'" [title]="'מספר בדיקות קורונה - יומי'" [graphName]="'main1'" [optionObj]="this.option"></app-generic-table>
-
+  <app-generic-table
+    *ngFor="
+      let title of [
+        'תושבים שנכנסו לישראל - מצב התחסנות',
+        'מגמת מאומתים שנכנסו לישראל',
+        'מאומתים הנכנסים לישראל לפי מדינות'
+      ]
+    "
+    [title]="title"
+  >
+  </app-generic-table>
+  <app-generic-table
+    [graphSize]="'width: 80%; height: 240px;'"
+    [title]="'מספר בדיקות קורונה - יומי'"
+    [graphName]="'main1'"
+    [optionObj]="this.option"
+  ></app-generic-table>
 </div>
 
-<app-links-list [pictureClass]="'purpleIsrael'" [link]="'health.gov.il'" [title]='"בדיקות מהירות"' [description]="'מפת בדיקות מהירות לקורונה, כולל נתונים אודות שעות פתיחה וניווט'"></app-links-list>
+<app-links-list
+  [pictureClass]="'purpleIsrael'"
+  [link]="'health.gov.il'"
+  [title]="'בדיקות מהירות'"
+  [description]="
+    'מפת בדיקות מהירות לקורונה, כולל נתונים אודות שעות פתיחה וניווט'
+  "
+></app-links-list>
 
+<app-links-list
+  [pictureClass]="'orangeIsrael'"
+  [link]="'ourworldindata.org'"
+  [title]="'בדיקות יומיות בעולם'"
+  [description]="'תמונת מצב אודות בדיקות יומיות, במדינות העולם'"
+></app-links-list>
 
-<app-links-list [pictureClass]="'orangeIsrael'" [link]="'ourworldindata.org'" [title]='"בדיקות יומיות בעולם"' [description]="'תמונת מצב אודות בדיקות יומיות, במדינות העולם'"></app-links-list>
-
-
-<app-links-list [pictureClass]="'labPic'" [link]="'health.gov.il'" [title]='"סוגי בדיקות"' [description]="'מרכז המידע לקורונה של משרד הבריאות'"></app-links-list>
+<app-links-list
+  [pictureClass]="'labPic'"
+  [link]="'health.gov.il'"
+  [title]="'סוגי בדיקות'"
+  [description]="'מרכז המידע לקורונה של משרד הבריאות'"
+></app-links-list>

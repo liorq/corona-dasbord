@@ -1,24 +1,16 @@
 <div class="container">
-<div class="title">מדדים מרכזיים
-
-</div>
+  <div class="title">מדדים מרכזיים</div>
 </div>
 <div class="graph-container">
-
-<app-generic-table *ngFor="let title of [  'מספר מאושפזים – יומי',  'ממוצע מאומתים שבועי',  'מאומתים חדשים יומי']" [title]="title">
-
-
-</app-generic-table>
+  <app-generic-table
+    *ngFor="
+      let title of [
+        'מספר מאושפזים – יומי',
+        'ממוצע מאומתים שבועי',
+        'מאומתים חדשים יומי'
+      ]
+    "
+    [title]="title"
+  >
+  </app-generic-table>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-

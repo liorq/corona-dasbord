@@ -1,23 +1,38 @@
-
 <div class="container">
   <div class="title">תחלואה מחו"ל</div>
-
-  </div>
-
-
-  <div class="graph-container">
-
-<app-generic-table *ngFor="let title of [  'תושבים שנכנסו לישראל - מצב התחסנות',  'מגמת מאומתים שנכנסו לישראל',  'מאומתים הנכנסים לישראל לפי מדינות']
-" [title]="title">
-
-
-</app-generic-table>
 </div>
 
-<app-links-list [pictureClass]="'greenEarth'" [link]="'experience.arcgis.com'" [title]='"תעופה בזמן קורונה"' [description]="'רמזור מדינות העולם לפי רמת סיכון'"></app-links-list>
+<div class="graph-container">
+  <app-generic-table
+    *ngFor="
+      let title of [
+        'תושבים שנכנסו לישראל - מצב התחסנות',
+        'מגמת מאומתים שנכנסו לישראל',
+        'מאומתים הנכנסים לישראל לפי מדינות'
+      ]
+    "
+    [title]="title"
+  >
+  </app-generic-table>
+</div>
 
+<app-links-list
+  [pictureClass]="'greenEarth'"
+  [link]="'experience.arcgis.com'"
+  [title]="'תעופה בזמן קורונה'"
+  [description]="'רמזור מדינות העולם לפי רמת סיכון'"
+></app-links-list>
 
-<app-links-list [pictureClass]="'orangeEarth'" [link]="'ourworldindata.org'" [title]='"מאומתים לפי מדינות העולם"' [description]="'תמונת מצב בעולם, מספר מאומתים יומי לפי מדינות'"></app-links-list>
+<app-links-list
+  [pictureClass]="'orangeEarth'"
+  [link]="'ourworldindata.org'"
+  [title]="'מאומתים לפי מדינות העולם'"
+  [description]="'תמונת מצב בעולם, מספר מאומתים יומי לפי מדינות'"
+></app-links-list>
 
-
-<app-links-list [pictureClass]="'blueEarth'" [link]="'experience.arcgis.com'" [title]='"נתוני תחלואה בעולם Who"' [description]="'תמונת מצב בעולם מוצגת ע&quot;י ארגון הבריאות העולמי'"></app-links-list>
+<app-links-list
+  [pictureClass]="'blueEarth'"
+  [link]="'experience.arcgis.com'"
+  [title]="'נתוני תחלואה בעולם Who'"
+  [description]="'תמונת מצב בעולם מוצגת ע&quot;י ארגון הבריאות העולמי'"
+></app-links-list>

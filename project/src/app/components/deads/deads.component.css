@@ -1,41 +1,33 @@
-.title{
+.title {
   font-size: 19px;
   font-weight: 700;
   position: relative;
   top: 15px;
-  border-top: 1px solid rgba(161,170,177,.4);
+  border-top: 1px solid rgba(161, 170, 177, 0.4);
   padding-top: 10px;
-
 }
-.graph-container{
+.graph-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.container{
+.container {
   height: 62px;
-
 }
-.graph-container{
-
+.graph-container {
 }
 @media screen and (min-width: 769px) {
-
-  app-generic-table{
-width: 30vw;
+  app-generic-table {
+    width: 30vw;
   }
-  .graph-container{
+  .graph-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
   }
-  }
+}
 
-  *{
-    direction: rtl;
-  }
-
-
-
-
+* {
+  direction: rtl;
+}

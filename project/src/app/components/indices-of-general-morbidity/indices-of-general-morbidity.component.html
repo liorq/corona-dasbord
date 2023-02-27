@@ -1,14 +1,13 @@
-
 <div class="container">
-  <div class="title" >מדדי תחלואה כללית</div>
+  <div class="title">מדדי תחלואה כללית</div>
+</div>
 
-  </div>
-
-
-  <div class="graph-container">
-
-<app-generic-table *ngFor="let title of ['אחוז תפוסת מיטות באישפוזים','תפוסת מיטות בביה&quot;ח'];" [title]="title">
-</app-generic-table>
-
-  </div>
-
+<div class="graph-container">
+  <app-generic-table
+    *ngFor="
+      let title of ['אחוז תפוסת מיטות באישפוזים', 'תפוסת מיטות בביה&quot;ח']
+    "
+    [title]="title"
+  >
+  </app-generic-table>
+</div>
