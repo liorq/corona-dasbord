@@ -61,7 +61,7 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
       },
       {
         type: 'value',
-        name: 'Precipitation',
+        name: '',
         position: 'right',
         alignTicks: true,
         offset: 80,
