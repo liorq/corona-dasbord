@@ -11,20 +11,32 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .container{
   height: 72px;
+  position: relative;
 
 }
 @media screen and (min-width: 769px) {
 
   app-generic-table{
 width: 30vw;
+position: relative;
+
   }
   .graph-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
+    position: relative;
+
   }
   }
+
+
+
+
+
+  

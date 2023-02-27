@@ -1,29 +1,55 @@
+<app-header class="blue-font"></app-header>
+<div
+  class="scroll-container blue-font"
+  [ngClass]="{ 'dark-mode': this.isDarkModeActive }"
+>
+  <app-anchor-list></app-anchor-list>
+  <app-view-on id="viewOn"></app-view-on>
 
-<app-header class="blue-font" ></app-header>
-<div class="scroll-container blue-font" [ngClass]="{'dark-mode':this.isDarkModeActive}">
-<app-anchor-list></app-anchor-list>
-<app-view-on id="viewOn"></app-view-on>
+  <app-summary-of7-days
+    id="Summaryoflast7daysComponent"
+    #Summaryoflast7daysComponent
+  ></app-summary-of7-days>
 
-<app-summary-of7-days  id="Summaryoflast7daysComponent" #Summaryoflast7daysComponent></app-summary-of7-days>
+  <app-major-indicators
+    id="MajorIndicatorsComponent"
+    #MajorIndicatorsComponent
+  ></app-major-indicators>
+  <app-indices-of-general-morbidity
+    id="IndicesofgeneralmorbidityComponent"
+    #IndicesofgeneralmorbidityComponent
+  ></app-indices-of-general-morbidity>
+  <app-morbidity-and-hospitalizations
+    id="MorbidityandhospitalizationsComponent"
+    #MorbidityandhospitalizationsComponent
+  ></app-morbidity-and-hospitalizations>
+  <app-morbidity-from-abroad
+    id="MorbidityfromabroadComponent"
+    #MorbidityfromabroadComponent
+  ></app-morbidity-from-abroad>
+  <app-effect-of-vaccination-on-morbidity
+    id="EffectofvaccinationonmorbidityComponent"
+    #EffectofvaccinationonmorbidityComponent
+  ></app-effect-of-vaccination-on-morbidity>
+  <app-deads id="DeadsComponent" #DeadsComponent></app-deads>
+  <app-tests id="TestsComponent" #TestsComponent></app-tests>
+  <app-further-investigations
+    id="FurtherinvestigationsComponent"
+    #FurtherinvestigationsComponent
+  ></app-further-investigations>
+  <app-recurrent-morbidity-and-recovery
+    id="RecurrentmorbidityandrecoveryComponent"
+    #RecurrentmorbidityandrecoveryComponent
+  ></app-recurrent-morbidity-and-recovery>
+  <app-vaccination-of-the-population
+    id="VaccinationofthepopulationComponent"
+    #VaccinationofthepopulationComponent
+  ></app-vaccination-of-the-population>
+  <app-lights-in-settlements
+    id="LightsinsettlementsComponent"
+    #LightsinsettlementsComponent
+  ></app-lights-in-settlements>
+  <div class="graph-container"></div>
 
-<app-major-indicators id="MajorIndicatorsComponent" #MajorIndicatorsComponent></app-major-indicators>
-<app-indices-of-general-morbidity id="IndicesofgeneralmorbidityComponent" #IndicesofgeneralmorbidityComponent></app-indices-of-general-morbidity>
-<app-morbidity-and-hospitalizations id="MorbidityandhospitalizationsComponent" #MorbidityandhospitalizationsComponent></app-morbidity-and-hospitalizations>
-<app-morbidity-from-abroad id="MorbidityfromabroadComponent" #MorbidityfromabroadComponent></app-morbidity-from-abroad>
-<app-effect-of-vaccination-on-morbidity id="EffectofvaccinationonmorbidityComponent"  #EffectofvaccinationonmorbidityComponent></app-effect-of-vaccination-on-morbidity>
-<app-deads id="DeadsComponent" #DeadsComponent></app-deads>
-<app-tests  id="TestsComponent" #TestsComponent></app-tests>
-<app-further-investigations id="FurtherinvestigationsComponent" #FurtherinvestigationsComponent></app-further-investigations>
-<app-recurrent-morbidity-and-recovery id="RecurrentmorbidityandrecoveryComponent" #RecurrentmorbidityandrecoveryComponent></app-recurrent-morbidity-and-recovery>
-<app-vaccination-of-the-population id="VaccinationofthepopulationComponent" #VaccinationofthepopulationComponent></app-vaccination-of-the-population>
-<app-lights-in-settlements id="LightsinsettlementsComponent" #LightsinsettlementsComponent></app-lights-in-settlements>
-<div class="graph-container">
-
+  <app-generic-sorted-table></app-generic-sorted-table>
 </div>
-
-<app-generic-sorted-table ></app-generic-sorted-table>
-
-</div>
-
-
-

@@ -15,8 +15,9 @@
               {{ option.label }}
             </label>
           </li>
-          <button (click)="confirmSelect('ok')">אישור</button>
-          <button (click)="confirmSelect('no')">ביטול</button>
+                <button class="btnSelect" (click)="confirmSelect('no')">ביטול</button>
+
+          <button class="btnSelect" (click)="confirmSelect('ok')">אישור</button>
         </ul>
       </div>
 
