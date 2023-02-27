@@ -15,7 +15,6 @@ export class TestsComponent implements OnInit{
   constructor(private coronaSvc:CoronaService){}
   timePeriod?:number=25;
 
-  options = ['Option 1', 'Option 2', 'Option 3'];
   private chart: echarts.ECharts | null = null;
 
   private emphasisStyle = {
@@ -29,7 +28,12 @@ export class TestsComponent implements OnInit{
   ngOnInit(){
       this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
         this.option=secondOption(this.emphasisStyle,this.timePeriod,newStatus)
-    })
+
+
+
+
+
+      })
 
 
 

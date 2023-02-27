@@ -1,6 +1,8 @@
 
 ///צריך לתת תקופה זמן ואז לעשות ספלייס וכל פעם שיש שינוי להשתמש בסאבגקט
 
+import { color } from "highcharts";
+
 export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
 
   let colors:string[]=!isDarkMode?['#237d7d', '#ff9482', '#EE6666','#595d62']
@@ -270,7 +272,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
     yAxis: [
       {
         type: 'value',
-        name: 'לא מחוסנים',
+        name: '',
         position: 'right',
         alignTicks: false,
         axisLine: {
@@ -285,7 +287,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
       },
       {
         type: 'value',
-        name: 'מחוסנים',
+        name: '',
         position: 'right',
         alignTicks: true,
         offset: 80,
@@ -351,7 +353,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
 
 
 export function  fourOption(timePeriod?:number,isDarkMode?:boolean){
-  // let colors:string[]=!isDarkMode?['#50cbfd', '#237d7d', '#b6ca51']:['#9be985', '#fe8672','#2cd2db'];
+   let colors:string[]=!isDarkMode?['#b6ca51','#50cbfd']:['#FD8264','#50cbfd'];
 
   return {
     title: {},
@@ -401,7 +403,7 @@ export function  fourOption(timePeriod?:number,isDarkMode?:boolean){
           }
         },
         itemStyle: {
-          color: '#b6ca51'
+          color: colors[0]
         },
         data: [
           { value: -3 },
@@ -431,7 +433,7 @@ export function  fourOption(timePeriod?:number,isDarkMode?:boolean){
           }
         },
         itemStyle: {
-          color: '#50cbfd'
+          color: colors[1]
         },
         data: [
           { value: 2 },
