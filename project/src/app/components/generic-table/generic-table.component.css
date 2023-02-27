@@ -111,10 +111,11 @@ gap: 8px;
 
 
 .select-box-container {
-  position: relative;
   display: inline-block;
   width: 120px;
   font-size: 14px;
+    position: relative;
+
 }
 
 .selected-option {

@@ -6,7 +6,7 @@
 
       <span class="title">{{title}}</span>
 
-      <div *ngIf="!isTable" class="select-box-container" (click)="toggleDropdown()">
+      <div *ngIf="!isTable&&this.graphName.length>0" class="select-box-container" (click)="toggleDropdown()">
         <button class="selected-option">{{ selectedOption }}</button>
         <ul class="options-list" [hidden]="!dropdownVisible">
           <li *ngFor="let option of options">
@@ -48,7 +48,7 @@
 
         <div  class="select-box-container" (click)="toggleDropdown()">
 
-          <button class="selected-option">{{ selectedOption }}</button>
+          <button  class="selected-option">{{ selectedOption }}</button>
           <ul class="options-list" [hidden]="!dropdownVisible">
 
             <div class="search-input">
