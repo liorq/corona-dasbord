@@ -14,7 +14,7 @@ export class TestsComponent implements OnInit{
 
   constructor(private coronaSvc:CoronaService){}
   timePeriod?:number=25;
-
+  isDarkModeActive?:boolean;
   private chart: echarts.ECharts | null = null;
 
   private emphasisStyle = {
@@ -26,8 +26,10 @@ export class TestsComponent implements OnInit{
   public option:any=secondOption(this.emphasisStyle,this.timePeriod,false);
 
   ngOnInit(){
-      this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
 
+
+      this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
+        this.isDarkModeActive=newStatus
         this.option=secondOption(this.emphasisStyle,this.timePeriod,newStatus)
 
         var chartDom = document.getElementById('main1') as HTMLElement;
@@ -64,7 +66,10 @@ export class TestsComponent implements OnInit{
 
       })
 
-
+      this.coronaSvc.timePeriods.subscribe((newTimePeriods)=>{
+        this.timePeriod=newTimePeriods[1];
+        this.option= secondOption(this.emphasisStyle,this.timePeriod,this.isDarkModeActive);
+      })
 
 
 }

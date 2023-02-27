@@ -10,12 +10,17 @@ import { CoronaService } from 'src/app/corona.service';
 export class FurtherInvestigationsComponent {
   option?: echarts.EChartsOption|any= fourOption(25,false);
   timePeriod?:number=25;
+  isDarkModeActive?:boolean;
   constructor(private coronaSvc:CoronaService){}
 
 ngOnInit(): void {
   this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
+    this.isDarkModeActive=newStatus;
   this.option=fourOption(this.timePeriod,newStatus)
   })
-  
+  this.coronaSvc.timePeriods.subscribe((newTimePeriods)=>{
+    this.timePeriod=newTimePeriods[3];
+    this.option= fourOption(this.timePeriod,this.isDarkModeActive);
+  })
 }
 }

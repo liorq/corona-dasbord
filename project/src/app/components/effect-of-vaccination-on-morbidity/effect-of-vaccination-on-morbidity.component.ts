@@ -10,11 +10,16 @@ import { CoronaService } from 'src/app/corona.service';
 export class EffectOfVaccinationOnMorbidityComponent {
   option: echarts.EChartsOption|any=threeOption(25,false);
   timePeriod?:number=25;
-
+  isDarkModeActive?:boolean;
   constructor(private coronaSvc:CoronaService){}
 ngOnInit(): void {
   this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
+    this.isDarkModeActive=newStatus;
   this.option=threeOption(this.timePeriod,newStatus)
+  })
+  this.coronaSvc.timePeriods.subscribe((newTimePeriods)=>{
+    this.timePeriod=newTimePeriods[2];
+    this.option= threeOption(this.timePeriod,this.isDarkModeActive);
   })
 }
 }

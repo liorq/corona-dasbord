@@ -39,11 +39,21 @@ export class GenericTableComponent implements OnInit{
  isActiveShareAndDownload?:boolean=false;
   filteredTablesData: any;
   selectedOption?: string='Option 1';
-  options: string[] = ['Option 1', 'Option 2', 'Option 3'];
+
+  options: any[] = [{ label: 'עד עכשיו', value: 750 },
+  { label: 'שנה', value: 365 },
+  { label: 'חצי שנה', value: 180 },
+  { label: '3 חודשים', value: 90 },
+  { label: 'חודש אחרון', value: 30 }];
+
+
   data: any[] = [
-    { label: 'Option 1', value: 10 },
-    { label: 'Option 2', value: 20 },
-    { label: 'Option 3', value: 30 }
+    { label: 'עד עכשיו', value: 750 },
+    { label: 'שנה', value: 365 },
+    { label: 'חצי שנה', value: 180 },
+    { label: '3 חודשים', value: 90 },
+    { label: 'חודש אחרון', value: 30 },
+
   ];
 
   filteredData: any[];
@@ -72,7 +82,7 @@ export class GenericTableComponent implements OnInit{
 
         if(this.graphName=="")
         return
-        
+
         setTimeout(() => {
         const chartDom = document.getElementById(this.graphName)!;
         const myChart = echarts?.init(chartDom);
@@ -118,8 +128,11 @@ export class GenericTableComponent implements OnInit{
   }
 
   selectOption(option: string) {
+
     this.selectedOption = option;
     this.dropdownVisible = false;
+
+
   }
   confirmSelect(type:string){
     if(type==='ok')

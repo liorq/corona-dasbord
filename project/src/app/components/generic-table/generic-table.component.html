@@ -11,8 +11,8 @@
         <ul class="options-list" [hidden]="!dropdownVisible">
           <li *ngFor="let option of options">
             <label class="option-label">
-              <input required type="radio" name="myOptions" class="option-button" (click)="selectOption(option)">
-              {{ option }}
+              <input required type="radio" name="myOptions" class="option-button" (click)="selectOption(option.label)">
+              {{ option.label }}
             </label>
           </li>
           <button (click)="confirmSelect('ok')">אישור</button>
