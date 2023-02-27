@@ -605,8 +605,9 @@ background: #daeaee;
 }
 .container-color{
   display: flex;
-  margin-bottom: 50px;
-  margin-left: 50px;
+  margin-bottom: 20px;
+  margin-left: 161px;
+  margin-top:46px;
 }
 .box-search-value{
   width: 116px;
