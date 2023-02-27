@@ -34,7 +34,7 @@ export class GenericTableComponent implements OnInit{
   @Input() isTable?:boolean;
   @Input() periodOfTime?:number=25;
   @Input() tablesTitle?:{};
-  @Input() tablesData:any=[];
+  @Input() tablesData?:any=[];
 
  isActiveShareAndDownload?:boolean=false;
   filteredTablesData: any;
@@ -70,6 +70,19 @@ export class GenericTableComponent implements OnInit{
           item.isDarkMode = !item.isDarkMode;
         });
 
+        if(this.graphName=="")
+        return
+        
+        setTimeout(() => {
+        const chartDom = document.getElementById(this.graphName)!;
+        const myChart = echarts?.init(chartDom);
+        let option:any=this.optionObj
+        this.chart?.setOption(option);
+        option && myChart?.setOption(option);
+        this.chart = myChart;
+        }, 1000);
+
+
     })
   }
 
@@ -85,7 +98,7 @@ export class GenericTableComponent implements OnInit{
       if(this.searchQuery.length>0){
          this.filteredTablesData = this.tablesData.filter((item:any) => item.address.toLowerCase().includes(this.searchQuery.toLowerCase()));
 
-       this.filteredTablesData= this.filteredTablesData.map((item:any)=>{
+         this.filteredTablesData= this.filteredTablesData.map((item:any)=>{
 
       return item.address.toLowerCase()
       })
@@ -117,13 +130,13 @@ export class GenericTableComponent implements OnInit{
     if(this.graphName=="")
     return
 
-    const chartDom = document.getElementById(this.graphName)!;
-    // const myChart = echarts.init(chartDom,'dark');
 
-    const myChart = echarts.init(chartDom);
+
+    const chartDom = document.getElementById(this.graphName)!;
+    const myChart = echarts?.init(chartDom);
     let option:any=this.optionObj
     this.chart?.setOption(option);
-    option && myChart.setOption(option);
+    option && myChart?.setOption(option);
     this.chart = myChart;
 
     // Attach resize event listener

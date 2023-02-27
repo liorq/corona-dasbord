@@ -4,7 +4,7 @@
 export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
 
   let colors:string[]=!isDarkMode?['#237d7d', '#ff9482', '#EE6666','#595d62']
-  :['#9be985', '#fcc537'];
+  :['#9be985', '#fcc537','#ff9482','#595d62']
 
 
  return  {
@@ -246,6 +246,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
 
     },
     legend: {
+
       data: ['', '', '', '']
     },
     xAxis: [
@@ -269,7 +270,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
     yAxis: [
       {
         type: 'value',
-        name: 'Evaporation',
+        name: 'לא מחוסנים',
         position: 'right',
         alignTicks: false,
         axisLine: {
@@ -284,7 +285,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
       },
       {
         type: 'value',
-        name: 'Precipitation',
+        name: 'מחוסנים',
         position: 'right',
         alignTicks: true,
         offset: 80,
@@ -316,7 +317,8 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
     ],
     series: [
       {
-        name: 'Evaporation',
+        //לא מחוסנים
+        name: 'לא מחוסנים',
         barWidth: 6.5, // change this value to adjust the bar width
 
         type: 'bar',
@@ -325,7 +327,8 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
         ]
       },
       {
-        name: 'Precipitation',
+        ///מחוסנים
+        name: 'מחוסנים',
         type: 'bar',
                   barWidth: 6.5, // change this value to adjust the bar width
 
@@ -334,7 +337,8 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
           2.6, 5.9, 2.0, 2.4, 2.7, 4.7, 1.6, 2.2, 2.7, 18.8, 6.0, 2.3,  2.6, 5.9, 9.0, 2.4, 2.7, 2.7, 2.6, 2.2, 2.7, 2.8, 6.0, 2.3   ]
       },
       {
-        name: 'Temperature',
+        //מחוסנים ללא תוקף
+        name: 'מחוסנים ללא תוקף',
         type: 'bar',
         barWidth: 6.5, // change this value to adjust the bar width
 

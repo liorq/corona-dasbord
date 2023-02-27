@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
+
+import * as echarts from 'echarts';
 import { firstOption } from 'src/app/app.graphData';
 import { CoronaService } from 'src/app/corona.service';
 
@@ -9,13 +11,21 @@ import { CoronaService } from 'src/app/corona.service';
 })
 export class DeadsComponent implements OnInit{
    timePeriod?:number=25;
-  option: echarts.EChartsOption | any = firstOption(this.timePeriod,false);
+   option?: echarts.EChartsOption | any;
+   isDarkModeActive?:boolean;
 
   constructor(private coronaSvc:CoronaService){}
-ngOnInit(): void {
+
+
+  ngOnInit(): void {
   this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
-    this.option= firstOption(this.timePeriod,newStatus);
+
+    this.isDarkModeActive=newStatus;
+    this.option= firstOption(this.timePeriod,this.isDarkModeActive);
+
   })
 }
+
+
 
 }

@@ -1,22 +1,21 @@
-
-
 <div class="container">
-  <hr class="hr">
-  <div class="title"
-  >נפטרים
-
-  </div>
-  </div>
-
+  <hr class="hr" />
+  <div class="title">נפטרים</div>
+</div>
 
 <div class="graph-container">
-  <app-generic-table  [title]="'נפטרים - יומי'" [graphName]="'main'" [optionObj]="this.option"></app-generic-table>
+  <app-generic-table
+    [title]="'נפטרים - יומי'"
+    [graphName]="'main'"
+    [optionObj]="this.option"
+  ></app-generic-table>
 
-<app-generic-table *ngFor="let title of
-[
-  'נפטרים יומי – מצב התחסנות',
-]
-;" [title]="title">
-</app-generic-table>
 
+
+
+  <app-generic-table
+    *ngFor="let title of ['נפטרים יומי – מצב התחסנות']"
+    [title]="title"
+  >
+  </app-generic-table>
 </div>
