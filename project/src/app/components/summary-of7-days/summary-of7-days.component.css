@@ -7,10 +7,8 @@
 
 .background-dark-mode{
   background:   #384f5f;
-  width: 96vw;
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
+
  }
 .title{
  font-size: 18px;

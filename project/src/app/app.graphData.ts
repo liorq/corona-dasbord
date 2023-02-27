@@ -33,7 +33,6 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
         axisTick: {
           alignWithLabel: true
         },
-        // prettier-ignore
            data: [
           '19.01', '20.01', '21.01', '22.01', '23.01',
           '24.01', '25.01', '26.01', '27.01', '28.01',
@@ -112,7 +111,6 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
           normal: {
             color: colors[1],
             borderColor:  colors[1],
-
           },
           emphasis: {
             color: '#fff',
