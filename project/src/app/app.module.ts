@@ -32,9 +32,7 @@ import { LinksListComponent } from './components/links-list/links-list.component
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { TableComponent } from './components/table/table.component';
 import { DataTablesModule } from "angular-datatables";
-
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 
@@ -66,7 +64,6 @@ import { GenericSortedTableComponent } from './components/generic-sorted-table/g
     LightsInSettlementsComponent,
     LinksListComponent,
     SideNavComponent,
-    TableComponent,
     GenericSortedTableComponent,
 
 
