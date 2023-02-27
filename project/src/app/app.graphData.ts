@@ -10,6 +10,7 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
 
  return  {
     color: colors,
+
     tooltip: {
       trigger: 'axis',
       axisPointer: {
@@ -52,12 +53,12 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
         axisLine: {
           show: false,
           lineStyle: {
-            color:''
-          }
+            color: '',
+          },
         },
         axisLabel: {
-          formatter: '{value} '
-        }
+          formatter: '{value} ',
+        },
       },
       {
         type: 'value',
@@ -68,12 +69,12 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
         axisLine: {
           show: true,
           lineStyle: {
-            color: '#fff'
-          }
+            color: '#fff',
+          },
         },
         axisLabel: {
-          formatter: '{value} '
-        }
+          formatter: '{value} ',
+        },
       },
       {
         type: 'value',
@@ -83,13 +84,13 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
         axisLine: {
           show: true,
           lineStyle: {
-            color: colors[3]
-          }
+            color: colors[3],
+          },
         },
         axisLabel: {
-          formatter: '{value} '
-        }
-      }
+          formatter: '{value} ',
+        },
+      },
     ],
     series: [
       {
@@ -180,7 +181,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
         emphasis: emphasisStyle,
         itemStyle: {
           color: colors[0],
-        }
+        },
       },
       {
         name: 'אנטיגן מוסדי',
