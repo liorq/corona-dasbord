@@ -135,8 +135,23 @@ export class GenericTableComponent implements OnInit{
 
   }
   confirmSelect(type:string){
-    if(type==='ok')
+    if(type==='ok'){
     console.log(this.selectedOption)
+    let timePeriods=this.coronaSvc.timePeriods.getValue();
+    let location;
+    switch(this.graphName){
+      case 'main':location=0;break;
+        case 'main1':location=1;break;
+          case 'main3':location=2;break;
+            case 'main4':location=3;break;
+    }
+    // if(location as Number&&location!=undefined){
+    // timePeriods[location]=this.selectedOption;
+    // this.coronaSvc.timePeriods.next(timePeriods)
+    // }
+
+    }
+
   }
 
   ngAfterViewInit(): void {

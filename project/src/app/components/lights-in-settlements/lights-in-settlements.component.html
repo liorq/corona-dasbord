@@ -3,8 +3,16 @@
 </div>
 
 <div class="graph-container">
+
   <app-generic-table
-    *ngFor="let title of ['תוכנית הרמזור', 'פילוח ציוני רמזור ישובים']"
+  [tablesData]="tableData1"
+  [graphName]="'lights'"
+  [title]="'תוכנית הרמזור'"
+  [isTable]="true"
+></app-generic-table>
+
+  <app-generic-table
+    *ngFor="let title of [ 'פילוח ציוני רמזור ישובים']"
     [title]="title"
   >
   </app-generic-table>

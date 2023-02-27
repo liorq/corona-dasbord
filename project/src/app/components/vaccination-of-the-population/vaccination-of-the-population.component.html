@@ -9,12 +9,19 @@
         'מספר התחסנויות - יומי',
         'מתחסנים מצטבר',
         'אחוז מתחסנים לפי קבוצות גיל',
-        'התחסנות לפי ישובים'
       ]
     "
     [title]="title"
   >
   </app-generic-table>
+
+  <app-generic-table
+  [tablesData]="tableData2"
+  [graphName]="'Vaccination'"
+  [title]="'התחסנות לפי ישובים'"
+  [isTable]="true"
+></app-generic-table>
+
 </div>
 
 <app-links-list

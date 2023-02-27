@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -35,7 +34,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { DataTablesModule } from "angular-datatables";
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 
-import { GenericSortedTableComponent } from './components/generic-sorted-table/generic-sorted-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,9 +59,6 @@ import { GenericSortedTableComponent } from './components/generic-sorted-table/g
     LightsInSettlementsComponent,
     LinksListComponent,
     SideNavComponent,
-    GenericSortedTableComponent,
-
-
   ],
   imports: [
 
