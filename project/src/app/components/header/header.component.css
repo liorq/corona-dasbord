@@ -115,6 +115,7 @@
   position: absolute;
   left: 50px;
   top: 20px;
+  cursor: pointer;
 }
 
 .colorfull-line {
@@ -175,4 +176,15 @@
 @media only screen and (min-width: 790px) {
 }
 @media only screen and (max-width: 490px) {
+}
+.SwitchToEnglishBtn{
+  background:url('../../../assets/images/hebrew-to-english.png');
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  background-size: cover;
+  top: 35px;
+  right: -10px;
+  border-radius: 10px;
+  border: 1.5px solid #e5ebf2;
 }

@@ -23,7 +23,11 @@
           : 'hamburger-btn-close'
       "
     ></div>
-    <div class="letters"></div>
+    <div class="letters" (click)="this.isSwitchToEnglishBtnOpen=!this.isSwitchToEnglishBtnOpen">
+
+          <div class="SwitchToEnglishBtn" *ngIf="this.isSwitchToEnglishBtnOpen"></div>
+
+    </div>
   </div>
 
   <div class="para-container">

@@ -10,6 +10,7 @@ import { CoronaService } from 'src/app/corona.service';
 export class HeaderComponent  {
   isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue();
   isNavBarOpen?:boolean=this.coronaSvc.isNavBarOpen.getValue();
+  isSwitchToEnglishBtnOpen?:boolean=false;
 constructor(public coronaSvc:CoronaService){}
 
 toggleMode(){
