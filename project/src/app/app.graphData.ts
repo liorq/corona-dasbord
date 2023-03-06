@@ -237,7 +237,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
 export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
 
 
-  let colors:string[]=!isDarkMode?['#50cbfd', '#237d7d', '#b6ca51']:['#9be985', '#fe8672','#2cd2db'];
+  let colors:string[]=!isDarkMode?['#50cbfd', '#237d7d', '#b6ca51','#fff']:['#9be985', '#fe8672','#2cd2db','#384f5f'];
 
 
   return {
@@ -286,7 +286,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
         axisLine: {
           show: false,
           lineStyle: {
-            color: '#fff'
+            color: colors[4]
           }
         },
         axisLabel: {
@@ -302,7 +302,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
         axisLine: {
           show: true,
           lineStyle: {
-            color: '#fff'
+            color: false
           }
         },
         axisLabel: {
