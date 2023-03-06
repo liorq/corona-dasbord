@@ -6,8 +6,8 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
 
   let colors:string[]=!isDarkMode?['#237d7d', '#ff9482', '#EE6666','#595d62']
   :['#9be985', '#fcc537','#ff9482','#595d62']
-
-
+ const fakeData= generateDataForDays(timePeriod||25);
+    console.log(fakeData)
  return  {
     color: colors,
 
@@ -129,6 +129,28 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
 }
 
 
+
+
+function generateDataForDays(numDays: number): [string[], number[], number[], number[]] {
+  let xAxisData: string[] = [];
+  let pcrData: number[] = [];
+  let antigenData: number[] = [];
+  let movingAvgData: number[] = [];
+
+  let today: Date = new Date();
+
+  for (let i = 0; i < numDays; i++) {
+    let date: Date = new Date(today);
+    date.setDate(today.getDate() - numDays + i + 1);
+    let dateString: string = date.getDate().toString().padStart(2, '0') + '.' + (date.getMonth() + 1).toString().padStart(2, '0');
+    xAxisData.push(dateString);
+    pcrData.push(Math.floor(Math.random() * 10));
+    antigenData.push(Math.floor(Math.random() * 10));
+    movingAvgData.push(Math.floor(Math.random() * 3));
+  }
+
+  return [xAxisData, pcrData, antigenData, movingAvgData];
+}
 
 
 

@@ -38,7 +38,7 @@ export class GenericTableComponent implements OnInit{
 
  isActiveShareAndDownload?:boolean=false;
   filteredTablesData: any;
-  selectedOption?: string='Option 1';
+  selectedOption?: string='חודש אחרון';
 
   options: any[] = [{ label: 'עד עכשיו', value: 750 },
   { label: 'שנה', value: 365 },
@@ -136,8 +136,15 @@ export class GenericTableComponent implements OnInit{
   }
   confirmSelect(type:string){
     if(type==='ok'){
-    console.log(this.selectedOption)
-    let timePeriods=this.coronaSvc.timePeriods.getValue();
+    switch(this.selectedOption){
+      case 'עד עכשיו':this.periodOfTime=420;break;
+        case 'שנה':this.periodOfTime=365;break;
+          case 'חצי שנה':this.periodOfTime=185;break;
+          case '3 חודשים':this.periodOfTime=90;break;
+
+            case 'חודש אחרון':this.periodOfTime=30;break;
+    }
+    let timePeriods:any=this.coronaSvc.timePeriods.getValue();
     let location;
     switch(this.graphName){
       case 'main':location=0;break;
@@ -145,16 +152,16 @@ export class GenericTableComponent implements OnInit{
           case 'main3':location=2;break;
             case 'main4':location=3;break;
     }
-    // if(location as Number&&location!=undefined){
-    // timePeriods[location]=this.selectedOption;
-    // this.coronaSvc.timePeriods.next(timePeriods)
-    // }
+    if(location)
+    timePeriods[location]=this.periodOfTime;
+    this.coronaSvc.timePeriods.next(timePeriods)
+    console.log(timePeriods)
 
     }
 
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit(timePeriods:number=25): void {
     if(this.graphName=="")
     return
 
