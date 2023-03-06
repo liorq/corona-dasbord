@@ -136,27 +136,30 @@ export class GenericTableComponent implements OnInit{
   }
   confirmSelect(type:string){
     if(type==='ok'){
+      console.log(this.selectedOption)
     switch(this.selectedOption){
-      case 'עד עכשיו':this.periodOfTime=420;break;
-        case 'שנה':this.periodOfTime=365;break;
-          case 'חצי שנה':this.periodOfTime=185;break;
-          case '3 חודשים':this.periodOfTime=90;break;
-
-            case 'חודש אחרון':this.periodOfTime=30;break;
+      case 'עד עכשיו':this.periodOfTime=365;break;
+        case 'שנה':this.periodOfTime=300;break;
+          case 'חצי שנה':this.periodOfTime=150;break;
+          case '3 חודשים':this.periodOfTime=70;break;
+            case 'חודש אחרון':this.periodOfTime=25;break;
     }
     let timePeriods:any=this.coronaSvc.timePeriods.getValue();
-    let location;
-    switch(this.graphName){
+    let location=5;
+    console.log(this.graphName)
+    switch(this.graphName+''){
       case 'main':location=0;break;
         case 'main1':location=1;break;
           case 'main3':location=2;break;
             case 'main4':location=3;break;
     }
-    if(location)
+
     timePeriods[location]=this.periodOfTime;
     this.coronaSvc.timePeriods.next(timePeriods)
     console.log(timePeriods)
-
+    setTimeout(()=>{
+    this.ngAfterViewInit(timePeriods[location])
+    },500)
     }
 
   }

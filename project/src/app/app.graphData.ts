@@ -3,7 +3,7 @@
 
 
 export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
-
+  console.log(timePeriod)
   let colors:string[]=!isDarkMode?['#237d7d', '#ff9482', '#EE6666','#595d62']
   :['#9be985', '#fcc537','#ff9482','#595d62']
  const fakeData= generateDataForDays(timePeriod||25);
@@ -34,14 +34,7 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
         axisTick: {
           alignWithLabel: true
         },
-           data: [
-          '19.01', '20.01', '21.01', '22.01', '23.01',
-          '24.01', '25.01', '26.01', '27.01', '28.01',
-          '29.01', '30.01', '31.01', '01.02', '02.02',
-          '03.02', '04.02', '05.02', '06.02', '07.02',
-          '08.02', '09.02', '10.02', '11.02', '12.02',
-          '13.02', '14.02', '15.02', '16.02'
-        ]
+           data: fakeData[0]
       }
     ],
     yAxis: [
@@ -98,14 +91,12 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
         type: 'bar',
         barWidth: 6.5, // change this value to adjust the bar width
 
-        data: [
-          2.0, 4.9, 2.0, 4.2, 8.6, 8.7, 5.6, 7.2, 8.6, 6.0, 6.4, 3.3,2.0, 4.9, 2.0, 4.2, 8.6, 8.7, 5.6, 7.2, 8.6, 6.0, 6.4, 3.3,   2.0, 4.9, 2.0, 4.2, 8.6, 8.7, 5.6, 7.2, 8.6, 6.0, 6.4, 3.3,2.0, 4.9, 2.0, 4.2, 8.6, 8.7, 5.6, 7.2, 8.6, 6.0, 6.4, 3.3
-        ]
+        data: fakeData[1]
       },   {
         name: 'ממוצע נפטרים',
         type: 'line',
         yAxisIndex: 2,
-        data: [5.0, 5.2, 5.3, 4.5, 5.3, 5.2, 5.3, 5.4, 5.0, 5.5, 5.0, 5.2, 5.3, 4.5, 5.3, 5.2, 5.3, 5.4, 5.0, 5.5, 5.0, 5.2, 5.3, 4.5, 5.3, 5.2, 5.3, 5.4, 5.0, 5.5,]
+        data: fakeData[2]
         ,symbolSize: 7 // Add this line to set the symbol size
        , itemStyle: {
 
@@ -145,7 +136,9 @@ function generateDataForDays(numDays: number): [string[], number[], number[], nu
     let dateString: string = date.getDate().toString().padStart(2, '0') + '.' + (date.getMonth() + 1).toString().padStart(2, '0');
     xAxisData.push(dateString);
     pcrData.push(Math.floor(Math.random() * 10));
-    antigenData.push(Math.floor(Math.random() * 10));
+    let maxPcrData: number = Math.max(...pcrData);
+
+    antigenData.push(Math.floor(maxPcrData/2));
     movingAvgData.push(Math.floor(Math.random() * 3));
   }
 
