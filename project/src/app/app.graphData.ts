@@ -3,8 +3,8 @@
 
 
 export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
-  let colors:string[]=!isDarkMode?['#237d7d', '#ff9482', '#EE6666','#595d62']
-  :['#9be985', '#fcc537','#ff9482','#595d62']
+  let colors:string[]=!isDarkMode?['#237d7d', '#ff9482', '#EE6666','#595d62','#fff']
+  :['#9be985', '#fcc537','#ff9482','#595d62','#384f5f']
  const fakeData= generateDataForDays(timePeriod||25);
 
  return  {
@@ -23,7 +23,7 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
 
     },
     legend: {
-      data: [ 'Precipitation', 'ממוצע נע נפטרים'],right: 10,
+      data: [ '', 'ממוצע נע נפטרים'],right: 10,
       top: 'middle',
       orient: 'vertical',
     },
@@ -45,7 +45,7 @@ export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
         axisLine: {
           show: false,
           lineStyle: {
-            color: '',
+            color: colors[4],
           },
         },
         axisLabel: {
@@ -229,7 +229,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
             shadowOffsetY: 0,
             shadowColor: 'rgba(0, 0, 0, 0.5)'
           }
-        }
+        },
       }
     ]
   };
