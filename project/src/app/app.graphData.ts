@@ -3,11 +3,10 @@
 
 
 export function  firstOption(timePeriod?:number,isDarkMode?:boolean){
-  console.log(timePeriod)
   let colors:string[]=!isDarkMode?['#237d7d', '#ff9482', '#EE6666','#595d62']
   :['#9be985', '#fcc537','#ff9482','#595d62']
  const fakeData= generateDataForDays(timePeriod||25);
-    console.log(fakeData)
+
  return  {
     color: colors,
 
@@ -137,8 +136,10 @@ function generateDataForDays(numDays: number): [string[], number[], number[], nu
     xAxisData.push(dateString);
     pcrData.push(Math.floor(Math.random() * 10));
     let maxPcrData: number = Math.max(...pcrData);
-
-    antigenData.push(Math.floor(maxPcrData/2));
+    let number=Math.floor(maxPcrData/2-Math.random()*1.2)
+    if(number<0)
+    number=Math.floor(maxPcrData/2-Math.random()*1.2)
+    antigenData.push(number);
     movingAvgData.push(Math.floor(Math.random() * 3));
   }
 
@@ -148,6 +149,7 @@ function generateDataForDays(numDays: number): [string[], number[], number[], nu
 
 
 export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:boolean){
+  const fakeData= generateDataForDays(timePeriod||25);
 
   let colors:string[]=!isDarkMode?['#50cbfd', '#b6ca51', '#ff9482','#fe8672']
   :['#50cbfd','#fe8672','#daa520'];
@@ -173,14 +175,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: [
-        '19.01', '20.01', '21.01', '22.01', '23.01',
-        '24.01', '25.01', '26.01', '27.01', '28.01',
-        '29.01', '30.01', '31.01', '01.02', '02.02',
-        '03.02', '04.02', '05.02', '06.02', '07.02',
-        '08.02', '09.02', '10.02', '11.02', '12.02',
-        '13.02', '14.02', '15.02', '16.02'
-      ]   },
+      data: fakeData[0]   },
     yAxis: {
       type: 'value'
     },
@@ -192,7 +187,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
         stack: 'one',
         barWidth: 6
 ,
-        data: [5, 7, 6, 8, 9, 10, 7, 8, 9, 10,5, 7, 6, 8, 9, 10, 7, 8, 9, 10,5, 7, 6, 8, 9, 10, 7, 8, 9, 10],
+        data: fakeData[1],
         emphasis: emphasisStyle,
         itemStyle: {
           color: colors[0],
@@ -203,7 +198,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
         type: 'bar',
         stack: 'one',
         barWidth: 6 ,
-        data: [6, 6.5, 7, 7, 7.5, 8, 8, 8.5, 9, 9,6, 6.5, 7, 7, 7.5, 8, 8, 8.5, 9, 9,6, 6.5, 7, 7, 7.5, 8, 8, 8.5, 9, 9],
+        data: fakeData[2],
         emphasis: emphasisStyle,
         itemStyle: {
           color: colors[1],
@@ -216,7 +211,7 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
         stack: 'one'
         ,symbolSize: 7 // Add this line to set the symbol size
 ,
-        data: [1, 2, 3, 2, 2, 2, 2, 3, 3, 2,1, 2, 3, 2, 2, 2, 2, 3, 3, 2,1, 2, 3, 2, 2, 2, 2, 3, 3, 2],
+        data: fakeData[2],
         emphasis: emphasisStyle,
         itemStyle: {
           color: colors[3],
