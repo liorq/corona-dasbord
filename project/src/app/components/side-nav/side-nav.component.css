@@ -113,36 +113,28 @@ a {
 }
 #sidenav .dropdown .dropdown-items .dropdown-item {
   padding-top: 0.3em;
+
 }
-/* #sidenav .dropdown .dropdown-items .dropdown-item::before {
-  content: " ";
-} */
 
 
 
 
-/* #sidenav .dropdown:hover .dropdown-items {
-  max-height: 6em;
-} */
-/* #sidenav .dropdown .dropdown-items .openOptions{
-  max-height: 50px;
-  max-height: 50px;
-} */
+
 #sidenav .dropdown .openOptions{
   max-height: 50px;
   max-height: 50px;
 }
 
 /* changing scrollbar on desktop */
-@media only screen and (min-width: 30rem) {
+/* @media only screen and (min-width: 30rem) {
   #sidenav .side-nav-items::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
     border-radius: 10px;
     background-color: #ccc;
  }
   #sidenav .side-nav-items::-webkit-scrollbar {
-    width: 0.4em;
- }
+    /* width: 0.4em; */
+ /* }
   #sidenav .side-nav-items::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
@@ -160,8 +152,8 @@ a {
   .dropdown-items::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
- }
-}
+ } */
+
 a {
   color: #111;
 }
@@ -185,4 +177,8 @@ a {
 #sidenav .dropdown .dropdown-items .openOptions a {
   display: block;
   padding: 0.3em 0.5em;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: #fff;
 }
