@@ -181,4 +181,5 @@ a {
 ::-webkit-scrollbar-thumb
 {
   background-color: #fff;
+  opacity: 0;
 }
