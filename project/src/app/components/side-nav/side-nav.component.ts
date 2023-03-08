@@ -4,9 +4,10 @@ import { CoronaService } from '../../corona.service';
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.css','side-nav.component.scss']
+  styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
+
   sidenav?: ElementRef;
   isNavBarOpen?:boolean=this.coronaSvc.isNavBarOpen.getValue();
   constructor(private renderer: Renderer2, private el: ElementRef,private coronaSvc:CoronaService) {}
@@ -60,5 +61,10 @@ export class SideNavComponent implements OnInit {
    toggleNav(para:string) {
     var navbar = document.getElementById(para);
     navbar?.classList.toggle("show");
+  }
+  showDropdown: boolean[] = [false, false, false];
+
+  openOptions(index: number) {
+    this.showDropdown[index] = !this.showDropdown[index];
   }
 }

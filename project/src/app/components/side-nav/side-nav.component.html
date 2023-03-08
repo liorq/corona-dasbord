@@ -12,9 +12,9 @@
   <div id="sidenav">
     <a href="javascript:void(0)"></a>
     <ul class="side-nav-items">
-      <li class="side-item dropdown">
+      <li class="side-item dropdown" (click)="openOptions(0)">
         <a href="#">עולמות תוכן</a>
-        <ul class="dropdown-items">
+        <ul class="dropdown-items" id="a0"  [ngClass]="{'openOptions': this.showDropdown[0]}">
           <li class="dropdown-item"><a href="#">קורונה</a></li>
           <li class="dropdown-item">
             <a href="#">עולמות תוכן נוספים בקרוב</a>
@@ -22,18 +22,18 @@
         </ul>
       </li>
 
-      <li class="side-item dropdown">
+      <li class="side-item dropdown" (click)="openOptions(1)">
         <a href="#">עולם הדאטה</a>
-        <ul class="dropdown-items">
+        <ul class="dropdown-items" id="a1"  [ngClass]="{'openOptions': this.showDropdown[1]}">
           <li class="dropdown-item"><a href="#">DATA -הי</a></li>
           <li class="dropdown-item"><a href="#">GIS</a></li>
           <li class="dropdown-item"><a href="#">Data_Gov</a></li>
         </ul>
       </li>
 
-      <li class="side-item dropdown">
+      <li class="side-item dropdown" (click)="openOptions(2)">
         <a href="#">על הדשבורד</a>
-        <ul class="dropdown-items">
+        <ul class="dropdown-items" id="a2"   [ngClass]="{'openOptions': this.showDropdown[2]}">
           <li class="dropdown-item"><a href="#">אודות</a></li>
           <li class="dropdown-item"><a href="#">תנאי שימוש</a></li>
           <li class="dropdown-item"><a href="#">מדריך למשתמש</a></li>
