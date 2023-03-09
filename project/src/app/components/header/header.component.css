@@ -174,8 +174,21 @@
 }
 
 @media only screen and (min-width: 790px) {
+  .line-up{
+display: none;
+  }
+
 }
-@media only screen and (max-width: 490px) {
+
+
+
+@media only screen and (min-width: 490px) {
+.para-container{
+  margin-right: 23px;
+}
+
+
+
 }
 .SwitchToEnglishBtn{
   background:url('../../../assets/images/hebrew-to-english.png');
