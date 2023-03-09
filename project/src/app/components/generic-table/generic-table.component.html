@@ -1,4 +1,4 @@
-<div class="container" [ngClass]="{ 'white-color': isDarkModeActive }">
+<div class="container" [ngClass]="{ 'white-color': isDarkModeActive,'TableWidth':isTable }">
   <div class="table" [ngClass]="{ 'background-dark-mode': isDarkModeActive }">
     <div class="little-container">
       <div
@@ -26,7 +26,7 @@
                 class="option-button"
                 (click)="selectOption(option.label)"
               />
-             <div class="text-options">{{ option.label }}</div>
+              <div class="text-options">{{ option.label }}</div>
             </label>
           </li>
           <button class="btnSelect" (click)="confirmSelect('no')">ביטול</button>
@@ -126,6 +126,7 @@
         ></div>
       </div>
     </div>
+
     <div *ngIf="isTable" class="row header">
       <div
         class="align-div cell title"

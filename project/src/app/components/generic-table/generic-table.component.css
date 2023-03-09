@@ -636,7 +636,10 @@ background: #daeaee;
 .background-dark-mode{
  background:   #384f5f;;
 }
-
+.TableWidth{
+  max-width: 66vw;
+  width: 70vw;
+}
 
 
 
