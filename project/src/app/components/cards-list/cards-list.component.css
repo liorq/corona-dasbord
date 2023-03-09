@@ -13,7 +13,7 @@
   margin-right: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
-
+ overflow: hidden;
   position: relative;
 
   -webkit-box-shadow: 5px 5px 48px -5px rgba(0, 0, 0, 0.15);
@@ -35,6 +35,11 @@
   font-weight: 700;
   font-size: 14.4px;
   gap: 8px;
+}
+.bigger-num{
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 10px;
 }
 .bigNumber {
   position: absolute;

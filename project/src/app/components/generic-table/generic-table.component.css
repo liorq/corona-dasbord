@@ -604,6 +604,9 @@ li{
 .lavender-background{
 background: #daeaee;
 }
+.title{
+  max-width: 200px;
+}
 .input{
   width: 116px;
 }

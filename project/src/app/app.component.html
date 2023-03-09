@@ -1,7 +1,8 @@
 <app-header class="blue-font"></app-header>
 <div
+
   class="scroll-container blue-font"
-  [ngClass]="{ 'dark-mode': this.isDarkModeActive }"
+  [ngClass]="{ 'dark-mode': this.isDarkModeActive,'opicity':this.isNavBarOpen }"
 >
   <app-anchor-list></app-anchor-list>
   <app-view-on id="viewOn"></app-view-on>

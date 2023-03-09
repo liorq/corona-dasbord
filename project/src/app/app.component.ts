@@ -9,12 +9,16 @@ import { CoronaService } from './corona.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  isDarkModeActive = this.coronaSvc.isDarkModeActive.getValue()
+  isNavBarOpen=false;
+  isDarkModeActive = false;
   constructor(private router: Router, private elementRef: ElementRef, public coronaSvc: CoronaService) { }
   currentPosition: number = window.pageYOffset; // Initialize to current scroll position
   ngAfterViewInit() {
     this.coronaSvc.isDarkModeActive.subscribe((newStatus: boolean) => {
       this.isDarkModeActive = newStatus;
+    })
+    this.coronaSvc.isNavBarOpen.subscribe((newStatus: boolean) => {
+      this.isNavBarOpen = newStatus;
     })
   }
   @HostListener('window:scroll', ['$event'])

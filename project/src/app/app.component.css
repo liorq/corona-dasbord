@@ -20,7 +20,9 @@ app-anchor-list{
 app-header{
   height: 150px;
 }
-
+.opicity{
+  opacity: 0;
+}
 .scroll-container{
   background:#e9edf5 ;
 }

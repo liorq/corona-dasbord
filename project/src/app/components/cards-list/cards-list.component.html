@@ -60,30 +60,28 @@
     </div>
 
     <div class="container-5-line-big">
-      <span
-        class="container-5-line"
-        *ngFor="
-          let item of [
-            'firstNum',
-            'firstLine',
-            'secondNum',
-            'secondLine',
-            'thirdNum',
-            'thirdLine',
-            'fourNum',
-            'fourLine',
-            'fiveNum',
-            'fiveLine'
-          ]
-        "
-      >
-        <span
-          class="line5"
-          [ngClass]="changeNumberFont(item)"
-          *ngIf="data[item] != undefined"
-          >{{ data[item] }}</span
-        >
-      </span>
+
+        <div class="container-5-line">
+          <div class="bigger-num">{{ data.firstNum }}</div>
+          <div>{{ data.firstLine }}</div>
+          </div>
+          <div class="container-5-line">
+            <div class="bigger-num">{{ data.secondNum }}</div>
+            <div>{{ data.secondLine }}</div>
+            </div>
+            <div class="container-5-line">
+              <div class="bigger-num">{{ data.thirdNum }}</div>
+              <div>{{ data.thirdLine }}</div>
+              </div>
+              <div class="container-5-line">
+                <div class="bigger-num">{{ data.fourNum }}</div>
+                <div>{{ data.fourLine }}</div>
+                </div>
+                <div class="container-5-line">
+                  <div class="bigger-num">{{ data.fiveNum }}</div>
+                  <div>{{ data.fiveLine }}</div>
+                  </div>
+
     </div>
   </div>
 </div>
