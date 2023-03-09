@@ -130,10 +130,10 @@
     <div *ngIf="isTable" class="row header">
       <div
         class="align-div cell title"
-        (click)="onSort('address')"
+        (click)="resortTableData('address')"
         [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
       >
-        <div  *ngIf="this.graphName !== 'lights'">ציון יומי מחושב</div>
+        <div  *ngIf="this.graphName !== 'lights'">ישוב</div>
         <div class="fontWeight400" *ngIf="this.graphName === 'lights'">חולים פעילים</div>
         <div
           [ngClass]="{
@@ -145,10 +145,11 @@
 
       <div
         class="align-div cell title lavender-background"
-        (click)="onSort('phone')"
+        (click)="resortTableData('phone')"
       >
         <div  *ngIf="this.graphName !== 'lights'" >
-          חולים פעילים לכל 10,000 נפש
+
+           מתחסנים במנה ראשונה %
         </div>
         <div class="fontWeight400" *ngIf="this.graphName === 'lights'">שיעור שינוי מאומתים</div>
         <div
@@ -161,9 +162,11 @@
 
       <div
         class="align-div cell title lavender-background"
-        (click)="onSort('email')"
+        (click)="resortTableData('email')"
       >
-        <div *ngIf="this.graphName !== 'lights'">% מתחסנים מנה שלישית</div>
+        <div *ngIf="this.graphName !== 'lights'">
+          % מתחסנים מנה שנייה
+        </div>
 
         <div class="fontWeight400" *ngIf="this.graphName === 'lights'">% הבדיקות החיוביות</div>
         <div
@@ -176,9 +179,9 @@
 
       <div
         class="align-div cell title lavender-background"
-        (click)="onSort('age')"
+        (click)="resortTableData('age')"
       >
-        <div *ngIf="this.graphName !== 'lights'">% מתחסנים מנה שנייה</div>
+        <div *ngIf="this.graphName !== 'lights'">% מתחסנים מנה שלישית</div>
         <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
           חולים חדשים לכל 10,000 נפש
         </div>
@@ -193,10 +196,10 @@
 
       <div
         class="align-div cell title"
-        (click)="onSort('name')"
+        (click)="resortTableData('name')"
         [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
       >
-        <div *ngIf="this.graphName !== 'lights'">% מתחסנים מנה ראשונה</div>
+        <div *ngIf="this.graphName !== 'lights'">חולים פעילים לכל 10,000 נפש</div>
         <div class="fontWeight400" *ngIf="this.graphName === 'lights'">ציון וצבע יומי</div>
         <div
           [ngClass]="{
@@ -209,9 +212,12 @@
       <div
         class="align-div cell title"
         [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
-        (click)="onSort('id')"
+        (click)="resortTableData('id')"
       >
-        <div>ישוב</div>
+
+        <div *ngIf="this.graphName ==='lights'">ישוב</div>
+        <div *ngIf="this.graphName !=='lights'">ציון יומי מחושב</div>
+
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.id == 1,

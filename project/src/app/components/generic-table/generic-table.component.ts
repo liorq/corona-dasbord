@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-// import 'echarts/theme/dark';
 import { CoronaService } from 'src/app/corona.service';
 
 @Component({
@@ -70,8 +69,6 @@ export class GenericTableComponent implements OnInit{
   currentSort = { column: 'id', direction: 'asc' };
   sortDirection: string="";
   tableColumns: any;
-
-
 
   ngOnInit(){
     this.coronaSvc.isDarkModeActive.subscribe((newStatus:boolean)=>{
@@ -168,16 +165,22 @@ export class GenericTableComponent implements OnInit{
     if(this.graphName==""||this.isTable)
     return
 
+    this.initializeGraph();
+    this.ResizeGraphSize();
+  }
 
 
+  initializeGraph(){
     const chartDom = document.getElementById(this.graphName)!;
     const myChart = echarts?.init(chartDom);
     let option:any=this.optionObj
     this.chart?.setOption(option);
     option && myChart?.setOption(option);
     this.chart = myChart;
+    this.ResizeGraphSize();
+  }
 
-    // Attach resize event listener
+  ResizeGraphSize(){
     window.addEventListener('resize', () => {
       if (this.resizeTimeoutId) {
         clearTimeout(this.resizeTimeoutId);
@@ -188,11 +191,7 @@ export class GenericTableComponent implements OnInit{
     });
   }
 
-
-
-
-
-  onSort(column: string) {
+  resortTableData(column: string) {
     if(this.clickCounterObj[column]==2)
     this.clickCounterObj[column]=0;
     else

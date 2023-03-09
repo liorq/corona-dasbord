@@ -16,10 +16,8 @@ export class DeadsComponent implements OnInit{
 
   constructor(private coronaSvc:CoronaService){}
 
-
   ngOnInit(): void {
   this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
-
     this.isDarkModeActive=newStatus;
     this.option= firstOption(this.timePeriod,this.isDarkModeActive);
   })

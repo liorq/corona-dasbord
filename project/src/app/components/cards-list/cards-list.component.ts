@@ -17,6 +17,7 @@ ngOnInit(): void {
 }
 @Input()dataToDisplay?:any[]=[];
 constructor(private coronaSvc:CoronaService){}
+
 public openWindowsIIcon=openWindowIconI;
 changeNumberFont(word:string){
 return{'medium-num':word.includes('Num')}

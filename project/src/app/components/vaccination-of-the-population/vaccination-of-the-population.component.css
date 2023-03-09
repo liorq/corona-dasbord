@@ -5,6 +5,12 @@
   padding-top: 10px;
 
   }
+  .graph-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    
+  }
   @media screen and (min-width: 769px) {
 
     app-generic-table{

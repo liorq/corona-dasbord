@@ -8,36 +8,56 @@ import { Component } from '@angular/core';
 export class VaccinationOfThePopulationComponent {
   tableData2 = [
     {
-      address: "אלון שבות",
-      phone: "מעל 90%",
-      email: "84.76%",
-      age: "66.44%",
-      name: "אין מידע",
-      id: 2
+      address: 2,
+      phone: "אין מידע",
+      email: "66.44%",
+      age: "84.76%",
+      name: "מעל 90%",
+      id: "אלון שבות"
+                  // address
+      // phone
+      // email
+      // age
+      // name
+      // id
     },
     {
-      address: "הר אדר",
-      phone: "מעל 90%",
-      email: "89.8%",
-      age: "72.69%",
-      name: "אין מידע",
-      id: 3.1
+      address: 3.1,
+      phone: "אין מידע",
+      email: "72.69%",
+      age: "89.8%",
+      name: "מעל 90%",
+      id: "הר אדר"
+
+
     },
     {
-      address: "חשמונאים",
-      phone: "מעל 90%",
-      email: "מעל 90%",
-      age: "82.3%",
-      name: "אין מידע",
-      id: 2
+      address: 2,
+      phone: "אין מידע",
+      email: "82.3%",
+      age: "מעל 90%",
+      name: "מעל 90%",
+      id: "חשמונאים"
+
+
+
     },
     {
-      address: "מזכרת בתיה",
-      phone: "מעל 90%",
-      email: "86.3%",
-      age: "66.72%",
-      name: "אין מידע",
-      id: 4.2
+
+      address: 4.2,
+      phone: "אין מידע",
+      email: "66.72%",
+      age: "86.3%",
+      name: "מעל 90%",
+      id: "מזכרת בתיה"
+
+      // address
+      // phone
+      // email
+      // age
+      // name
+      // id
     }
   ];
+
 }
