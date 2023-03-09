@@ -10,7 +10,7 @@
   margin-right: 10px;
   margin-bottom: 19px;
   border-radius: 10px;
-  font-weight:550;
+  font-weight:500;
 position: relative;
 -webkit-box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
 box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
@@ -276,7 +276,9 @@ li{
   align-items: center;
 }
 
-
+.fontWeight400{
+  font-weight: 400;
+}
 .table{
   text-align: right;
   height: 347px;
@@ -595,6 +597,8 @@ li{
 }
 .weight{
   font-weight: 700;
+  display: flex;
+  justify-content: center;
 }
 .lavender-background{
 background: #daeaee;
@@ -617,6 +621,7 @@ background: #daeaee;
   margin-top:46px;
   padding-right: 28px;
   justify-content: right;
+  flex-direction:row-reverse;
 }
 .box-search-value{
   width: 116px;

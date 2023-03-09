@@ -84,7 +84,7 @@
         container7: this.graphName == 'main3'
       }"
     >
-      <div *ngIf="isTable">
+      <div *ngIf="isTable" >
         <div class="select-box-container" (click)="toggleDropdown()">
           <button class="selected-option">{{ selectedOption }}</button>
           <ul class="options-list" [hidden]="!dropdownVisible">
@@ -133,8 +133,8 @@
         (click)="onSort('address')"
         [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
       >
-        <div *ngIf="this.graphName !== 'lights'">ציון יומי מחושב</div>
-        <div *ngIf="this.graphName === 'lights'">חולים פעילים</div>
+        <div  *ngIf="this.graphName !== 'lights'">ציון יומי מחושב</div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">חולים פעילים</div>
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.address == 1,
@@ -147,10 +147,10 @@
         class="align-div cell title lavender-background"
         (click)="onSort('phone')"
       >
-        <div *ngIf="this.graphName !== 'lights'">
+        <div  *ngIf="this.graphName !== 'lights'" >
           חולים פעילים לכל 10,000 נפש
         </div>
-        <div *ngIf="this.graphName === 'lights'">שיעור שינוי מאומתים</div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">שיעור שינוי מאומתים</div>
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.phone == 1,
@@ -165,7 +165,7 @@
       >
         <div *ngIf="this.graphName !== 'lights'">% מתחסנים מנה שלישית</div>
 
-        <div *ngIf="this.graphName === 'lights'">% הבדיקות החיוביות</div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">% הבדיקות החיוביות</div>
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.email == 1,
@@ -179,7 +179,7 @@
         (click)="onSort('age')"
       >
         <div *ngIf="this.graphName !== 'lights'">% מתחסנים מנה שנייה</div>
-        <div *ngIf="this.graphName === 'lights'">
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
           חולים חדשים לכל 10,000 נפש
         </div>
 
@@ -197,7 +197,7 @@
         [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
       >
         <div *ngIf="this.graphName !== 'lights'">% מתחסנים מנה ראשונה</div>
-        <div *ngIf="this.graphName === 'lights'">ציון וצבע יומי</div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">ציון וצבע יומי</div>
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.name == 1,
@@ -224,10 +224,10 @@
     <div *ngIf="isTable" class="tbody">
       <ng-container *ngFor="let row of tablesData">
         <div *ngIf="isTable" class="row">
-          <div class="cell">{{ row.id }}</div>
-          <div class="cell">{{ row.name }}</div>
-          <div class="cell">{{ row.age }}</div>
-          <div class="cell">{{ row.email }}</div>
+          <div class="cell fontWeight400">{{ row.id }}</div>
+          <div class="cell fontWeight400">{{ row.name }}</div>
+          <div class="cell fontWeight400">{{ row.age }}</div>
+          <div class="cell fontWeight400">{{ row.email }}</div>
           <div class="cell weight">
             <div
               class="color"
