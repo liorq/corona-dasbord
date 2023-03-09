@@ -1,6 +1,6 @@
 <div class="container-4">
   <nav class="horizontal-nav">
-    <a href="#" id="nav-toggle-btn">
+    <a  id="nav-toggle-btn">
       <svg width="30" height="30">
         <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
         <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
@@ -10,45 +10,44 @@
   </nav>
 
   <div id="sidenav">
-    <a ></a>
     <ul class="side-nav-items">
       <li class="side-item dropdown" (click)="openOptions(0)">
-        <a href="#">עולמות תוכן</a>
+        <a >עולמות תוכן</a>
         <ul
           class="dropdown-items"
           id="a0"
           [ngClass]="{ openOptions: this.showDropdown[0] }"
         >
-          <li class="dropdown-item"><a href="#">קורונה</a></li>
+          <li class="dropdown-item"><a>קורונה</a></li>
           <li class="dropdown-item">
-            <a href="#">עולמות תוכן נוספים בקרוב</a>
+            <a >עולמות תוכן נוספים בקרוב</a>
           </li>
         </ul>
       </li>
 
       <li class="side-item dropdown" (click)="openOptions(1)">
-        <a href="#">עולם הדאטה</a>
+        <a >עולם הדאטה</a>
         <ul
           class="dropdown-items"
           id="a1"
           [ngClass]="{ openOptions: this.showDropdown[1] }"
         >
-          <li class="dropdown-item"><a href="#">DATA -הי</a></li>
-          <li class="dropdown-item"><a href="#">GIS</a></li>
-          <li class="dropdown-item"><a href="#">Data_Gov</a></li>
+          <li class="dropdown-item"><a >DATA -הי</a></li>
+          <li class="dropdown-item"><a >GIS</a></li>
+          <li class="dropdown-item"><a >Data_Gov</a></li>
         </ul>
       </li>
 
       <li class="side-item dropdown" (click)="openOptions(2)">
-        <a href="#">על הדשבורד</a>
+        <a >על הדשבורד</a>
         <ul
           class="dropdown-items"
           id="a2"
           [ngClass]="{ openOptions: this.showDropdown[2] }"
         >
-          <li class="dropdown-item"><a href="#">אודות</a></li>
-          <li class="dropdown-item"><a href="#">תנאי שימוש</a></li>
-          <li class="dropdown-item"><a href="#">מדריך למשתמש</a></li>
+          <li class="dropdown-item"><a >אודות</a></li>
+          <li class="dropdown-item"><a >תנאי שימוש</a></li>
+          <li class="dropdown-item"><a >מדריך למשתמש</a></li>
         </ul>
       </li>
     </ul>
