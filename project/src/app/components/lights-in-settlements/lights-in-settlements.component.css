@@ -10,13 +10,11 @@
   flex-wrap: wrap;
 }
 @media screen and (min-width: 769px) {
-  app-generic-table {
-    width: 65vw;
-  }
+
   .graph-container {
     display: flex;
     flex-wrap: wrap;
-    
+
     justify-content: right;
     width: fit-content;
   }

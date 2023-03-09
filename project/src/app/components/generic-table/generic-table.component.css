@@ -615,6 +615,8 @@ background: #daeaee;
   margin-bottom: 20px;
   margin-left: 161px;
   margin-top:46px;
+  padding-right: 28px;
+  justify-content: right;
 }
 .box-search-value{
   width: 116px;
