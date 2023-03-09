@@ -80,7 +80,7 @@ export class GenericTableComponent implements OnInit{
           item.isDarkMode = !item.isDarkMode;
         });
 
-        if(this.graphName=="")
+        if(this.graphName==""||this.isTable)
         return
 
         setTimeout(() => {
@@ -165,7 +165,7 @@ export class GenericTableComponent implements OnInit{
   }
 
   ngAfterViewInit(timePeriods:number=25): void {
-    if(this.graphName=="")
+    if(this.graphName==""||this.isTable)
     return
 
 

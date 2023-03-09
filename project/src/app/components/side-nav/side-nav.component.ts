@@ -1,4 +1,4 @@
-import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
+import { Component, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
 import { CoronaService } from '../../corona.service';
 
 @Component({
@@ -6,15 +6,13 @@ import { CoronaService } from '../../corona.service';
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.css']
 })
-export class SideNavComponent implements OnInit {
+export class SideNavComponent implements AfterViewInit {
 
   sidenav?: ElementRef;
   isNavBarOpen?:boolean=this.coronaSvc.isNavBarOpen.getValue();
   constructor(private renderer: Renderer2, private el: ElementRef,private coronaSvc:CoronaService) {}
 
-  ngOnInit() {
-
-
+  ngAfterViewInit() {
 
     this.sidenav = this.el.nativeElement.querySelector("#sidenav");
     this.renderer.listen(this.el.nativeElement.querySelector('#nav-toggle-btn'), 'click', () => {
@@ -27,18 +25,11 @@ export class SideNavComponent implements OnInit {
       this.coronaSvc.isNavBarOpen.next(false);
       this.isNavBarOpen=false;
       this.renderer.removeClass(this.sidenav, 'show');
-
-    const navToggleBtn = document.querySelector("#nav-toggle-btn");
-    const dropdownItems = document.querySelectorAll(".dropdown-items");
-
     }
-
-
     });
 
 
   }
-
 
    toggleNav(para:string) {
     var navbar = document.getElementById(para);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 import { secondOption } from 'src/app/app.graphData';
 import { CoronaService } from 'src/app/corona.service';
@@ -8,7 +8,7 @@ import { CoronaService } from 'src/app/corona.service';
   templateUrl: './tests.component.html',
   styleUrls: ['./tests.component.css']
 })
-export class TestsComponent implements OnInit{
+export class TestsComponent implements AfterViewInit{
 
 
 
@@ -24,10 +24,7 @@ export class TestsComponent implements OnInit{
     }
   };
   public option:any=secondOption(this.emphasisStyle,this.timePeriod,false);
-
-  ngOnInit(){
-
-
+ngAfterViewInit(): void {
       this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
         this.isDarkModeActive=newStatus
         this.option=secondOption(this.emphasisStyle,this.timePeriod,newStatus)

@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import {  Router } from '@angular/router';
 
 import { CoronaService } from './corona.service';
@@ -8,16 +8,15 @@ import { CoronaService } from './corona.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements AfterViewInit{
   isDarkModeActive=this.coronaSvc.isDarkModeActive.getValue()
   constructor(private router: Router, private elementRef: ElementRef,public coronaSvc:CoronaService) {}
   currentPosition: number = 0;
-  ngOnInit(){
+  ngAfterViewInit(){
     this.coronaSvc.isDarkModeActive.subscribe((newStatus:boolean)=>{
       this.isDarkModeActive=newStatus;
     })
   }
-  @HostListener('window:scroll', ['$event'])
   onWindowScroll(event:any) {
     this.currentPosition = window.scrollY;
     const num=this.currentPosition
@@ -37,8 +36,11 @@ export class AppComponent implements OnInit{
 ];
 
 for (const range of ranges) {
+  if(range==null)continue
+
+
   if (num >= range[0] && num < range[1]) {
-    console.log(range[2]);
+
     this.coronaSvc.componentNameActive.next(range[2])
     this.scrollToDiv(range[2])
     break;
@@ -47,7 +49,10 @@ for (const range of ranges) {
 
   }
    scrollToDiv(divName:string) {
+    console.log(divName+"15")
+
     var div = document.getElementById(divName);
+    if(div)
     div?.scrollIntoView({ behavior: 'smooth' });
   }
 }
