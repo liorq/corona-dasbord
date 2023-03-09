@@ -278,6 +278,7 @@ li{
 
 .fontWeight400{
   font-weight: 400;
+  width: fit-content;
 }
 .table{
   text-align: right;
