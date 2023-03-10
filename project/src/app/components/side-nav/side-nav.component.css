@@ -180,7 +180,9 @@ a {
   opacity: 0;
 }
 .rotate{
-  transform: translate(0.5em, 0.25em) rotateZ(268deg);
+  transform: translate(0.5em, 0.25em) rotateZ(-90deg);
+  transition: transform 0.5s ease-in-out;
+
 }
 
 
