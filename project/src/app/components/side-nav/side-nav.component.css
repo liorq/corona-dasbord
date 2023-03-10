@@ -1,7 +1,5 @@
-.container-4
-{
 
-}
+
 html {
   font-size: 18px;
 }
@@ -19,6 +17,7 @@ ul {
 }
 a {
   text-decoration: none;
+  font-size: 15px;
 }
 .horizontal-nav {
   z-index: 99;
@@ -86,7 +85,7 @@ a {
 }
 #sidenav .side-nav-items .side-item {
   margin-top: 1.3em;
-  border-bottom: 1px solid #2f2f2f;
+  border-bottom: 1px solid #dce1e3;
   color: #111;
 }
 #sidenav .side-nav-items .side-item:first-child {
@@ -97,12 +96,13 @@ a {
 }
 #sidenav .dropdown {
   color: #b3b3b3;
+  position: relative;
 }
 #sidenav .dropdown > a::after {
-  content: "^";
+
   display: inline-block;
   font-size: 0.7em;
-  transform: translate(0.5em, -0.25em) rotateZ(180deg);
+  transform: translate(0.5em, -0.25em) rotateZ(45deg);
 }
 #sidenav .dropdown .dropdown-items {
   padding: 0.3em 0 0.3em 0.5em;
@@ -115,12 +115,41 @@ a {
   padding-top: 0.3em;
 
 }
+.side-item{
 
-
-#sidenav .dropdown .openOptions{
-  max-height: 50px;
-  max-height: 50px;
 }
+.half-rectangele{
+  background: url('../../../assets/images/half-rec.png');
+  height: 20px;
+  width: 20px;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 99px;
+}
+
+#firstDiv,#secondDiv,#thirdDiv{
+  min-height: 60px;
+  overflow: hidden;
+}
+#firstDiv{
+  min-height: 60px;
+
+}
+/* #firstDiv .openOptions{
+  height: 120px;
+} */
+#secondDiv{
+  height: 180px;
+}
+.borderNone{
+  border-bottom: none;
+}
+#sidenav .dropdown .openOptions{
+  max-height: 120px;
+  height: 120px;
+}
+
 
 
 a {

@@ -11,8 +11,9 @@
 
   <div id="sidenav">
     <ul class="side-nav-items">
-      <li class="side-item dropdown" (click)="openOptions(0)">
+      <li id="firstDiv" class="side-item dropdown" (click)="openOptions(0)">
         <a >עולמות תוכן</a>
+        <div class="half-rectangele"></div>
         <ul
           class="dropdown-items"
           id="a0"
@@ -25,8 +26,10 @@
         </ul>
       </li>
 
-      <li class="side-item dropdown" (click)="openOptions(1)">
+      <li id="secondDiv" class="side-item dropdown" (click)="openOptions(1)">
         <a >עולם הדאטה</a>
+        <div class="half-rectangele"></div>
+
         <ul
           class="dropdown-items"
           id="a1"
@@ -38,8 +41,10 @@
         </ul>
       </li>
 
-      <li class="side-item dropdown" (click)="openOptions(2)">
+      <li id="thirdDiv" class="side-item dropdown borderNone" (click)="openOptions(2)">
         <a >על הדשבורד</a>
+        <div class="half-rectangele"></div>
+
         <ul
           class="dropdown-items"
           id="a2"
