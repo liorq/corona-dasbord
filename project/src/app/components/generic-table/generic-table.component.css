@@ -146,7 +146,7 @@ text-align: center;
   display: block;
   width: 100%;
   min-width:200px;
-  background-color: #f2f2f2;
+  background-color: #f7f9fc;
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: left;
@@ -667,5 +667,20 @@ background: #daeaee;
   width: 70vw;
 }
 
+.half-rectangle{
+  background: url('../../../assets/images/half-rec-little.png');
+  height: 15px;
+  width: 15px;
+  background-size: cover;
+  position: absolute;
+  top: 8px;
+  left: -71px;
 
+}
 
+.rotate{
+
+  transform: translate(0.5em, 0) rotateZ(180deg);
+  transition: transform 0.5s ease-in-out;
+
+}

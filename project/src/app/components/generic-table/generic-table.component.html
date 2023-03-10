@@ -13,9 +13,14 @@
       <div
         *ngIf="!isTable && this.graphName.length > 0"
         class="select-box-container"
-        (click)="toggleDropdown()"
-      >
-        <button class="selected-option">{{ selectedOption }}</button>
+        (click)="toggleDropdown()">
+
+        <button class="selected-option">
+          <div [ngClass]="{'rotate':dropdownVisible}" class="half-rectangle"></div>
+          {{ selectedOption }}
+
+
+        </button>
         <ul class="options-list" [hidden]="!dropdownVisible">
           <li *ngFor="let option of options">
             <label class="option-label">
