@@ -118,6 +118,29 @@ gap: 8px;
 z-index: 1;
 
 }
+.container7{
+ position: relative;
+left: auto;
+top: auto;
+text-align: center;
+
+}
+#main3 {
+  position: relative;
+  top: 25px;
+ left: 20px;
+  min-width: 120%;
+}
+
+#main1{
+  position: relative;
+  top:44px;
+ right: 10px;
+  min-width: 90%;
+  height: 229px;
+}
+
+
 
 .selected-option {
   display: block;
@@ -272,8 +295,10 @@ li{
   justify-content: center;
   align-items: center;
 }
-#main1{
+#main{
 
+    position: absolute;
+    top: 53px;
 }
 .align-graph{
   display: flex;
@@ -431,12 +456,23 @@ gap: 8px;
   top: 65px;
 }
 .li{
-  margin:5px;
+ position: relative;
+ left: 20px;
+  min-width: fit-content;
+  font-size: 12.5px;
 }
 li{
 text-decoration: none;
 }
+#circle-container{
+  width: calc(vw);
+  max-width: 475px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-wrap: wrap;
 
+}
 
 .testByDates2{
   position: absolute;
