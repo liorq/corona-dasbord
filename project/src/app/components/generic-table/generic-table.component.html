@@ -59,7 +59,8 @@
     ></div>
 
     <div class="graph-header">
-      <ul class="ul" id="circle-container">
+      <div *ngIf="this.graphName=='main1'" class="pic-graph"></div>
+      <ul class="ul" id="circle-container" [ngClass]="{'align-circle':this.graphName=='main1'}">
         <ng-container *ngFor="let item of items">
           <li class="li" *ngIf="item.graphName == graphName && item.isDarkMode">
             <div>{{ item.title }}</div>

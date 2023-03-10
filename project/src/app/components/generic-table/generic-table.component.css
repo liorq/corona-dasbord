@@ -468,7 +468,7 @@ li{
 text-decoration: none;
 }
 #circle-container{
-  width: calc(vw);
+
   max-width: 475px;
   display: flex;
   align-items: center;
@@ -677,7 +677,20 @@ background: #daeaee;
   left: -71px;
 
 }
+.align-circle{
 
+margin-top: 28px;
+
+}
+.pic-graph{
+  background: url('../../../assets/images/pic-graphi-i.png');
+  position: absolute;
+  top: 80px;
+  right: 5px;
+  height: 17px;
+  width: 262px;
+  background-size: cover;
+}
 .rotate{
 
   transform: translate(0.5em, 0) rotateZ(180deg);
