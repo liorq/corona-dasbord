@@ -38,6 +38,7 @@ export class GenericTableComponent implements OnInit{
  isActiveShareAndDownload?:boolean=false;
   filteredTablesData: any;
   selectedOption?: string='חודש אחרון';
+  selectedOption2?: string='כלל הישובים';
 
   options: any[] = [{ label: 'עד עכשיו', value: 750 },
   { label: 'שנה', value: 365 },
@@ -129,6 +130,9 @@ export class GenericTableComponent implements OnInit{
     this.selectedOption = option;
     this.dropdownVisible = false;
 
+
+  }
+  confirmSelectTable(option:string){
 
   }
   confirmSelect(type:string){
