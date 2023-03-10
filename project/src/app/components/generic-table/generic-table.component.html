@@ -62,6 +62,7 @@
           </li>
         </ng-container>
       </ul>
+      <div *ngIf="this.graphName == 'main'||this.graphName == 'main1'" class="date"> תאריך</div>
 
       <div class="testByDates1" *ngIf="this.graphName == 'main'">
         מספר נפטרים
@@ -224,7 +225,9 @@
             'arrow-up': clickCounterObj.id == 2
           }"
         ></div>
+
       </div>
+
     </div>
 
     <div *ngIf="isTable" class="tbody">
@@ -250,6 +253,8 @@
           <div class="cell weight">{{ row.address }}</div>
         </div>
       </ng-container>
+
     </div>
+
   </div>
 </div>
