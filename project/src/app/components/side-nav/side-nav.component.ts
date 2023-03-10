@@ -8,10 +8,11 @@ import { CoronaService } from '../../corona.service';
 })
 export class SideNavComponent implements AfterViewInit {
 
+  showDropdown: boolean[] = [false, false, false];
   sidenav?: ElementRef;
   isNavBarOpen?:boolean=this.coronaSvc.isNavBarOpen.getValue();
   constructor(private renderer: Renderer2, private el: ElementRef,private coronaSvc:CoronaService) {}
-
+  
   ngAfterViewInit() {
 
     this.sidenav = this.el.nativeElement.querySelector("#sidenav");
@@ -35,7 +36,6 @@ export class SideNavComponent implements AfterViewInit {
     var navbar = document.getElementById(para);
     navbar?.classList.toggle("show");
   }
-  showDropdown: boolean[] = [false, false, false];
 
   openOptions(index: number) {
     this.showDropdown[index] = !this.showDropdown[index];

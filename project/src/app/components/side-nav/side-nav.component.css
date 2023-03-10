@@ -136,9 +136,7 @@ a {
   min-height: 60px;
 
 }
-/* #firstDiv .openOptions{
-  height: 120px;
-} */
+
 #secondDiv{
   height: 180px;
 }
@@ -181,3 +179,10 @@ a {
   background-color: #fff;
   opacity: 0;
 }
+.rotate{
+  transform: translate(0.5em, 0.25em) rotateZ(268deg);
+}
+
+
+
+
