@@ -604,7 +604,8 @@ li{
   width: 20px;
 }
 .squre{
-  width: 22px;
+  max-width: 22px;
+  width: 2vw;
   height: 22px;
 }
 .title2{
@@ -635,9 +636,9 @@ background: #daeaee;
 }
 .container-color{
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-left: 161px;
-  margin-top:46px;
+  margin-top:59px;
   padding-right: 28px;
   justify-content: right;
   flex-direction:row-reverse;
@@ -706,4 +707,19 @@ margin-top: 28px;
   transform: translate(0.5em, 0) rotateZ(180deg);
   transition: transform 0.5s ease-in-out;
 
+}
+.pic-graph-light{
+  background: url('../../../assets/images/pic-graphi-i-light.png');
+  position: absolute;
+  top: 80px;
+  right: 5px;
+  height: 20px;
+  width: 180px;
+  background-size: cover;
+}
+
+.pic-graph-light-dark{
+  background: url('../../../assets/images/pic-graphi-i-light-dark.png');
+
+  background-size: cover;
 }

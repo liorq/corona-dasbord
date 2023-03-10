@@ -122,6 +122,8 @@
       ></div>
     </div>
     <div *ngIf="isTable" class="container-color">
+      <div *ngIf="graphName=='lights'" class="pic-graph-light" [ngClass]="{'pic-graph-light-dark':isDarkModeActive}"></div>
+
       <div *ngFor="let color of colors" class="little-container-text-and-color">
         <div *ngIf="this.graphName == 'lights'" class="flex-cloumn-color">
           <div class="text-color">{{ color.name }}</div>
