@@ -687,7 +687,17 @@ margin-top: 28px;
   position: absolute;
   top: 80px;
   right: 5px;
-  height: 17px;
+  height: 20px;
+  width: 262px;
+  background-size: cover;
+}
+
+.pic-graph-dark{
+  background: url('../../../assets/images/pic-graphi-i-dark-mode.png');
+  position: absolute;
+  top: 80px;
+  right: 5px;
+  height: 20px;
   width: 262px;
   background-size: cover;
 }

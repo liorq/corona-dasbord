@@ -59,7 +59,7 @@
     ></div>
 
     <div class="graph-header">
-      <div *ngIf="this.graphName=='main1'" class="pic-graph"></div>
+      <div *ngIf="this.graphName=='main1'" class="pic-graph" [ngClass]="{'pic-graph-dark':isDarkModeActive}"></div>
       <ul class="ul" id="circle-container" [ngClass]="{'align-circle':this.graphName=='main1'}">
         <ng-container *ngFor="let item of items">
           <li class="li" *ngIf="item.graphName == graphName && item.isDarkMode">
