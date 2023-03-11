@@ -22,7 +22,7 @@ import { RecurrentMorbidityAndRecoveryComponent } from './components/recurrent-m
 import { VaccinationOfThePopulationComponent } from './components/vaccination-of-the-population/vaccination-of-the-population.component';
 import { LightsInSettlementsComponent } from './components/lights-in-settlements/lights-in-settlements.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table'; // import MatTableModule
+import { MatTableModule } from '@angular/material/table'; 
 import { MatSortModule } from '@angular/material/sort';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,7 +32,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { DataTablesModule } from "angular-datatables";
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

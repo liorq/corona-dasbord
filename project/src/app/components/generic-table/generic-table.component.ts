@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { clickCounterObj, colors, data, options } from 'src/app/app.arrays';
 import { CoronaService } from 'src/app/corona.service';
 
 @Component({
@@ -16,12 +17,7 @@ export class GenericTableComponent implements OnInit{
   items = [  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'salmon',isDarkMode:this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'blue',isDarkMode:this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'salmon' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'blue' ,isDarkMode:this.isDarkModeActive },
   { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'orange',isDarkMode:!this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'aqua',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'goldenrod' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'aqua' ,isDarkMode:!this.isDarkModeActive },];
 
-  colors = [
-    { name: 'אדום', range: 'ציון 7.5 ומעלה', class: 'red' },
-    { name: 'כתום', range: 'ציון בין 6 ל - 7.5', class: 'orange' },
-    { name: 'צהוב', range: 'ציון בין 4.5 ל - 6', class: 'yellow' },
-    { name: 'ירוק', range: 'ציון עד 4.5', class: 'green' }
-  ];
+  colors = colors;
   searchQuery: string = '';
 
   @Input()title?:string;
@@ -40,32 +36,14 @@ export class GenericTableComponent implements OnInit{
   selectedOption?: string='חודש אחרון';
   selectedOption2?: string='כלל הישובים';
 
-  options: any[] = [{ label: 'עד עכשיו', value: 750 },
-  { label: 'שנה', value: 365 },
-  { label: 'חצי שנה', value: 180 },
-  { label: '3 חודשים', value: 90 },
-  { label: 'חודש אחרון', value: 30 }];
+  options=options
 
 
-  data: any[] = [
-    { label: 'עד עכשיו', value: 750 },
-    { label: 'שנה', value: 365 },
-    { label: 'חצי שנה', value: 180 },
-    { label: '3 חודשים', value: 90 },
-    { label: 'חודש אחרון', value: 30 },
-
-  ];
+  data=data
 
   filteredData: any[];
   dropdownVisible: boolean = false;
-  clickCounterObj:any={
-    'id':0,
-    'name':0,
-    'age':0,
-    'email':0,
-    'phone':0,
-    'address':0,
-  }
+  clickCounterObj=clickCounterObj;
 
   currentSort = { column: 'id', direction: 'asc' };
   sortDirection: string="";
