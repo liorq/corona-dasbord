@@ -310,6 +310,7 @@ li{
 .fontWeight400{
   font-weight: 400;
   width: fit-content;
+
 }
 .table{
   text-align: right;
@@ -588,6 +589,12 @@ li{
   cursor: pointer;
   width: 20px;
 }
+.color2{
+  width: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #b8de92;
+}
 .squre{
   max-width: 22px;
   width: 2vw;
@@ -606,7 +613,7 @@ li{
 background: #daeaee;
 }
 .title{
-  max-width: 200px;
+  /* max-width: 200px; */
 }
 .input{
   width: 116px;
@@ -741,10 +748,14 @@ margin-top: 28px;
         max-width: 95vw;
         width: 95vw;
         margin-right :14px;
+
+
       }
     }
+
 .tbody{
   overflow: scroll;
+
 }
 
 
