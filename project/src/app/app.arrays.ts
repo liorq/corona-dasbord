@@ -43,7 +43,7 @@ export const tableData2 = [
   {
     address: 2,
     phone: "אין מידע",
-    email: "66.44%",
+    email:"72.69%",
     age: "84.76%",
     name: "מעל 90%",
     id: "אלון שבות"
@@ -62,8 +62,8 @@ export const tableData2 = [
   {
     address: 2,
     phone: "אין מידע",
-    email: "82.3%",
-    age: "מעל 90%",
+    email: "72.69%",
+    age: "85.76%",
     name: "מעל 90%",
     id: "חשמונאים"
 
@@ -74,7 +74,7 @@ export const tableData2 = [
 
     address: 4.2,
     phone: "אין מידע",
-    email: "66.72%",
+    email: "72.69%",
     age: "86.3%",
     name: "מעל 90%",
     id: "מזכרת בתיה"

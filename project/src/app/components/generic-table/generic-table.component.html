@@ -1,4 +1,11 @@
-<div class="container" [ngClass]="{ 'white-color': isDarkModeActive,'TableWidth':isTable,'TableWidth100':graphName=='Vaccination'}">
+<div
+  class="container"
+  [ngClass]="{
+    'white-color': isDarkModeActive,
+    TableWidth: isTable,
+    TableWidth100: graphName == 'Vaccination'
+  }"
+>
   <div class="table" [ngClass]="{ 'background-dark-mode': isDarkModeActive }">
     <div class="little-container">
       <div
@@ -13,13 +20,14 @@
       <div
         *ngIf="!isTable && this.graphName.length > 0"
         class="select-box-container"
-        (click)="toggleDropdown()">
-
+        (click)="toggleDropdown()"
+      >
         <button class="selected-option">
-          <div [ngClass]="{'rotate':dropdownVisible}" class="half-rectangle"></div>
+          <div
+            [ngClass]="{ rotate: dropdownVisible }"
+            class="half-rectangle"
+          ></div>
           {{ selectedOption }}
-
-
         </button>
         <ul class="options-list" [hidden]="!dropdownVisible">
           <li *ngFor="let option of options">
@@ -59,8 +67,16 @@
     ></div>
 
     <div class="graph-header">
-      <div *ngIf="this.graphName=='main1'" class="pic-graph" [ngClass]="{'pic-graph-dark':isDarkModeActive}"></div>
-      <ul class="ul" id="circle-container" [ngClass]="{'align-circle':this.graphName=='main1'}">
+      <div
+        *ngIf="this.graphName == 'main1'"
+        class="pic-graph"
+        [ngClass]="{ 'pic-graph-dark': isDarkModeActive }"
+      ></div>
+      <ul
+        class="ul"
+        id="circle-container"
+        [ngClass]="{ 'align-circle': this.graphName == 'main1' }"
+      >
         <ng-container *ngFor="let item of items">
           <li class="li" *ngIf="item.graphName == graphName && item.isDarkMode">
             <div>{{ item.title }}</div>
@@ -68,7 +84,12 @@
           </li>
         </ng-container>
       </ul>
-      <div *ngIf="this.graphName == 'main'||this.graphName == 'main1'" class="date"> תאריך</div>
+      <div
+        *ngIf="this.graphName == 'main' || this.graphName == 'main1'"
+        class="date"
+      >
+        תאריך
+      </div>
 
       <div class="testByDates1" *ngIf="this.graphName == 'main'">
         מספר נפטרים
@@ -91,22 +112,34 @@
         container7: this.graphName == 'main3'
       }"
     >
-      <div *ngIf="isTable" >
+      <div *ngIf="isTable">
         <div class="select-box-container" (click)="toggleDropdown()">
-          <button class="selected-option">{{ selectedOption2 }}
-            <div [ngClass]="{'rotate':dropdownVisible}" class="center-half-rectangle"></div>
-
+          <button class="selected-option">
+            {{ selectedOption2 }}
+            <div
+              [ngClass]="{ rotate: dropdownVisible }"
+              class="center-half-rectangle"
+            ></div>
           </button>
           <ul class="options-list" [hidden]="!dropdownVisible">
             <div class="search-input">
-              <input class="input" type="text" placeholder="חיפוש לפי ישוב" [(ngModel)]="searchText" (input)="onInput()"  >
+              <input
+                class="input"
+                type="text"
+                placeholder="חיפוש לפי ישוב"
+                [(ngModel)]="searchText"
+                (input)="onInput()"
+              />
               <div class="search-results" *ngIf="showResults">
                 <ul>
-                  <li *ngFor="let item of this.tablesData" (click)="onResultClick(item)">{{item.address}}</li>
+                  <li
+                    *ngFor="let item of this.tablesData"
+                    (click)="onResultClick(item)"
+                  >
+                    {{ item.address }}
+                  </li>
                 </ul>
               </div>
-
-
             </div>
             <button (click)="confirmSelectTable('ok')">אישור</button>
             <button (click)="confirmSelectTable('no')">ביטול</button>
@@ -120,7 +153,11 @@
       ></div>
     </div>
     <div *ngIf="isTable" class="container-color">
-      <div *ngIf="graphName=='lights'" class="pic-graph-light" [ngClass]="{'pic-graph-light-dark':isDarkModeActive}"></div>
+      <div
+        *ngIf="graphName == 'lights'"
+        class="pic-graph-light"
+        [ngClass]="{ 'pic-graph-light-dark': isDarkModeActive }"
+      ></div>
 
       <div *ngFor="let color of colors" class="little-container-text-and-color">
         <div *ngIf="this.graphName == 'lights'" class="flex-cloumn-color">
@@ -140,8 +177,12 @@
         (click)="resortTableData('address')"
         [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
       >
-        <div class="fontWeight400"  *ngIf="this.graphName !== 'lights'">ישוב</div>
-        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">חולים פעילים</div>
+        <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
+          ישוב
+        </div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
+          חולים פעילים
+        </div>
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.address == 1,
@@ -154,11 +195,12 @@
         class="align-div cell title lavender-background"
         (click)="resortTableData('phone')"
       >
-        <div class="fontWeight400" *ngIf="this.graphName !== 'lights'" >
-
-           מתחסנים במנה ראשונה %
+        <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
+          מתחסנים במנה ראשונה %
         </div>
-        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">שיעור שינוי מאומתים</div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
+          שיעור שינוי מאומתים
+        </div>
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.phone == 1,
@@ -175,7 +217,9 @@
           % מתחסנים מנה שנייה
         </div>
 
-        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">% הבדיקות החיוביות</div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
+          % הבדיקות החיוביות
+        </div>
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.email == 1,
@@ -188,7 +232,9 @@
         class="align-div cell title lavender-background"
         (click)="resortTableData('age')"
       >
-        <div  class="fontWeight400" *ngIf="this.graphName !== 'lights'">% מתחסנים מנה שלישית</div>
+        <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
+          % מתחסנים מנה שלישית
+        </div>
         <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
           חולים חדשים לכל 10,000 נפש
         </div>
@@ -202,12 +248,16 @@
       </div>
 
       <div
-        class="align-div cell title "
+        class="align-div cell title"
         (click)="resortTableData('name')"
         [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
       >
-        <div  class="fontWeight400" *ngIf="this.graphName !== 'lights'">חולים פעילים לכל 10,000 נפש</div>
-        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">ציון וצבע יומי</div>
+        <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
+          חולים פעילים לכל 10,000 נפש
+        </div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
+          ציון וצבע יומי
+        </div>
         <div
           [ngClass]="{
             'arrow-down': clickCounterObj.name == 1,
@@ -221,9 +271,12 @@
         [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
         (click)="resortTableData('id')"
       >
-
-        <div class="fontWeight400" *ngIf="this.graphName ==='lights'">ישוב</div>
-        <div class="fontWeight400" *ngIf="this.graphName !=='lights'">ציון יומי מחושב</div>
+        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
+          ישוב
+        </div>
+        <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
+          ציון יומי מחושב
+        </div>
 
         <div
           [ngClass]="{
@@ -231,45 +284,54 @@
             'arrow-up': clickCounterObj.id == 2
           }"
         ></div>
-
       </div>
-
     </div>
 
-    <div *ngIf="isTable" class="tbody" [ngClass]="{'TableWidth100':graphName=='Vaccination'}">
+    <div
+      *ngIf="isTable"
+      class="tbody"
+      [ngClass]="{ TableWidth100: graphName == 'Vaccination' }"
+    >
       <ng-container *ngFor="let row of tablesData">
         <div *ngIf="isTable" class="row">
-          <div class="cell fontWeight400 "  >{{ row.id }}</div>
+          <div class="cell fontWeight400">{{ row.id }}</div>
           <div class="cell fontWeight400">{{ row.name }}</div>
-          <div class="cell fontWeight400">{{ row.age }}</div>
-          <div class="cell fontWeight400">{{ row.email }}</div>
+          <div class="cell fontWeight400">{{ row.age }}
+         <div *ngIf="graphName !== 'lights'" class="squre-gold"></div>
+          </div>
+          <div class="cell fontWeight400">{{ row.email }}
+            <div *ngIf="graphName !== 'lights'" class="squre-Cyan"></div>
+          </div>
+
           <div class="cell weight">
             <div
-
               [ngClass]="{
                 green: row.phone < 4.5,
                 yellow: row.phone > 4.5 && row.phone < 6,
                 orange: row.phone > 6 && row.phone < 7.5,
-                red: row.phone > 7.5,'color':graphName=='lights','fontWeight400':graphName=='Vaccination'
+                red: row.phone > 7.5,
+                color: graphName == 'lights',
+                fontWeight400: graphName == 'Vaccination'
               }"
             >
               {{ row.phone }}
             </div>
           </div>
           <div class="cell weight">
-
-          <div class="color" [ngClass]="{'color2':graphName=='Vaccination',
-            'lightgreen': row.id < 4.5,
-            'yellow': row.id > 4.6 && row.id < 5.9,
-            'orange': row.id > 6.1 && row.id < 6.8
-
-          }">{{ row.address }}</div>
+            <div
+              class="color"
+              [ngClass]="{
+                color2: graphName == 'Vaccination',
+                lightgreen: row.id < 4.5,
+                yellow: row.id > 4.6 && row.id < 5.9,
+                orange: row.id > 6.1 && row.id < 6.8
+              }"
+            >
+              {{ row.address }}
+            </div>
+          </div>
         </div>
-      </div>
-
       </ng-container>
-
     </div>
-
   </div>
 </div>
