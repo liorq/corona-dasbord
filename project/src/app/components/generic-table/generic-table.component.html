@@ -106,19 +106,7 @@
                 </ul>
               </div>
 
-              <!-- <input
-                [placeholder]="'חיפוש לפי ישוב'"
-                class="input"
-                type="text"
-                id="search-input"
-                (keyup)="search()"
-                [(ngModel)]="searchQuery"
-              />
-              <div  class="box-search-value">
-                <div *ngFor="let item of this.filteredTablesData">
-                  <div *ngIf="item">{{ item }}</div>
-                </div>
-              </div> -->
+
             </div>
             <button (click)="confirmSelectTable('ok')">אישור</button>
             <button (click)="confirmSelectTable('no')">ביטול</button>
@@ -257,12 +245,12 @@
           <div class="cell fontWeight400">{{ row.email }}</div>
           <div class="cell weight">
             <div
-              class="color"
+
               [ngClass]="{
                 green: row.phone < 4.5,
                 yellow: row.phone > 4.5 && row.phone < 6,
                 orange: row.phone > 6 && row.phone < 7.5,
-                red: row.phone > 7.5
+                red: row.phone > 7.5,'color':graphName=='lights','fontWeight400':graphName=='Vaccination'
               }"
             >
               {{ row.phone }}

@@ -26,7 +26,7 @@ export class AppComponent implements AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
     this.currentPosition = window.scrollY;
-   console.log(Math.floor(this.currentPosition))
+  //  console.log(Math.floor(this.currentPosition))
 
 
     let ranges: any=[]

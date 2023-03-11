@@ -73,25 +73,7 @@ export class GenericTableComponent implements OnInit{
   }
 
 
-  search(): void {
-    if (!this.tablesData) {
-      return;
-    }
-    if(this.searchQuery.length==0){
-      this.filteredTablesData=this.tablesData.address
-    }
-  else {
-      if(this.searchQuery.length>0){
-         this.filteredTablesData = this.tablesData.filter((item:any) => item.address.toLowerCase().includes(this.searchQuery.toLowerCase()));
 
-         this.filteredTablesData= this.filteredTablesData.map((item:any)=>{
-
-      return item.address.toLowerCase()
-      })
-      }
-
-    }
-  }
 
 
   constructor(private coronaSvc:CoronaService) {
@@ -223,8 +205,7 @@ showResults: boolean = false;
 onInput() {
   if (this.searchText.length > 0) {
     console.log( this.tablesData)
-    // Simulated search results
-    // this.searchResults = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew', 'Ivy', 'Jackfruit']
+   
     const newArray=  this.tablesData.filter((value:any) =>{
        if(value.address.includes(this.searchText))
        return value.address

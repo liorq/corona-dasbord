@@ -592,6 +592,7 @@ li{
 .color2{
   width: 20px;
   font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
   background: #b8de92;
 }
