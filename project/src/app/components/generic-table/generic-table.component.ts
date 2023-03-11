@@ -178,26 +178,6 @@ export class GenericTableComponent implements OnInit{
     });
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   searchText: string = '';
 searchResults: string[] = [];
 showResults: boolean = false;
@@ -205,7 +185,7 @@ showResults: boolean = false;
 onInput() {
   if (this.searchText.length > 0) {
     console.log( this.tablesData)
-   
+
     const newArray=  this.tablesData.filter((value:any) =>{
        if(value.address.includes(this.searchText))
        return value.address
