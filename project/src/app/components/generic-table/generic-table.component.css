@@ -38,7 +38,6 @@ box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
     flex-direction: row-reverse;
     justify-content:center ;
     align-items: center;
-    max-width: 550px;
   }
   .goldenrod{
     background: #fcc537;
@@ -741,8 +740,29 @@ margin-top: 28px;
 
 
 
-@media only screen and (min-width: 415px) {
+/* @media only screen and (min-width: 415px) {
   .table{
     width: 80vw;
   }
 }
+@media only screen and (max-width: 500px) {
+  .table{
+    width: 80vw;
+  }
+} */
+
+
+@media (min-width: 415px) and (max-width: 500px) {
+  .table{
+    width: 80vw;
+  }}
+
+  @media (min-width: 500px) and (max-width: 796px) {
+    .table{
+      width: 95vw;
+    }}
+/* @media only screen and (max-width: 769px) {
+  .table{
+    width: 95vw;
+  }
+} */
