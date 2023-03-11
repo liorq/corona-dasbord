@@ -12,7 +12,7 @@ export class AppComponent implements AfterViewInit {
   isNavBarOpen=false;
   isDarkModeActive = false;
   constructor(private router: Router, private elementRef: ElementRef, public coronaSvc: CoronaService) { }
-  currentPosition: number = window.pageYOffset; // Initialize to current scroll position
+  currentPosition?: number; // window.pageYOffset Initialize to current scroll position
   ngAfterViewInit() {
     this.coronaSvc.isDarkModeActive.subscribe((newStatus: boolean) => {
       this.isDarkModeActive = newStatus;
