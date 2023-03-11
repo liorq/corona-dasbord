@@ -14,6 +14,7 @@
 position: relative;
 -webkit-box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
 box-shadow: 5px 5px 48px -5px rgba(0,0,0,0.15);
+overflow: hidden;
   }
   .i-icon{
     background: url('../../../assets/images/i-icon1.png') no-repeat;
@@ -771,7 +772,11 @@ margin-top: 28px;
   overflow: scroll;
 
 }
-
+@media (max-width:550px)  {
+  .cell {
+    font-size: 11px !important;
+  }
+}
 
 
 
