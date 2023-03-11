@@ -66,7 +66,7 @@ export class AppComponent implements AfterViewInit {
 
   scrollToDiv(divName: string) {
     const div = document.getElementById(divName);
-    if (div) div?.scrollTo({ behavior: 'smooth' });
+    if (div) div?.scroll({ behavior: 'smooth' });
   }
 
 }
