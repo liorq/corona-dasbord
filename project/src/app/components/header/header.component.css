@@ -159,6 +159,30 @@
     top: 25px;
     right: 30px;
   }
+.container-sun-gray{
+width: 53px;
+height: 44px;
+}
+.container-sun-dark{
+  width: 53px;
+  height: 44px;
+}
+.letters{
+  left: 69px;
+}
+.sun{
+position: absolute;
+left: 14px;
+top: 3px;
+}
+.sun-dark{
+  position: absolute;
+  left: 10px;
+  top: 1px;
+}
+
+
+
 }
 
 @media only screen and (min-width: 690px) {
