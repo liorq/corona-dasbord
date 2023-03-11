@@ -15,6 +15,7 @@
   height: 121px;
   align-items: flex-end;
   position: relative;
+  background: #fff;
 }
 .sun {
   height: 37px;
@@ -148,6 +149,8 @@
   }
   .header-container {
     height: 125px;
+
+    
   }
   .hamburger-btn {
     position: absolute;

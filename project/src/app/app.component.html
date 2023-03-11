@@ -1,10 +1,13 @@
+<div class="sticky-container">
+
 <app-header class="blue-font"></app-header>
+<app-anchor-list></app-anchor-list>
+</div>
 <div
 
   class="scroll-container blue-font"
   [ngClass]="{ 'dark-mode': this.isDarkModeActive,'opicity':this.isNavBarOpen }"
 >
-  <app-anchor-list></app-anchor-list>
   <app-view-on id="viewOn"></app-view-on>
 
   <app-summary-of7-days
