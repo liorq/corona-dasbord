@@ -196,4 +196,53 @@ export class GenericTableComponent implements OnInit{
     });
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  searchText: string = '';
+searchResults: string[] = [];
+showResults: boolean = false;
+
+onInput() {
+  if (this.searchText.length > 0) {
+    console.log( this.tablesData)
+    // Simulated search results
+    // this.searchResults = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew', 'Ivy', 'Jackfruit']
+    const newArray=  this.tablesData.filter((value:any) =>{
+       if(value.address.includes(this.searchText))
+       return value.address
+       else
+       return false
+      }
+
+      );
+   if(newArray.length>0)
+    this.showResults = true;
+  } else {
+    this.showResults = false;
+  }
+}
+
+onResultClick(result: any) {
+
+   this.searchText = result.address;
+   this.showResults = false;
+}
 }

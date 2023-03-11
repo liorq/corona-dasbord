@@ -17,4 +17,5 @@ ngOnInit(){
     this.isDarkModeActive=newStatus;
   })
 }
+
 }

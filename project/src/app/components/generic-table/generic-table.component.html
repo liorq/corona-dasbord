@@ -99,8 +99,14 @@
           </button>
           <ul class="options-list" [hidden]="!dropdownVisible">
             <div class="search-input">
+              <input class="input" type="text" placeholder="חיפוש לפי ישוב" [(ngModel)]="searchText" (input)="onInput()"  >
+              <div class="search-results" *ngIf="showResults">
+                <ul>
+                  <li *ngFor="let item of this.tablesData" (click)="onResultClick(item)">{{item.address}}</li>
+                </ul>
+              </div>
 
-              <input
+              <!-- <input
                 [placeholder]="'חיפוש לפי ישוב'"
                 class="input"
                 type="text"
@@ -112,7 +118,7 @@
                 <div *ngFor="let item of this.filteredTablesData">
                   <div *ngIf="item">{{ item }}</div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <button (click)="confirmSelectTable('ok')">אישור</button>
             <button (click)="confirmSelectTable('no')">ביטול</button>
