@@ -114,7 +114,7 @@
     >
       <div *ngIf="isTable">
         <div class="select-box-container" (click)="toggleDropdown()">
-          <button class="selected-option">
+          <button class="selected-option " [ngClass]="{'selected-option-table':graphName=='Vaccination'}">
             {{ selectedOption2 }}
             <div
               [ngClass]="{ rotate: dropdownVisible }"

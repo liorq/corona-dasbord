@@ -235,6 +235,10 @@ export function  secondOption(emphasisStyle:any,timePeriod?:number,isDarkMode?:b
   };
 }
 export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
+  const firstFakeData=generateDataForPercents(timePeriod||25)
+  const secondFakeData=generateDataForPercents(timePeriod||25)
+  const thirdFakeData=generateDataForPercents(timePeriod||25)
+
 
 
   let colors:string[]=!isDarkMode?['#50cbfd', '#237d7d', '#b6ca51','#fff']:['#9be985', '#fe8672','#2cd2db','#384f5f'];
@@ -332,9 +336,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
         barWidth: 6.5, // change this value to adjust the bar width
 
         type: 'bar',
-        data: [
-          2.0, 4.9, 7.0, 2.2, 2.6, 2.7, 2.6, 2.2, 2.6, 2.0, 6.4, 3.3, 2.0, 4.9, 7.0, 2.2, 2.6, 2.7, 2.6, 2.2, 2.6, 20.0, 6.4, 3.3
-        ]
+        data: firstFakeData
       },
       {
         ///מחוסנים
@@ -343,8 +345,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
                   barWidth: 6.5, // change this value to adjust the bar width
 
         yAxisIndex: 1,
-        data: [
-          2.6, 5.9, 2.0, 2.4, 2.7, 4.7, 1.6, 2.2, 2.7, 18.8, 6.0, 2.3,  2.6, 5.9, 9.0, 2.4, 2.7, 2.7, 2.6, 2.2, 2.7, 2.8, 6.0, 2.3   ]
+        data: secondFakeData
       },
       {
         //מחוסנים ללא תוקף
@@ -353,7 +354,7 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
         barWidth: 6.5, // change this value to adjust the bar width
 
         yAxisIndex: 2,
-        data: [2.0, 2.2, 3.3, 4.5, 6.3, 2.2, 2.3, 23.4, 23.0, 16.5, 12.0, 6.2,2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+        data: thirdFakeData
       }
     ]
   };
@@ -361,6 +362,10 @@ export function  threeOption(timePeriod?:number,isDarkMode?:boolean){
 
 
 export function  fourOption(timePeriod?:number,isDarkMode?:boolean){
+
+  const positiveData = generateDataForFourOption(30, true);
+  const negativeData = generateDataForFourOption(30, false);
+
    let colors:string[]=!isDarkMode?['#b6ca51','#50cbfd']:['#FD8264','#50cbfd'];
 
   return {
@@ -413,18 +418,7 @@ export function  fourOption(timePeriod?:number,isDarkMode?:boolean){
         itemStyle: {
           color: colors[0]
         },
-        data: [
-          { value: -3 },
-          { value: -5 },
-          { value: -6 },
-          { value: -2 },
-          { value: -5 },
-          { value: -3 },
-          { value: -5 },
-          { value: -7 },
-          { value: -2 },
-          { value: -3 },
-        ]
+        data: negativeData
       },
       {
         barWidth: 6.5, // change this value to adjust the bar width
@@ -443,19 +437,39 @@ export function  fourOption(timePeriod?:number,isDarkMode?:boolean){
         itemStyle: {
           color: colors[1]
         },
-        data: [
-          { value: 2 },
-          { value: 3 },
-          { value: 4 },
-          { value: 5 },
-          { value: 8 },
-          { value: 2 },
-          { value: 3 },
-          { value: 4 },
-          { value: 5 },
-          { value: 2 },
-        ]
+        data: positiveData
       }
     ]
   };
+}
+function generateDataForFourOption(period: number, isPositive: boolean) {
+  const data = [];
+  const startDate = new Date();
+  const endDate = new Date();
+
+  startDate.setDate(startDate.getDate() - period);
+
+  while (startDate <= endDate) {
+    const value = Math.floor(Math.random() * 20) + 1;
+    data.push({ value: isPositive ? value : -value });
+    startDate.setDate(startDate.getDate() + 1);
+  }
+
+  return data;
+}
+
+
+function generateDataForPercents(period: number) {
+  const data = [];
+  const startDate = new Date();
+  const endDate = new Date();
+
+  startDate.setDate(startDate.getDate() - period);
+
+  while (startDate <= endDate) {
+    data.push(Math.floor(Math.random() * 20) + 1); // generate a random number between 1 and 20
+    startDate.setDate(startDate.getDate() + 1);
+  }
+
+  return data;
 }
