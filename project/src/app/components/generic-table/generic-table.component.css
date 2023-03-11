@@ -736,3 +736,13 @@ margin-top: 28px;
 
   background-size: cover;
 }
+/* //container */
+
+
+
+
+@media only screen and (min-width: 415px) {
+  .table{
+    width: 80vw;
+  }
+}
