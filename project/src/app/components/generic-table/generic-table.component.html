@@ -121,7 +121,7 @@
               class="center-half-rectangle"
             ></div>
           </button>
-          <ul [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}" [hidden]="!dropdownVisible">
+          <ul *ngIf="dropdownVisible" [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}"  >
             <div class="search-input">
               <input
                 class="input"

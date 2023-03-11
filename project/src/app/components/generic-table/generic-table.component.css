@@ -255,7 +255,8 @@ text-align: center;
 .text-options{
   width:200px;
   font-weight:400;
-
+ position: relative;
+ right:-29px;
 }
 .option-button {
   margin-right: 5px;
