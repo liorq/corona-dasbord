@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@
 import { Router } from '@angular/router';
 
 import { CoronaService } from './corona.service';
+import { rangesAbove790px, rangesDown790px } from './app.arrays';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,9 @@ import { CoronaService } from './corona.service';
 export class AppComponent implements AfterViewInit {
   isNavBarOpen=false;
   isDarkModeActive = false;
+  ranges:any[]=[];
   constructor(private router: Router, private elementRef: ElementRef, public coronaSvc: CoronaService) { }
-  currentPosition?: number; // window.pageYOffset Initialize to current scroll position
+  currentPosition?: number;
   ngAfterViewInit() {
     this.coronaSvc.isDarkModeActive.subscribe((newStatus: boolean) => {
       this.isDarkModeActive = newStatus;
@@ -24,21 +26,14 @@ export class AppComponent implements AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
     this.currentPosition = window.scrollY;
+   console.log(Math.floor(this.currentPosition))
 
-    const ranges: any = [
-      [0, 400, 'מבט על'],
-      [401, 1501, 'מדדים מרכזיים'],
-      [1502, 2322, 'מדדי תחלואה כללית'],
-      [2322, 4257, 'תחלואה ואשפוזי ילדים'],
-      [4258, 5788, 'תחלואה מחול'],
-      [5789, 6988, 'חולים קשה ומאושפזים'],
-      [6989, 7772, 'נפטרים'],
-      [7775, 9372, 'בדיקות'],
-      [9372, 10881, 'תחקורים נוספים'],
-      [10881, 12072, 'תחלואה חוזרת ומחלימים'],
-      [12072, 14033, 'התחסנות האוכלוסיה'],
-      [14033, 15233, 'רמזור בישובים']
-    ];
+
+    let ranges: any=[]
+     if(window.innerWidth<790)
+     ranges =rangesAbove790px;
+     else
+     ranges=rangesDown790px;
 
     for (const range of ranges) {
       if (range == null) continue;
@@ -71,7 +66,7 @@ export class AppComponent implements AfterViewInit {
 
   scrollToDiv(divName: string) {
     const div = document.getElementById(divName);
-    if (div) div?.scrollIntoView({ behavior: 'smooth' });
+    if (div) div?.scrollTo({ behavior: 'smooth' });
   }
 
 }
