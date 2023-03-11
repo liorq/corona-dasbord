@@ -661,10 +661,8 @@ background: #daeaee;
 .background-dark-mode{
  background:   #384f5f;;
 }
-.TableWidth{
-  max-width: 66vw;
-  width: 70vw;
-}
+
+
 
 .half-rectangle{
   background: url('../../../assets/images/half-rec-little.png');
@@ -734,8 +732,16 @@ margin-top: 28px;
       width: 95vw;
     }}
 
+    @media (min-width: 769px)  {
+      .TableWidth{
+        max-width: 66vw;
+        width: 70vw;
+      }
 
-
+    }
+.tbody{
+  overflow: scroll;
+}
 
 
 
