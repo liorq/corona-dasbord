@@ -1,4 +1,4 @@
-<div class="container" [ngClass]="{ 'white-color': isDarkModeActive,'TableWidth':isTable }">
+<div class="container" [ngClass]="{ 'white-color': isDarkModeActive,'TableWidth':isTable,'TableWidth100':graphName=='Vaccination'}">
   <div class="table" [ngClass]="{ 'background-dark-mode': isDarkModeActive }">
     <div class="little-container">
       <div
@@ -248,7 +248,7 @@
 
     </div>
 
-    <div *ngIf="isTable" class="tbody">
+    <div *ngIf="isTable" class="tbody" [ngClass]="{'TableWidth100':graphName=='Vaccination'}">
       <ng-container *ngFor="let row of tablesData">
         <div *ngIf="isTable" class="row">
           <div class="cell fontWeight400">{{ row.id }}</div>

@@ -737,7 +737,11 @@ margin-top: 28px;
         max-width: 66vw;
         width: 70vw;
       }
-
+      .TableWidth100{
+        max-width: 95vw;
+        width: 95vw;
+        margin-right :14px;
+      }
     }
 .tbody{
   overflow: scroll;
