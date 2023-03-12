@@ -26,11 +26,9 @@ export class AppComponent implements AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
     this.currentPosition = window.scrollY;
-  //  console.log(Math.floor(this.currentPosition))
-
-
+    console.log(this.currentPosition)
     let ranges: any=[]
-     if(window.innerWidth<790)
+     if(window.innerWidth>790)
      ranges =rangesAbove790px;
      else
      ranges=rangesDown790px;
