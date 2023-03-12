@@ -1,5 +1,4 @@
 
-///צריך לתת תקופה זמן ואז לעשות ספלייס וכל פעם שיש שינוי להשתמש בסאבגקט
 
 
 export function  firstOption(timePeriod?:number,isDarkMode?:boolean){

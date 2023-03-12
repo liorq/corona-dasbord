@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-import { clickCounterObj, colors, data, options } from 'src/app/app.arrays';
+import { clickCounterObj, colors, data, options } from 'src/app/utils/app.arrays';
 import { CoronaService } from 'src/app/corona.service';
 
 @Component({

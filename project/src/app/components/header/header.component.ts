@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CoronaService } from 'src/app/corona.service';
 
 @Component({
@@ -14,9 +14,7 @@ export class HeaderComponent  {
 constructor(public coronaSvc:CoronaService){}
 
 toggleMode(){
-
 this.isDarkModeActive=!this.isDarkModeActive
   this.coronaSvc.isDarkModeActive.next(this.isDarkModeActive)
-  console.log(this.isDarkModeActive)
 }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tableData1 } from 'src/app/app.arrays';
+import { tableData1 } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-lights-in-settlements',

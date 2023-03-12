@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { idAnchors } from 'src/app/app.data';
+import { idAnchors } from 'src/app/utils/app.data';
 import { CoronaService } from 'src/app/corona.service';
 
 @Component({

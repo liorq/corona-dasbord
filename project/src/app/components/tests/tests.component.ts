@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-import { emphasisStyle } from 'src/app/app.arrays';
+import { emphasisStyle } from 'src/app/utils/app.arrays';
 import { secondOption } from 'src/app/app.graphData';
 import { CoronaService } from 'src/app/corona.service';
 

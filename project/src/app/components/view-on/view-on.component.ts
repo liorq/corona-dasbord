@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { viewOnObj } from '../../app.data';
+import { viewOnObj } from '../../utils/app.data';
 
 @Component({
   selector: 'app-view-on',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoronaService } from 'src/app/corona.service';
-import { SummaryOf7DaysObj } from '../../app.data';
+import { SummaryOf7DaysObj } from '../../utils/app.data';
 
 @Component({
   selector: 'app-summary-of7-days',

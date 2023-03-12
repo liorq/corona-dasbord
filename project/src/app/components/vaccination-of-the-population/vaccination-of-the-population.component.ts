@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tableData2 } from 'src/app/app.arrays';
+import { tableData2 } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-vaccination-of-the-population',

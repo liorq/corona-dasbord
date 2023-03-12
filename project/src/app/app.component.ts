@@ -2,20 +2,25 @@ import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@
 import { Router } from '@angular/router';
 
 import { CoronaService } from './corona.service';
-import { rangesAbove790px, rangesDown790px } from './app.arrays';
+import { rangesAbove790px, rangesDown790px } from './utils/app.arrays';
+import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-general-morbidity/indices-of-general-morbidity.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit  {
+   @ViewChild('IndicesofgeneralmorbidityComponent') myComponent?:ElementRef;
+
   isNavBarOpen=false;
   isDarkModeActive = false;
   ranges:any[]=[];
   constructor(private router: Router, private elementRef: ElementRef, public coronaSvc: CoronaService) { }
   currentPosition?: number;
   ngAfterViewInit() {
+    console.log(document.querySelector('#IndicesofgeneralmorbidityComponent')?.getBoundingClientRect());
+
     this.coronaSvc.isDarkModeActive.subscribe((newStatus: boolean) => {
       this.isDarkModeActive = newStatus;
     })
@@ -25,8 +30,9 @@ export class AppComponent implements AfterViewInit {
   }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
+
     this.currentPosition = window.scrollY;
-    console.log(this.currentPosition)
+    console.log()
     let ranges: any=[]
      if(window.innerWidth>790)
      ranges =rangesAbove790px;

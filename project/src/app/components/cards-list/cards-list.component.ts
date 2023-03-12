@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { openWindowIconI } from 'src/app/app.data';
 import { CoronaService } from 'src/app/corona.service';
+import { openWindowIconI } from 'src/app/utils/app.data';
 
 @Component({
   selector: 'app-cards',
