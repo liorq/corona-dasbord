@@ -135,15 +135,15 @@
                 <ul>
                   <li
                     *ngFor="let item of this.tablesData"
-                    (click)="onResultClick(item)"
+                    (click)="onResultClick(item,$event)"
                   >
                     {{ item.address }}
                   </li>
                 </ul>
               </div>
             </div>
-            <button (click)="confirmSelectTable('ok')">אישור</button>
-            <button (click)="confirmSelectTable('no')">ביטול</button>
+            <button  class="btnSelect" (click)="confirmSelectTable('ok')">אישור</button>
+            <button  class="btnSelect" (click)="confirmSelectTable('no')">ביטול</button>
           </ul>
         </div>
       </div>

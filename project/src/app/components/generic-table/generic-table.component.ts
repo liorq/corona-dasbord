@@ -11,15 +11,6 @@ import { CoronaService } from 'src/app/corona.service';
 
 
 export class GenericTableComponent implements OnInit{
-  isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue()
-
-
-  items = [  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'salmon',isDarkMode:this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'blue',isDarkMode:this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'salmon' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'blue' ,isDarkMode:this.isDarkModeActive },
-  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'orange',isDarkMode:!this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'aqua',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'goldenrod' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'aqua' ,isDarkMode:!this.isDarkModeActive },];
-
-  colors = colors;
-  searchQuery: string = '';
-
   @Input()title?:string;
   @Input() chart: echarts.ECharts | null = null;
   @Input() resizeTimeoutId: any;
@@ -31,24 +22,27 @@ export class GenericTableComponent implements OnInit{
   @Input() tablesTitle?:{};
   @Input() tablesData?:any=[];
 
- isActiveShareAndDownload?:boolean=false;
+  isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue()
+  items = [  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'salmon',isDarkMode:this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'blue',isDarkMode:this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'salmon' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'blue' ,isDarkMode:this.isDarkModeActive },
+  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'orange',isDarkMode:!this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'aqua',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'goldenrod' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'aqua' ,isDarkMode:!this.isDarkModeActive },];
+  colors = colors;
+  searchQuery: string = '';
+  isActiveShareAndDownload?:boolean=false;
   filteredTablesData: any;
   selectedOption?: string='חודש אחרון';
   selectedOption2?: string='כלל הישובים';
-
   options=options
-
-
   data=data
-
   filteredData: any[];
   dropdownVisible: boolean = false;
   clickCounterObj=clickCounterObj;
-
   currentSort = { column: 'id', direction: 'asc' };
   sortDirection: string="";
   tableColumns: any;
 
+  constructor(private coronaSvc:CoronaService) {
+    this.filteredData = this.data;
+  }
   ngOnInit(){
     this.coronaSvc.isDarkModeActive.subscribe((newStatus:boolean)=>{
       this.isDarkModeActive=newStatus;
@@ -76,9 +70,6 @@ export class GenericTableComponent implements OnInit{
 
 
 
-  constructor(private coronaSvc:CoronaService) {
-    this.filteredData = this.data;
-  }
 
 
   toggleDropdown() {
@@ -203,8 +194,8 @@ onInput() {
   }
 }
 
-onResultClick(result: any) {
-
+onResultClick(result: any,event:Event) {
+   event.stopPropagation();
    this.searchText = result.address;
    this.showResults = false;
 }

@@ -661,7 +661,10 @@ background: #daeaee;
   /* max-width: 200px; */
 }
 .input{
-  width: 116px;
+  width: 95%;
+  height: 25px;
+  border: 1px solid rgba(128, 128, 128, 0.466);
+  text-align: right;
 }
 .little-container-text-and-color{
 
