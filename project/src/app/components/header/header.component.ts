@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoronaService } from 'src/app/corona.service';
 
 @Component({
@@ -7,11 +7,20 @@ import { CoronaService } from 'src/app/corona.service';
   styleUrls: ['./header.component.css']
 })
 
-export class HeaderComponent  {
-  isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue();
-  isNavBarOpen?:boolean=this.coronaSvc.isNavBarOpen.getValue();
+export class HeaderComponent  implements OnInit{
+  isDarkModeActive?:boolean;
+  isNavBarOpen?:boolean;
   isSwitchToEnglishBtnOpen?:boolean=false;
+
 constructor(public coronaSvc:CoronaService){}
+ngOnInit(): void {
+  this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
+    this.isDarkModeActive=newStatus;
+  })
+  this.coronaSvc.isNavBarOpen.subscribe((newStatus)=>{
+   this.isNavBarOpen=newStatus;
+  })
+}
 
 toggleMode(){
 this.isDarkModeActive=!this.isDarkModeActive

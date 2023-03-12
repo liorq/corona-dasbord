@@ -12,15 +12,12 @@ import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-gene
 })
 export class AppComponent implements AfterViewInit  {
 
-  isNavBarOpen=false;
-  isDarkModeActive = false;
+  isNavBarOpen?:boolean;
+  isDarkModeActive?:boolean;
   ranges:any[]=[];
-  constructor(private router: Router, public coronaSvc: CoronaService) { }
+  constructor(public coronaSvc: CoronaService) { }
   currentPosition?: number;
   ngAfterViewInit() {
-    // console.log(document.querySelector('.components')?.getBoundingClientRect());
-
-
 
     this.coronaSvc.isDarkModeActive.subscribe((newStatus: boolean) => {
       this.isDarkModeActive = newStatus;
@@ -33,22 +30,23 @@ export class AppComponent implements AfterViewInit  {
   onWindowScroll(event: any) {
     const components:any= document.querySelectorAll('.components');
     let index = 0;
+    let ranges: any=rangesAbove790px;
     for (let item of components) {
-      const rect = item.getBoundingClientRect();
-      const scrollY = window.scrollY || window.pageYOffset;
-      const start = scrollY + rect.top; // start position
-      const end = scrollY + rect.bottom; // end position
+      const rect = item?.getBoundingClientRect();
+      const scrollY = window?.scrollY || window?.pageYOffset;
+      const start = scrollY + rect?.top; // start position
+      const end = scrollY + rect?.bottom; // end position
 
-      console.log(index, item.id, start, end);
+      console.log(index, item?.id, start, end);
       index++;
-    }
-    this.currentPosition = window.scrollY;
+       ranges[index][0]=start;
+       ranges[index][1]=end;
 
-    let ranges: any=[]
-     if(window.innerWidth>790)
-     ranges =rangesAbove790px;
-     else
-     ranges=rangesDown790px;
+    }
+    console.log(ranges)
+    this.currentPosition = window?.scrollY;
+
+
 
     for (const range of ranges) {
       if (range == null) continue;
