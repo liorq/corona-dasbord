@@ -30,7 +30,7 @@
           ></div>
           {{ selectedOption }}
         </button>
-        <ul class="options-list" [hidden]="!dropdownVisible">
+        <ul class="options-list" [ngClass]="{'deep-blue-option':isDarkModeActive}" [hidden]="!dropdownVisible">
           <div class="time">זמן</div>
           <li *ngFor="let option of options">
             <label class="option-label">
@@ -44,9 +44,9 @@
               <div class="text-options">{{ option.label }}</div>
             </label>
           </li>
-          <button class="btnSelect" (click)="confirmSelect('no')">ביטול</button>
+          <button class="btnSelect" [ngClass]="{'deep-blue-btn':isDarkModeActive}" (click)="confirmSelect('no')">ביטול</button>
 
-          <button class="btnSelect" (click)="confirmSelect('ok')">אישור</button>
+          <button class="btnSelect" [ngClass]="{'deep-blue-btn':isDarkModeActive}" (click)="confirmSelect('ok')">אישור</button>
         </ul>
       </div>
     </div>
@@ -116,11 +116,11 @@
     >
       <div *ngIf="isTable">
         <div [class]="graphName=='lights'?'select-box-container-table1':'select-box-container'" (click)="toggleDropdown()">
-          <button class="selected-option " [ngClass]="{'selected-option-table':graphName=='Vaccination','flex-and-center':graphName=='lights'}">
+          <button class="selected-option " [ngClass]="{'selected-option-table':graphName=='Vaccination','flex-and-center':graphName=='lights','selected-option-darkMode':isDarkModeActive}">
             {{ selectedOption2 }}
             <div
-              [ngClass]="{ rotate: dropdownVisible }"
-              class="center-half-rectangle"
+            class="center-half-rectangle"
+              [ngClass]="{ rotate: dropdownVisible,'center-half-rectangle-dark':isDarkModeActive }"
             ></div>
           </button>
           <ul *ngIf="dropdownVisible" [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}"  >
@@ -307,10 +307,11 @@
           <div class="cell fontWeight400">{{ row.id }}</div>
           <div class="cell fontWeight400">{{ row.name }}</div>
           <div class="cell fontWeight400">{{ row.age }}
-         <div *ngIf="graphName !== 'lights'" class="squre-gold"></div>
+         <div *ngIf="graphName !== 'lights'" class="squre-gold" [ngClass]="{'solomon-rec':isDarkModeActive}"></div>
           </div>
+
           <div class="cell fontWeight400">{{ row.email }}
-            <div *ngIf="graphName !== 'lights'" class="squre-Cyan"></div>
+            <div *ngIf="graphName !== 'lights'" class="squre-Cyan" [ngClass]="{'cync-rec':isDarkModeActive}"></div>
           </div>
 
           <div class="cell weight">

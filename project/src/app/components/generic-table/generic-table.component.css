@@ -199,15 +199,15 @@ align-items: center;
 flex-direction: row-reverse;
 }
 .squre-Cyan{
-  width: 15px;
+  width: 18px;
  background: #50cbfd;
- height: 8px;
+ height: 9px;
 
 }
 .squre-gold{
-  width: 15px;
+  width: 18px;
   background: #b6ca51;
-  height: 8px;
+  height: 9px;
 
 }
 .options-list {
@@ -805,10 +805,16 @@ margin-top: 28px;
   background-size: cover;
 }
 
-.pic-graph-light-dark{
-  background: url('../../../assets/images/pic-graphi-i-light-dark.png');
 
+.center-half-rectangle-dark{
+  background: url('../../../assets/images/half-rec-little-dark.png');
+  height: 15px;
+  width: 15px;
   background-size: cover;
+  position: relative;
+
+
+
 }
 
 
@@ -864,7 +870,19 @@ margin-top: 28px;
   z-index: 20;
 cursor: pointer;
 }
+.solomon-rec{
+background: url('../../../assets/images/solomon-rec.png');
+width: 43px;
+height: 15px;
+background-size: cover;
+}
+.cync-rec{
+  background: url('../../../assets/images/cync-rec.png');
+  width: 46px;
+  height: 16px;
+  background-size: cover;
 
+}
 
 
 
@@ -948,4 +966,11 @@ background: #2a3b47;
   background: #354047;
 
 }
+.deep-blue-option{
+  background: #384f5f;
+}
 
+.deep-blue-btn{
+  background: #2a3b47;
+  color: #fff;
+}
