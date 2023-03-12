@@ -850,7 +850,7 @@ margin-top: 28px;
   width: 15px;
   border:1px solid #fff ;
   position: absolute;
-  left: 5px;
+  left: 6px;
   top: 6px;
   background-size: cover;
   z-index: 20;
@@ -885,7 +885,8 @@ cursor: pointer;
   max-height: 200px;
   overflow-y: auto;
   height: 50px;
-  width: 168px;
+  width: 185px;
+  text-align: right;
 }
 .input{
   position: relative;
