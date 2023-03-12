@@ -381,7 +381,7 @@ li{
 .fontWeight400{
   font-weight: 400;
   width: fit-content;
-
+  font-size: 12px;
 }
 .table{
   text-align: right;
@@ -844,7 +844,18 @@ margin-top: 28px;
     font-size: 11px !important;
   }
 }
-
+.x-input{
+  background: url('../../../assets/images/x-input.png');
+  height: 15px;
+  width: 15px;
+  border:1px solid #fff ;
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  background-size: cover;
+  z-index: 20;
+cursor: pointer;
+}
 
 
 

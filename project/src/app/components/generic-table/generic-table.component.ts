@@ -21,6 +21,7 @@ export class GenericTableComponent implements OnInit{
   @Input() periodOfTime?:number=25;
   @Input() tablesTitle?:{};
   @Input() tablesData?:any=[];
+  isHovering = false;
 
   isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue()
   items = [  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'salmon',isDarkMode:this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'blue',isDarkMode:this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'salmon' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'blue' ,isDarkMode:this.isDarkModeActive },
@@ -66,7 +67,9 @@ export class GenericTableComponent implements OnInit{
     })
   }
 
-
+  toggleHover() {
+    this.isHovering = !this.isHovering;
+  }
 
 
 

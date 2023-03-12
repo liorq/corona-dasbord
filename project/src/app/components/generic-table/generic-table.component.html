@@ -123,7 +123,8 @@
           </button>
           <ul *ngIf="dropdownVisible" [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}"  >
             <div class="search-input">
-              <input
+              <div class="x-input" *ngIf="isHovering" ></div>
+              <input (mouseenter)="toggleHover()" (mouseleave)="toggleHover()"
                 class="input"
                 type="text"
                 placeholder="חיפוש לפי ישוב"
