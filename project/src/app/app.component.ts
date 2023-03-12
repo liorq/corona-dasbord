@@ -19,7 +19,19 @@ export class AppComponent implements AfterViewInit  {
   constructor(private router: Router, private elementRef: ElementRef, public coronaSvc: CoronaService) { }
   currentPosition?: number;
   ngAfterViewInit() {
-    console.log(document.querySelector('#IndicesofgeneralmorbidityComponent')?.getBoundingClientRect());
+    // console.log(document.querySelector('.components')?.getBoundingClientRect());
+    const components:any= document.querySelectorAll('.components');
+    let index = 0;
+    for (let item of components) {
+      const rect = item.getBoundingClientRect();
+      const scrollY = window.scrollY || window.pageYOffset;
+      const start = scrollY + rect.top; // start position
+      const end = scrollY + rect.bottom; // end position
+
+      console.log(index, item.id, start, end);
+      index++;
+    }
+
 
     this.coronaSvc.isDarkModeActive.subscribe((newStatus: boolean) => {
       this.isDarkModeActive = newStatus;
@@ -52,20 +64,7 @@ export class AppComponent implements AfterViewInit  {
 
   @HostListener('window:wheel', ['$event'])
   onWindowWheel(event: any) {
-    const sections: any = document.querySelectorAll('section');
 
-    for (const section of sections) {
-      const rect = section.getBoundingClientRect();
-      const scrollY = window.scrollY || window.pageYOffset;
-      const diff = scrollY + window.innerHeight - rect.bottom;
-
-      // Check if the bottom of the section is within 200 pixels of the bottom of the screen
-      if (diff > -200 && diff <50) {
-        this.coronaSvc.componentNameActive.next(section.getAttribute('data-name'));
-        this.scrollToDiv(section.getAttribute('data-name'));
-        break;
-      }
-    }
   }
 
   scrollToDiv(divName: string) {

@@ -8,12 +8,18 @@ import { CoronaService } from '../../corona.service';
 })
 export class SideNavComponent implements AfterViewInit {
 
+  // myHashMap = new Map()
+
   showDropdown: boolean[] = [false, false, false];
   sidenav?: ElementRef;
   isNavBarOpen?:boolean=this.coronaSvc.isNavBarOpen.getValue();
   constructor(private renderer: Renderer2, private el: ElementRef,private coronaSvc:CoronaService) {}
-  
+
   ngAfterViewInit() {
+    // this.myHashMap.forEach(()=>{
+
+    // })
+
 
     this.sidenav = this.el.nativeElement.querySelector("#sidenav");
     this.renderer.listen(this.el.nativeElement.querySelector('#nav-toggle-btn'), 'click', () => {

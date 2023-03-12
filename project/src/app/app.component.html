@@ -1,4 +1,4 @@
-<div class="sticky-container">
+<div class="sticky-header">
 
 <app-header class="blue-font"></app-header>
 <app-anchor-list></app-anchor-list>
@@ -7,64 +7,63 @@
 <div
 
   class="container blue-font"
-  [ngClass]="{ 'dark-mode': this.isDarkModeActive,'opicity':this.isNavBarOpen }"
+  [ngClass]="{ 'dark-mode': this.isDarkModeActive,'opacity':this.isNavBarOpen }"
 >
-  <app-view-on id="overview"></app-view-on>
+  <app-view-on class="components" id="overview"></app-view-on>
 
   <app-summary-of7-days
+  class="components"
     id="Summaryoflast7daysComponent"
-    #Summaryoflast7daysComponent
   ></app-summary-of7-days>
 
   <app-major-indicators
+  class="components"
     id="MajorIndicatorsComponent"
-    #MajorIndicatorsComponent
   ></app-major-indicators>
 
   <app-indices-of-general-morbidity
     id="IndicesofgeneralmorbidityComponent"
-    #IndicesofgeneralmorbidityComponent
-  ></app-indices-of-general-morbidity>
+    class="components"
+      ></app-indices-of-general-morbidity>
 
   <app-morbidity-and-hospitalizations
     id="MorbidityandhospitalizationsComponent"
-    #MorbidityandhospitalizationsComponent
-  ></app-morbidity-and-hospitalizations>
+    class="components"
+      ></app-morbidity-and-hospitalizations>
 
   <app-morbidity-from-abroad
     id="MorbidityfromabroadComponent"
-    #MorbidityfromabroadComponent
-  ></app-morbidity-from-abroad>
+    class="components"
+      ></app-morbidity-from-abroad>
 
   <app-effect-of-vaccination-on-morbidity
     id="EffectofvaccinationonmorbidityComponent"
-    #EffectofvaccinationonmorbidityComponent
-  ></app-effect-of-vaccination-on-morbidity>
+    class="components"
+      ></app-effect-of-vaccination-on-morbidity>
 
-  <app-deads id="DeadsComponent" #DeadsComponent></app-deads>
+  <app-deads id="DeadsComponent" class="components"></app-deads>
 
-  <app-tests id="TestsComponent" #TestsComponent></app-tests>
+  <app-tests id="TestsComponent" class="components"></app-tests>
 
   <app-further-investigations
     id="FurtherinvestigationsComponent"
-    #FurtherinvestigationsComponent
+    class="components"
   ></app-further-investigations>
 
   <app-recurrent-morbidity-and-recovery
     id="RecurrentmorbidityandrecoveryComponent"
-    #RecurrentmorbidityandrecoveryComponent
+    class="components"
   ></app-recurrent-morbidity-and-recovery>
 
   <app-vaccination-of-the-population
     id="VaccinationofthepopulationComponent"
-    #VaccinationofthepopulationComponent
-  ></app-vaccination-of-the-population>
+    class="components"
+      ></app-vaccination-of-the-population>
 
   <app-lights-in-settlements
     id="LightsinsettlementsComponent"
-    #LightsinsettlementsComponent
-  ></app-lights-in-settlements>
+    class="components"
+      ></app-lights-in-settlements>
 
-  <!-- <div class="graph-container"></div> -->
 
 </div>
