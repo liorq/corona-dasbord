@@ -94,6 +94,8 @@ a {
 }
 #sidenav.show {
   transform: translateX(0);
+  animation: slide-in 0.5s forwards; /* Add the animation */
+  overflow: hidden;
 }
 #sidenav .dropdown {
   color: #b3b3b3;
@@ -151,6 +153,15 @@ a {
 
 a {
   color: #111;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%); /* Start off the screen on the right */
+  }
+  to {
+    transform: translateX(0); /* Move to the left edge of the screen */
+  }
 }
 @media only screen and (width: min-width) {
   .horizontal-nav {
