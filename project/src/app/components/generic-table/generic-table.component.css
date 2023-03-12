@@ -249,7 +249,22 @@ cursor: pointer;
   position: absolute;
   top: 45px;
 }
-
+.select-box-container-table2{
+  position: absolute;
+  top: 45px;
+  display: inline-block;
+  width: 120px;
+  right:91px;
+  font-size: 14px;
+}
+.select-box-container-table2{
+  position: absolute;
+  top: 45px;
+  display: inline-block;
+  width: 120px;
+  right:0px;
+  font-size: 14px;
+}
 .option-label {
   display: flex;
   align-items: center;
@@ -347,11 +362,7 @@ li{
     position: absolute;
     top: 53px;
 }
-.align-graph{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .fontWeight400{
   font-weight: 400;
@@ -556,8 +567,9 @@ li{
 }
 .align-graph{
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
+  margin-right: 10px;
 }
 
 .table {
@@ -862,11 +874,11 @@ ul{
 .search-results li:hover {
   background-color: #f4f4f4;
 }
-.selected-option-table{
+/* .selected-option-table{
   position: absolute;
   right: -230px;
 
-}
+} */
 
 
 
