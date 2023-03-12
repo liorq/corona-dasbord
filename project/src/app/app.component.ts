@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CoronaService } from './corona.service';
 import {  ranges } from './utils/app.arrays';
 import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-general-morbidity/indices-of-general-morbidity.component';
+import { idAnchors } from './utils/app.data';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-gene
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit  {
+  componentsId=['רמזור בישובים', 'התחסנות האוכלוסיה', 'תחלואה חוזרת ומחלימים', 'תחקורים נוספים', 'בדיקות', 'נפטרים', 'חולים קשה ומאושפזים', 'השפעת התחסנות על התחלואה', 'תחלואה מחול', 'תחלואה ואשפוזי ילדים', 'מדדי תחלואה כללית', 'מדדים מרכזיים', 'מבט על' ]
 
   isNavBarOpen?:boolean;
   isDarkModeActive?:boolean;
@@ -29,25 +31,21 @@ export class AppComponent implements AfterViewInit  {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
     const components:any= document.querySelectorAll('.components');
-    let index = 0;
-    let newArray=[];
-    let ArrayRanges: any=ranges;
-    for (let item of components) {
+    const newArray:any=[];
+    let index=0;
+    components.forEach((item: any) => {
       const rect = item?.getBoundingClientRect();
       const scrollY = window?.scrollY || window?.pageYOffset;
-      const start =Math.floor(scrollY + rect?.top); // start position
-      const end = Math.floor(scrollY + rect?.bottom); // end position
+      const start = Math.floor(scrollY + (rect?.top ?? 0)); // Use optional chaining and nullish coalescing
+      const end = Math.floor(scrollY + (rect?.bottom ?? 0)); // Use optional chaining and nullish coalescing
 
-      //  console.log(index, item?.id, start, end);
-       newArray[index]=`start in ${start} end in ${end} `
-       ArrayRanges[index][0]=start;
-       ArrayRanges[index][1]=end;
-        console.log(index);
-       index++;
+      newArray.push([start-265, end-265,this.componentsId[this.componentsId.length-1-index]]);
+      index++;
+    });
 
-    }
     console.log(newArray)
-    console.log(ArrayRanges)
+    console.log(window?.scrollY)
+
 
     this.currentPosition = window?.scrollY;
 

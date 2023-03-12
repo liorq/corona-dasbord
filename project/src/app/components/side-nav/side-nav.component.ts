@@ -1,4 +1,4 @@
-import { Component, Renderer2, ElementRef, AfterViewInit, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoronaService } from '../../corona.service';
 
 @Component({
@@ -17,7 +17,6 @@ export class SideNavComponent implements OnInit {
 ngOnInit(): void {
   this.coronaSvc.isNavBarOpen.subscribe((newStatus)=>{
   this.isNavBarOpen=newStatus;
-  this.coronaSvc.isNavBarOpen.next(newStatus);
   })
 }
 
