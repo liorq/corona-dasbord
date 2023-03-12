@@ -106,9 +106,10 @@ flex-direction: row-reverse;
 }
 
 .options-list-for-table1{
-    position: absolute;
-    top: 31px;
-    right: -231px;
+
+position: relative;
+right: 5px;
+bottom: 24px;
     min-width: 192px;
     width: 100%;
     padding: 0;
@@ -122,10 +123,7 @@ flex-direction: row-reverse;
 
 }
 .options-list-for-table2{
-  position: absolute;
-  top: 31px;
   min-width: 192px;
-  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -134,8 +132,10 @@ flex-direction: row-reverse;
   border-radius: 5px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
   z-index: 1;
-
+ position: absolute;
+ top: 31px;
 }
+
 
 
 
@@ -189,6 +189,12 @@ text-align: center;
   padding-right:12px;
   border-radius: 20px;
 
+}
+.flex-and-center{
+  display: flex;
+justify-content: space-between;
+align-items: center;
+flex-direction: row-reverse;
 }
 .squre-Cyan{
   width: 15px;
@@ -255,6 +261,13 @@ cursor: pointer;
   display: inline-block;
   width: 120px;
   right:91px;
+  font-size: 14px;
+}
+
+
+.select-box-container-table1{
+display: flex;
+
   font-size: 14px;
 }
 .select-box-container-table2{
@@ -570,6 +583,7 @@ li{
   justify-content: right;
   align-items: center;
   margin-right: 10px;
+  position: relative;
 }
 
 .table {
@@ -718,9 +732,9 @@ background: #daeaee;
   height: 15px;
   width: 15px;
   background-size: cover;
-  position: absolute;
-  top: 8px;
-  left: 9px;
+  position: relative;
+
+
 
 }
 
@@ -874,11 +888,13 @@ ul{
 .search-results li:hover {
   background-color: #f4f4f4;
 }
-/* .selected-option-table{
-  position: absolute;
-  right: -230px;
-
-} */
+.selected-option-table{
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+bottom: 25px;
+}
 
 
 
