@@ -214,7 +214,6 @@ onResultClick(result: any,event:Event) {
 
    this.showResults = false;
    this.filterCites()
-  this.resetSearchValue()
 
 }
 resetSearchValue(){
@@ -227,7 +226,6 @@ filterCites(){
   this.filteredData=this.tablesData.filter((c:any)=>c.address==this.searchText)
   if(this.graphName=='Vaccination')
   this.filteredData=this.tablesData.filter((c:any)=>c.id==this.searchText)
-  this.resetSearchValue()
 
 }
 }

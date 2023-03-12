@@ -125,10 +125,12 @@
           </button>
           <ul *ngIf="dropdownVisible" [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}"  >
             <div class="search-input">
-              <div  class="x-input" *ngIf="isHovering" (click)="this.searchText=''" (mouseenter)="toggleHover($event)" ></div>
-              <input (mouseenter)="toggleHover($event)" (mouseleave)="toggleHover($event)"
+              <div  class="x-input" [ngClass]="{'x-input-dark':isDarkModeActive}" *ngIf="this.searchText.length>0" (click)="this.searchText=''" ></div>
+              <input
                 class="input"
                 type="text"
+                [ngClass]="{'deep-blue-option': isDarkModeActive}"
+
                 placeholder="חיפוש לפי ישוב"
                 [(ngModel)]="searchText"
                 (input)="onInput()"
@@ -145,8 +147,9 @@
                 </ul>
               </div>
             </div>
-            <button  class="btnSelect" (click)="confirmSelectTable('ok')">אישור</button>
-            <button  class="btnSelect" (click)="confirmSelectTable('no')">ביטול</button>
+
+            <button  [ngClass]="{'deep-blue-btn': isDarkModeActive}" class="btnSelect" (click)="confirmSelectTable('ok')">אישור</button>
+            <button [ngClass]="{'deep-blue-btn': isDarkModeActive}" class="btnSelect" (click)="confirmSelectTable('no')">ביטול</button>
           </ul>
         </div>
       </div>

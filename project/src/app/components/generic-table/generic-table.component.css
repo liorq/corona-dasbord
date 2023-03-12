@@ -698,7 +698,7 @@ background: #daeaee;
   /* max-width: 200px; */
 }
 .input{
-  width: 95%;
+  width: 97%;
   height: 25px;
   border: 1px solid rgba(128, 128, 128, 0.466);
   text-align: right;
@@ -871,6 +871,21 @@ margin-top: 28px;
   z-index: 20;
 cursor: pointer;
 }
+
+
+.x-input-dark{
+  background: url('../../../assets/images/x-input-dark.png');
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  border: none;
+
+  background-size: cover;
+  z-index: 20;
+cursor: pointer;
+}
 .solomon-rec{
 background: url('../../../assets/images/solomon-rec.png');
 width: 43px;
@@ -884,21 +899,6 @@ background-size: cover;
   background-size: cover;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
