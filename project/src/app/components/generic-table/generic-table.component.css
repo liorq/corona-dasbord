@@ -109,7 +109,7 @@ flex-direction: row-reverse;
     position: absolute;
     top: 31px;
     right: -231px;
-    min-width: 200px;
+    min-width: 192px;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -124,7 +124,7 @@ flex-direction: row-reverse;
 .options-list-for-table2{
   position: absolute;
   top: 31px;
-  min-width: 200px;
+  min-width: 192px;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -221,6 +221,11 @@ text-align: center;
   border:none;
   width:50%;
   height:32px;
+  font-size: 14px;
+}
+.squre-gold:hover,.squre-Cyan:hover{
+opacity: 0.8;
+cursor: pointer;
 }
 .option-button {
   display: block;

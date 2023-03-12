@@ -197,6 +197,13 @@ onInput() {
 onResultClick(result: any,event:Event) {
    event.stopPropagation();
    this.searchText = result.address;
+   ///added
+   this.selectedOption2=result.address;
    this.showResults = false;
+   this.filterCites()
+}
+filterCites(){
+  this.tablesData=this.tablesData.filter((c:any)=>c.address==this.searchText)
+
 }
 }
