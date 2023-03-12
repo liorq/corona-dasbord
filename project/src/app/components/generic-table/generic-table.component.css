@@ -104,7 +104,9 @@ flex-direction: row-reverse;
   border-radius: 50%;
   background-color: #fff;
 }
-
+.time{
+  text-align: center;
+}
 .options-list-for-table1{
 
 position: relative;
@@ -748,7 +750,7 @@ background: #daeaee;
   font-weight: 400;
 }
 .background-dark-mode{
- background:   #384f5f;;
+ background:   #384f5f;
 }
 
 
@@ -916,3 +918,18 @@ bottom: 37px;
 
 
 
+.selected-option-darkMode{
+  background:   #4e6275;
+  color: #fff;
+  border: 1px solid gray;
+}
+.half-rectangle-dark{
+  background: url('../../../assets/images/half-rec-little-dark.png');
+  height: 15px;
+  width: 15px;
+  background-size: cover;
+  position: absolute;
+  top: 8px;
+  left: -71px;
+
+}

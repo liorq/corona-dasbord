@@ -22,14 +22,16 @@
         class="select-box-container"
         (click)="toggleDropdown()"
       >
-        <button class="selected-option">
+        <button class="selected-option" [ngClass]="{'selected-option-darkMode':isDarkModeActive}">
           <div
-            [ngClass]="{ rotate: dropdownVisible }"
+            [ngClass]="{ rotate: dropdownVisible,'half-rectangle-dark':isDarkModeActive}"
             class="half-rectangle"
+
           ></div>
           {{ selectedOption }}
         </button>
         <ul class="options-list" [hidden]="!dropdownVisible">
+          <div class="time">זמן</div>
           <li *ngFor="let option of options">
             <label class="option-label">
               <input
@@ -123,8 +125,8 @@
           </button>
           <ul *ngIf="dropdownVisible" [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}"  >
             <div class="search-input">
-              <div  class="x-input" *ngIf="isHovering" (mouseenter)="toggleHover()" ></div>
-              <input (mouseenter)="toggleHover()" (mouseleave)="toggleHover()"
+              <div  class="x-input" *ngIf="isHovering" (click)="this.searchText=''" (mouseenter)="toggleHover($event)" ></div>
+              <input (mouseenter)="toggleHover($event)" (mouseleave)="toggleHover($event)"
                 class="input"
                 type="text"
                 placeholder="חיפוש לפי ישוב"

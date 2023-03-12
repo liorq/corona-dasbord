@@ -1,5 +1,5 @@
 .title {
-  max-width: 200px;
+
   font-size: 19px;
   font-weight: 700;
   position: relative;
@@ -29,7 +29,7 @@
     justify-content: flex-start;
     text-align: justify;
     gap:14px
-    
+
   }
 }
 

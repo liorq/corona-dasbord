@@ -67,7 +67,8 @@ export class GenericTableComponent implements OnInit{
     })
   }
 
-  toggleHover() {
+  toggleHover(event:Event) {
+    event.stopPropagation();
     this.isHovering = !this.isHovering;
   }
 
