@@ -137,7 +137,7 @@
               <div class="search-results" *ngIf="showResults">
                 <ul>
                   <li
-                    *ngFor="let item of this.tablesData"
+                    *ngFor="let item of this.filteredData"
                     (click)="onResultClick(item,$event)"
                   >
                     {{ graphName=='lights'?item.address:item.id }}

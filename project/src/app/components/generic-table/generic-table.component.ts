@@ -45,6 +45,8 @@ export class GenericTableComponent implements OnInit{
     this.filteredData = this.data;
   }
   ngOnInit(){
+    this.filteredData =[...this.tablesData];
+
     this.coronaSvc.isDarkModeActive.subscribe((newStatus:boolean)=>{
       this.isDarkModeActive=newStatus;
         this.items.forEach(item => {
@@ -175,18 +177,21 @@ export class GenericTableComponent implements OnInit{
     });
   }
 
-  searchText: string = '';
+ searchText: string = '';
 searchResults: string[] = [];
 showResults: boolean = false;
 
 onInput() {
+
   let newArray;
   if (this.searchText.length > 0) {
     if(this.graphName=='lights')
      newArray=  this.tablesData.filter((value:any) =>value?.address?.includes(this.searchText))
-   else
+   else{
    newArray=  this.tablesData.filter((value:any) =>value?.id?.includes(this.searchText))
-   console.log( newArray)
+   }
+
+
 
    if(newArray.length>0)
     this.showResults = true;
@@ -209,12 +214,20 @@ onResultClick(result: any,event:Event) {
 
    this.showResults = false;
    this.filterCites()
+  this.resetSearchValue()
+
 }
+resetSearchValue(){
+if(this.searchText=='')
+this.filteredData =[...this.tablesData];
+}
+
 filterCites(){
   if(this.graphName=='lights')
-  this.tablesData=this.tablesData.filter((c:any)=>c.address==this.searchText)
+  this.filteredData=this.tablesData.filter((c:any)=>c.address==this.searchText)
   if(this.graphName=='Vaccination')
-  this.tablesData=this.tablesData.filter((c:any)=>c.id==this.searchText)
+  this.filteredData=this.tablesData.filter((c:any)=>c.id==this.searchText)
+  this.resetSearchValue()
 
 }
 }
