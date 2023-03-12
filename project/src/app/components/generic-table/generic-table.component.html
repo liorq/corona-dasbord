@@ -129,6 +129,7 @@
                 placeholder="חיפוש לפי ישוב"
                 [(ngModel)]="searchText"
                 (input)="onInput()"
+                (click)="onInputClick($event)"
               />
               <div class="search-results" *ngIf="showResults">
                 <ul>
@@ -213,6 +214,7 @@
         class="align-div cell title lavender-background"
         (click)="resortTableData('email')"
       >
+
         <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
           % מתחסנים מנה שנייה
         </div>

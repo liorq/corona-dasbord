@@ -84,7 +84,9 @@ export class GenericTableComponent implements OnInit{
   toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
   }
-
+  onInputClick(event: MouseEvent) {
+    event.stopPropagation();
+  }
   selectOption(option: string) {
 
     this.selectedOption = option;
