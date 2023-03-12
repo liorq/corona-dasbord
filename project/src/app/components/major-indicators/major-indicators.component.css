@@ -29,8 +29,9 @@ position: relative;
   .graph-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: right;
-    position: relative;
+    display: flex;
+    text-align: justify;
+    gap:14px
 
   }
   }
@@ -39,4 +40,3 @@ position: relative;
 
 
 
-  

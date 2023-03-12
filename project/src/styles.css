@@ -28,5 +28,6 @@ body{
 
 html, body{
   height: fit-content;
+  width: 98vw;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

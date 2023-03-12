@@ -19,10 +19,14 @@
   app-generic-table {
     width: 30vw;
   }
-  .graph-container {
+  .graph-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: right;
+    display: flex;
+    justify-content: flex-start;
+    text-align: justify;
+    gap:14px
+
   }
 }
 
