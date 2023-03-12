@@ -39,7 +39,7 @@ export class AppComponent implements AfterViewInit  {
       const start = Math.floor(scrollY + (rect?.top ?? 0)); // Use optional chaining and nullish coalescing
       const end = Math.floor(scrollY + (rect?.bottom ?? 0)); // Use optional chaining and nullish coalescing
 
-      newArray.push([start-265, end-265,this.componentsId[this.componentsId.length-1-index]]);
+      newArray.push([start+265, end,this.componentsId[this.componentsId.length-1-index]]);
       index++;
     });
 
