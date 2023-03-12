@@ -18,7 +18,7 @@ ngOnInit(): void {
     this.isDarkModeActive=newStatus;
   this.option=fourOption(this.timePeriod,newStatus)
   })
-  this.coronaSvc.timePeriods.subscribe((newTimePeriods)=>{
+  this.coronaSvc.timePeriodsInDays.subscribe((newTimePeriods)=>{
     this.timePeriod=newTimePeriods[3];
     this.option= fourOption(this.timePeriod,this.isDarkModeActive);
   })

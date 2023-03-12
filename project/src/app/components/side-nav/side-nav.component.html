@@ -1,6 +1,7 @@
 <div class="container-4">
+  <!-- open horizontal-nav component -->
   <nav class="horizontal-nav">
-    <a  id="nav-toggle-btn">
+    <a (click)="toggleNav()" id="nav-toggle-btn">
       <svg width="30" height="30">
         <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
         <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
@@ -8,8 +9,9 @@
       </svg>
     </a>
   </nav>
+  <!-- open sidenav component -->
 
-  <div id="sidenav">
+  <div *ngIf="this.isNavBarOpen" [ngClass]="{'show':this.isNavBarOpen}" #sidenav id="sidenav">
     <ul class="side-nav-items">
       <li id="firstDiv" class="side-item dropdown" (click)="openOptions(0)">
         <a >עולמות תוכן</a>
@@ -40,6 +42,9 @@
           <li class="dropdown-item"><a >Data_Gov</a></li>
         </ul>
       </li>
+
+
+<!-- <customComp (click)="openOptions(index)"> -->
 
       <li id="thirdDiv" class="side-item dropdown borderNone" (click)="openOptions(2)">
         <a >על הדשבורד</a>

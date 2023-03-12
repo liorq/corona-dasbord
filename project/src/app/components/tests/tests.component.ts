@@ -59,7 +59,7 @@ ngAfterViewInit(): void {
 
       })
 
-      this.coronaSvc.timePeriods.subscribe((newTimePeriods)=>{
+      this.coronaSvc.timePeriodsInDays.subscribe((newTimePeriods)=>{
         this.timePeriod=newTimePeriods[1];
         this.option= secondOption(this.emphasisStyle,this.timePeriod,this.isDarkModeActive);
       })

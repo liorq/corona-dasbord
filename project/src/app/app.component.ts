@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@
 import { Router } from '@angular/router';
 
 import { CoronaService } from './corona.service';
-import { rangesAbove790px, rangesDown790px } from './utils/app.arrays';
+import {  ranges } from './utils/app.arrays';
 import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-general-morbidity/indices-of-general-morbidity.component';
 
 @Component({
@@ -30,20 +30,25 @@ export class AppComponent implements AfterViewInit  {
   onWindowScroll(event: any) {
     const components:any= document.querySelectorAll('.components');
     let index = 0;
-    let ranges: any=rangesAbove790px;
+    let newArray=[];
+    let ArrayRanges: any=ranges;
     for (let item of components) {
       const rect = item?.getBoundingClientRect();
       const scrollY = window?.scrollY || window?.pageYOffset;
-      const start = scrollY + rect?.top; // start position
-      const end = scrollY + rect?.bottom; // end position
+      const start =Math.floor(scrollY + rect?.top); // start position
+      const end = Math.floor(scrollY + rect?.bottom); // end position
 
-      console.log(index, item?.id, start, end);
-      index++;
-       ranges[index][0]=start;
-       ranges[index][1]=end;
+      //  console.log(index, item?.id, start, end);
+       newArray[index]=`start in ${start} end in ${end} `
+       ArrayRanges[index][0]=start;
+       ArrayRanges[index][1]=end;
+        console.log(index);
+       index++;
 
     }
-    console.log(ranges)
+    console.log(newArray)
+    console.log(ArrayRanges)
+
     this.currentPosition = window?.scrollY;
 
 

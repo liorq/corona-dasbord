@@ -104,7 +104,7 @@ export class GenericTableComponent implements OnInit{
           case '3 חודשים':this.periodOfTime=70;break;
             case 'חודש אחרון':this.periodOfTime=25;break;
     }
-    let timePeriods:any=this.coronaSvc.timePeriods.getValue();
+    let timePeriods:any=this.coronaSvc.timePeriodsInDays.getValue();
     let location=5;
     console.log(this.graphName)
     switch(this.graphName+''){
@@ -115,8 +115,8 @@ export class GenericTableComponent implements OnInit{
     }
 
     timePeriods[location]=this.periodOfTime;
-    this.coronaSvc.timePeriods.next(timePeriods)
-    console.log(timePeriods)
+    this.coronaSvc.timePeriodsInDays.next(timePeriods)
+  
     setTimeout(()=>{
     this.ngAfterViewInit(timePeriods[location])
     },500)

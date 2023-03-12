@@ -1,45 +1,35 @@
-import { Component, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Renderer2, ElementRef, AfterViewInit, OnInit } from '@angular/core';
 import { CoronaService } from '../../corona.service';
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.css']
+  styleUrls: ['./side-nav.component.css'],
 })
-export class SideNavComponent implements AfterViewInit {
-
-  // myHashMap = new Map()
+export class SideNavComponent implements OnInit {
 
   showDropdown: boolean[] = [false, false, false];
-  sidenav?: ElementRef;
-  isNavBarOpen?:boolean=this.coronaSvc.isNavBarOpen.getValue();
-  constructor(private renderer: Renderer2, private el: ElementRef,private coronaSvc:CoronaService) {}
+  isNavBarOpen?: boolean;
+  constructor(
+    private coronaSvc: CoronaService
+  ) {}
 
-  ngAfterViewInit() {
+ngOnInit(): void {
+  this.coronaSvc.isNavBarOpen.subscribe((newStatus)=>{
+  this.isNavBarOpen=newStatus;
+  this.coronaSvc.isNavBarOpen.next(newStatus);
+  })
+}
 
+toggleNav(){
+   const sidenav =document.getElementById('sidenav')
+        if (!this.isNavBarOpen)
+          this.coronaSvc.isNavBarOpen.next(true);
+          else
+          this.coronaSvc.isNavBarOpen.next(false);
 
-
-    this.sidenav = this.el.nativeElement.querySelector("#sidenav");
-    this.renderer.listen(this.el.nativeElement.querySelector('#nav-toggle-btn'), 'click', () => {
-    if(!this.isNavBarOpen){
-      this.coronaSvc.isNavBarOpen.next(true);
-      this.isNavBarOpen=true;
-      this.renderer.addClass(this.sidenav, 'show');
-    }
-    else{
-      this.coronaSvc.isNavBarOpen.next(false);
-      this.isNavBarOpen=false;
-      this.renderer.removeClass(this.sidenav, 'show');
-    }
-    });
-
-
-  }
-
-   toggleNav(para:string) {
-    var navbar = document.getElementById(para);
-    navbar?.classList.toggle("show");
-  }
+        sidenav?.classList.toggle('show')
+      }
 
   openOptions(index: number) {
     this.showDropdown[index] = !this.showDropdown[index];

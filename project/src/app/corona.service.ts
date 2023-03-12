@@ -8,6 +8,6 @@ export class CoronaService {
 componentNameActive=new BehaviorSubject<string>('')
 isDarkModeActive=new BehaviorSubject<boolean>(false);
 isNavBarOpen=new BehaviorSubject<boolean>(false);
-timePeriods=new BehaviorSubject<number[]>([25,25,25,25])
+timePeriodsInDays=new BehaviorSubject<number[]>([25,25,25,25])
 ///timePeriodsInDays-obj
 }

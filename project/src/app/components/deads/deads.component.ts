@@ -21,7 +21,7 @@ export class DeadsComponent implements OnInit{
     this.isDarkModeActive=newStatus;
     this.option= firstOption(this.timePeriod,this.isDarkModeActive);
   })
-  this.coronaSvc.timePeriods.subscribe((newTimePeriods)=>{
+  this.coronaSvc.timePeriodsInDays.subscribe((newTimePeriods)=>{
     this.timePeriod=newTimePeriods[0];
     this.option= firstOption(this.timePeriod,this.isDarkModeActive);
   })
