@@ -105,7 +105,8 @@ flex-direction: row-reverse;
   background-color: #fff;
 }
 .time{
-  text-align: center;
+  text-align: right;
+  margin-right: 42px;
 }
 .options-list-for-table1{
 

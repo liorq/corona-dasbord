@@ -140,7 +140,7 @@
                     *ngFor="let item of this.tablesData"
                     (click)="onResultClick(item,$event)"
                   >
-                    {{ item.address }}
+                    {{ graphName=='lights'?item.address:item.id }}
                   </li>
                 </ul>
               </div>

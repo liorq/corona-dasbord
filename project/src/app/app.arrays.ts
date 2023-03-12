@@ -27,18 +27,18 @@ export const clickCounterObj:any={
   'phone':0,
   'address':0,
 }
-export const tableData1 = [
-  { id: 34, name: '10%', age: '24%', email: 7.2, phone: 7.6, address: 'אילת' },
-  { id: 63, name: '30%', age: '24%', email: 4.2, phone: 2.2, address: 'מודיעין' },
-  { id: 257, name: '0%', age: '30%', email: 2.2, phone: 5.2, address: 'ירושלים' },
-  { id: 29, name: '20%', age: '24%', email: 4.2, phone: 4.2, address: 'תל אביב' },
-];
 export const emphasisStyle = {
   itemStyle: {
     shadowBlur: 0.5,
     shadowColor: 'rgba(0,0,0,0.3)'
   }
 };
+export const tableData1 = [
+  { id: 34, name: '10%', age: '24%', email: 7.2, phone: 7.6, address: 'אילת' },
+  { id: 63, name: '30%', age: '24%', email: 4.2, phone: 2.2, address: 'מודיעין' },
+  { id: 257, name: '0%', age: '30%', email: 2.2, phone: 5.2, address: 'ירושלים' },
+  { id: 29, name: '20%', age: '24%', email: 4.2, phone: 4.2, address: 'תל אביב' },
+];
 export const tableData2 = [
   {
     address: 2,

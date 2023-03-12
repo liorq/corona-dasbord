@@ -180,12 +180,13 @@ searchResults: string[] = [];
 showResults: boolean = false;
 
 onInput() {
+  let newArray;
   if (this.searchText.length > 0) {
-    console.log( this.tablesData)
-
-    let newArray=  this.tablesData.filter((value:any) =>value?.address?.includes(this.searchText))
-
-   newArray=  this.tablesData.filter((value:any) =>value?.address?.includes(this.searchText))
+    if(this.graphName=='lights')
+     newArray=  this.tablesData.filter((value:any) =>value?.address?.includes(this.searchText))
+   else
+   newArray=  this.tablesData.filter((value:any) =>value?.id?.includes(this.searchText))
+   console.log( newArray)
 
    if(newArray.length>0)
     this.showResults = true;
@@ -195,14 +196,12 @@ onInput() {
 }
 
 onResultClick(result: any,event:Event) {
-  console.log( result )
-
-  console.log( this.graphName )
 
    event.stopPropagation();
+   if(this.graphName=='lights')
    this.searchText = result?.address;
-   ///added
    this.selectedOption2=result?.address;
+
    if(this.graphName=='Vaccination'){
    this.searchText = result.id;
    this.selectedOption2=result.id;
