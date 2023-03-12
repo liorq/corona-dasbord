@@ -11,26 +11,15 @@ import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-gene
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit  {
-   @ViewChild('IndicesofgeneralmorbidityComponent') myComponent?:ElementRef;
 
   isNavBarOpen=false;
   isDarkModeActive = false;
   ranges:any[]=[];
-  constructor(private router: Router, private elementRef: ElementRef, public coronaSvc: CoronaService) { }
+  constructor(private router: Router, public coronaSvc: CoronaService) { }
   currentPosition?: number;
   ngAfterViewInit() {
     // console.log(document.querySelector('.components')?.getBoundingClientRect());
-    const components:any= document.querySelectorAll('.components');
-    let index = 0;
-    for (let item of components) {
-      const rect = item.getBoundingClientRect();
-      const scrollY = window.scrollY || window.pageYOffset;
-      const start = scrollY + rect.top; // start position
-      const end = scrollY + rect.bottom; // end position
 
-      console.log(index, item.id, start, end);
-      index++;
-    }
 
 
     this.coronaSvc.isDarkModeActive.subscribe((newStatus: boolean) => {
@@ -42,9 +31,19 @@ export class AppComponent implements AfterViewInit  {
   }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any) {
+    const components:any= document.querySelectorAll('.components');
+    let index = 0;
+    for (let item of components) {
+      const rect = item.getBoundingClientRect();
+      const scrollY = window.scrollY || window.pageYOffset;
+      const start = scrollY + rect.top; // start position
+      const end = scrollY + rect.bottom; // end position
 
+      console.log(index, item.id, start, end);
+      index++;
+    }
     this.currentPosition = window.scrollY;
-    console.log()
+
     let ranges: any=[]
      if(window.innerWidth>790)
      ranges =rangesAbove790px;
@@ -60,11 +59,6 @@ export class AppComponent implements AfterViewInit  {
         break;
       }
     }
-  }
-
-  @HostListener('window:wheel', ['$event'])
-  onWindowWheel(event: any) {
-
   }
 
   scrollToDiv(divName: string) {

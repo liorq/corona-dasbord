@@ -16,9 +16,7 @@ export class SideNavComponent implements AfterViewInit {
   constructor(private renderer: Renderer2, private el: ElementRef,private coronaSvc:CoronaService) {}
 
   ngAfterViewInit() {
-    // this.myHashMap.forEach(()=>{
 
-    // })
 
 
     this.sidenav = this.el.nativeElement.querySelector("#sidenav");
