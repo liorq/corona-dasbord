@@ -150,7 +150,7 @@
   .header-container {
     height: 125px;
 
-    
+
   }
   .hamburger-btn {
     position: absolute;
@@ -236,6 +236,23 @@ top: 3px;
 
 
 }
+
+
+@media only screen and (max-width: 490px) {
+
+.hamburger-btn {
+  position: relative;
+  top: 8px;
+  right: -4px;
+}
+.hamburger-btn-close {
+  position: relative;
+  top: 8px;
+  right: -4px;
+}
+
+  }
+
 .SwitchToEnglishBtn{
   background:url('../../../assets/images/hebrew-to-english.png');
   height: 70px;

@@ -821,7 +821,10 @@ margin-top: 28px;
   @media (min-width: 500px) and (max-width: 796px) {
     .table{
       width: 95vw;
-    }}
+    }
+
+
+  }
 
     @media (min-width: 769px)  {
       .TableWidth{
@@ -834,6 +837,9 @@ margin-top: 28px;
         margin-right :14px;
 
 
+      }
+      .color{
+        width: 28px;
       }
     }
 

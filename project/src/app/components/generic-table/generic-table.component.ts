@@ -207,7 +207,10 @@ onResultClick(result: any,event:Event) {
    this.filterCites()
 }
 filterCites(){
+  if(this.graphName=='lights')
   this.tablesData=this.tablesData.filter((c:any)=>c.address==this.searchText)
+  else
+  this.tablesData=this.tablesData.filter((c:any)=>c.id==this.searchText)
 
 }
 }

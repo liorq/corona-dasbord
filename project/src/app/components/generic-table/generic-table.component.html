@@ -80,7 +80,7 @@
         [ngClass]="{ 'align-circle': this.graphName == 'main1' }"
       >
         <ng-container *ngFor="let item of items">
-          <li class="li" *ngIf="item.graphName == graphName && item.isDarkMode">
+          <li class="li bent" *ngIf="item.graphName == graphName && item.isDarkMode">
             <div>{{ item.title }}</div>
             <div class="circle {{ item.color }}"></div>
           </li>
@@ -179,7 +179,7 @@
       <div
         class="align-div cell title"
         (click)="resortTableData('address')"
-        [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
+        [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination','deep-blue':isDarkModeActive }"
       >
         <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
           ישוב
@@ -197,6 +197,7 @@
 
       <div
         class="align-div cell title lavender-background"
+        [ngClass]="{'deep-blue':isDarkModeActive}"
         (click)="resortTableData('phone')"
       >
         <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
@@ -215,6 +216,7 @@
 
       <div
         class="align-div cell title lavender-background"
+        [ngClass]="{'deep-blue':isDarkModeActive}"
         (click)="resortTableData('email')"
       >
 
@@ -235,12 +237,15 @@
 
       <div
         class="align-div cell title lavender-background"
+        [ngClass]="{'deep-blue':isDarkModeActive}"
         (click)="resortTableData('age')"
       >
         <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
           % מתחסנים מנה שלישית
         </div>
-        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
+        <div         [ngClass]="{'deep-blue':isDarkModeActive}"
+        class="fontWeight400" *ngIf="this.graphName === 'lights'">
+
           חולים חדשים לכל 10,000 נפש
         </div>
 
@@ -255,12 +260,12 @@
       <div
         class="align-div cell title"
         (click)="resortTableData('name')"
-        [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
+        [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination','deep-blue':isDarkModeActive }"
       >
-        <div class="fontWeight400" *ngIf="this.graphName !== 'lights'">
+        <div  class="fontWeight400" *ngIf="this.graphName !== 'lights'">
           חולים פעילים לכל 10,000 נפש
         </div>
-        <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
+        <div class=" fontWeight400" [ngClass]="{'deep-blue':isDarkModeActive}" *ngIf="this.graphName === 'lights'">
           ציון וצבע יומי
         </div>
         <div
@@ -273,7 +278,7 @@
 
       <div
         class="align-div cell title"
-        [ngClass]="{ 'lavender-background': this.graphName == 'Vaccination' }"
+        [ngClass]="{'deep-blue':isDarkModeActive, 'lavender-background': this.graphName == 'Vaccination' }"
         (click)="resortTableData('id')"
       >
         <div class="fontWeight400" *ngIf="this.graphName === 'lights'">
