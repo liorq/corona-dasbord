@@ -200,6 +200,7 @@ flex-direction: row-reverse;
   width: 15px;
  background: #50cbfd;
  height: 8px;
+
 }
 .squre-gold{
   width: 15px;
@@ -675,6 +676,8 @@ li{
   max-width: 22px;
   width: 2vw;
   height: 22px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 .title2{
   width: fit-content;
@@ -709,7 +712,7 @@ background: #daeaee;
   display: flex;
   margin-bottom: 10px;
   margin-left: 161px;
-  margin-top:59px;
+  margin-top:40px;
   padding-right: 28px;
   justify-content: right;
   flex-direction:row-reverse;
@@ -893,7 +896,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 position: relative;
-bottom: 25px;
+bottom: 37px;
 }
 
 
