@@ -3,12 +3,13 @@
     <a (click)="toggleNav()" id="nav-toggle-btn">
     </a>
   </nav>
-<!-- navbar -->
+
   <div *ngIf="this.isNavBarOpen" [ngClass]="{'show':this.isNavBarOpen}" #sidenav id="sidenav">
    <ul class="side-nav-items">
-<app-side-item  [dropDownOptions]="[' ','עולמות תוכן נוספים בקרוב','קורונה']" [showDropdownPosition]="0" [ContainerTitle]="'עולמות התוכן'" [ContainerId]="'firstDiv'"></app-side-item>
-<app-side-item  [dropDownOptions]="['Data_Gov','GIS','DATA -הי']" [showDropdownPosition]="1" [ContainerTitle]="'עולם הדאטא'" [ContainerId]="'secondDiv'"></app-side-item>
-<app-side-item  [dropDownOptions]="['אודות','תנאי שימוש','מדריך למשתמש']" [showDropdownPosition]="2" [ContainerTitle]="'על הדשבורד'" [ContainerId]="'thirdDiv'"></app-side-item>
+    <ng-container *ngFor="let item of sideNavData; let i = index">
+      <app-side-item [dropDownOptions]="item.options" [showDropdownPosition]="i" [ContainerTitle]="item.title" [ContainerId]="item.id"></app-side-item>
+    </ng-container>
+
     </ul>
   </div>
 </div>

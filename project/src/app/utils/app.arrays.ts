@@ -83,6 +83,23 @@ export const tableData2 = [
   }
 ];
 
+
+export const sideNavData = [
+  {    options: [' ', 'עולמות תוכן נוספים בקרוב', 'קורונה'],
+    title: 'עולמות התוכן',
+    id: 'firstDiv'
+  },
+  {
+    options: ['Data_Gov', 'GIS', 'DATA -הי'],
+    title: 'עולם הדאטא',
+    id: 'secondDiv'
+  },
+  {
+    options: ['אודות', 'תנאי שימוש', 'מדריך למשתמש'],
+    title: 'על הדשבורד',
+    id: 'thirdDiv'
+  }
+];
 export const  links4 = [
   {
     pictureClass: 'blueIsrael',

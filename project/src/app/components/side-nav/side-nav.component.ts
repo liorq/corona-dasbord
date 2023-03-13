@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoronaService } from '../../corona.service';
 import { SideItemComponent } from '../side-item/side-item.component';
+import { sideNavData } from 'src/app/utils/app.arrays';
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
@@ -10,6 +11,7 @@ export class SideNavComponent implements OnInit {
 
   showDropdown: boolean[] = [false, false, false];
   isNavBarOpen?: boolean;
+  sideNavData = sideNavData;
   constructor(
     private coronaSvc: CoronaService
   ) {}
@@ -20,15 +22,11 @@ ngOnInit(): void {
   })
 }
 
-toggleNav(){
-   const sidenav =document.getElementById('sidenav')
-        if (!this.isNavBarOpen)
-          this.coronaSvc.isNavBarOpen.next(true);
-          else
-          this.coronaSvc.isNavBarOpen.next(false);
-
-        sidenav?.classList.toggle('show')
-      }
+toggleNav() {
+  const sidenav = document.getElementById('sidenav');
+  this.isNavBarOpen ? this.coronaSvc.isNavBarOpen.next(false) : this.coronaSvc.isNavBarOpen.next(true);
+  sidenav?.classList.toggle('show');
+}
 
   openOptions(index: number) {
     this.showDropdown[index] = !this.showDropdown[index];

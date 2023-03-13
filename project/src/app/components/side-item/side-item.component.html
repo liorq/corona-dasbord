@@ -3,9 +3,7 @@
     <a>{{this.ContainerTitle}}</a>
     <div [ngClass]="{'rotate':this.showDropdown[showDropdownPosition]}" class="half-rectangele"></div>
     <ul   class="dropdown-items" [ngClass]="{ 'openOptions': this.showDropdown[this.showDropdownPosition] }">
-      <li class="dropdown-item"><a>{{this.dropDownOptions[0]}}</a></li>
-      <li class="dropdown-item"><a>{{this.dropDownOptions[1]}}</a></li>
-      <li class="dropdown-item"><a>{{this.dropDownOptions[2]}}</a></li>
+      <li class="dropdown-item" *ngFor="let item of [0,1,2]"><a>{{this.dropDownOptions[item]}}</a></li>
     </ul>
   </li>
 
