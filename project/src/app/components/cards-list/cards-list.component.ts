@@ -9,7 +9,13 @@ import { openWindowIconI } from 'src/app/utils/app.data';
 })
 export class CardsComponent implements OnInit{
 isDarkModeActive=this.coronaSvc.isDarkModeActive.getValue()
-
+dataArray = [
+  { num: "firstNum", line: "firstLine" },
+  { num: "secondNum", line: "secondLine" },
+  { num: "thirdNum", line: "thirdLine" },
+  { num: "fourNum", line: "fourLine" },
+  { num: "fiveNum", line: "fiveLine" }
+];
 ngOnInit(): void {
   this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
   this.isDarkModeActive=newStatus;

@@ -1,91 +1,35 @@
-<div class="container">
-  <div
-    [ngClass]="{ 'background-dark-mode': isDarkModeActive }"
-    *ngFor="let data of dataToDisplay; let i = index"
-    class="card"
-    [id]="data.id"
-  >
+ <div class="container">
+  <div *ngFor="let data of dataToDisplay; let i = index" [ngClass]="{ 'background-dark-mode': isDarkModeActive }" class="card" [id]="data.id">
     <div class="title-container">
-      <div
-        [ngClass]="{
-          'i-icon-dark': isDarkModeActive,
-          'i-icon': !isDarkModeActive
-        }"
-      ></div>
-
+      <div [ngClass]="{'i-icon-dark': isDarkModeActive, 'i-icon': !isDarkModeActive}"></div>
       <div class="text-i-icon">
-        <div class="text-i-icon-container">
-          {{ openWindowsIIcon[i] }}
-        </div>
+        <div class="text-i-icon-container">{{ openWindowsIIcon[i] }}</div>
       </div>
       <div>{{ data.title }}</div>
     </div>
-    <div class="bigNumber" *ngIf="data.bigNumber != undefined">
-      {{ data.bigNumber }}
-    </div>
+    <app-card-line [classNum]="'bigNumber'" [num]="data.bigNumber"></app-card-line>
     <div class="container-little-line">
-      <div class="littleNumber" *ngIf="data.firstLittleNum != undefined">
-        {{ data.firstLittleNum }}
-      </div>
-      <div class="littleLine" *ngIf="data.firstLittleLine != undefined">
-        {{ data.firstLittleLine }}
-      </div>
+      <app-card-line [classNum]="'littleNumber'" [num]="data.firstLittleNum"></app-card-line>
+      <app-card-line [classText]="'littleLine'" [text]="data.firstLittleLine"></app-card-line>
       <div *ngIf="data.title == 'חולים קשה'" class="circle red"></div>
     </div>
-
     <div class="container-little-line-2">
-      <div class="littleNumber" *ngIf="data.secondLittleNum != undefined">
-        {{ data.secondLittleNum }}
-      </div>
-      <div class="littleLine" *ngIf="data.secondLittleNum != undefined">
-        {{ data.secondLittleLine }}
-      </div>
+      <app-card-line [classNum]="'littleNumber'" [num]="data.secondLittleNum"></app-card-line>
+      <app-card-line [classText]="'littleLine'" [text]="data.secondLittleLine"></app-card-line>
       <div *ngIf="data.title == 'חולים קשה'" class="circle red"></div>
     </div>
-
     <div *ngIf="data.title == 'חולים קשה'" class="container-little-line-3">
       <div class="container-3">
-        <div class="littleNumber">{{ data.thirdLittleNum }}</div>
-        <div class="littleLine">{{ data.thirdLittleLine }}</div>
+        <app-card-line [classText]="'littleLine'" [classNum]="'littleNumber'" [num]="data.thirdLittleNum" [text]="data.thirdLittleLine"></app-card-line>
         <div *ngIf="data.title == 'חולים קשה'" class="circle yellow"></div>
       </div>
-      <div class="container-3 margin">
-        <div class="littleNumber">{{ data.fourLittleNum }}</div>
-        <div class="littleLine">{{ data.fourLittleLine }}</div>
-      </div>
-      <div class="container-3 margin">
-        <div class="littleNumber">{{ data.fiveLittleNum }}</div>
-        <div class="littleLine">{{ data.fiveLittleLine }}</div>
-      </div>
+      <app-card-line [classText]="'littleLine'" [classContainer]="'container-3 margin'" [classNum]="'littleNumber'" [num]="data.fourLittleNum" [text]="data.fourLittleLine"></app-card-line>
+      <app-card-line [classText]="'littleLine'" [classContainer]="'container-3 margin'" [classNum]="'littleNumber'" [num]="data.fiveLittleNum" [text]="data.fiveLittleLine"></app-card-line>
     </div>
-
     <div class="container-5-line-big">
-
-<!-- <myComp [num]="firstNum" [line]="firstLine"></myComp>
-<myComp [num]="firstNum" [line]="secondLine"></myComp>
-<myComp [num]="firstNum" [line]="thirdLine"></myComp> -->
-
-
-      <div class="container-5-line">
-        <div class="bigger-num">{{ data.firstNum }}</div>
-        <div>{{ data.firstLine }}</div>
-      </div>
-      <div class="container-5-line">
-        <div class="bigger-num">{{ data.secondNum }}</div>
-        <div>{{ data.secondLine }}</div>
-      </div>
-      <div class="container-5-line">
-        <div class="bigger-num">{{ data.thirdNum }}</div>
-        <div>{{ data.thirdLine }}</div>
-      </div>
-      <div class="container-5-line">
-        <div class="bigger-num">{{ data.fourNum }}</div>
-        <div>{{ data.fourLine }}</div>
-      </div>
-      <div class="container-5-line">
-        <div class="bigger-num">{{ data.fiveNum }}</div>
-        <div>{{ data.fiveLine }}</div>
-      </div>
+      <ng-container *ngFor="let item of dataArray">
+        <app-card-line [classContainer]="'container-5-line'" [classNum]="'bigger-num'" [num]="data[item.num]" [text]="data[item.line]"></app-card-line>
+      </ng-container>
     </div>
   </div>
 </div>

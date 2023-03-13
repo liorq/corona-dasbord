@@ -34,6 +34,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DataTablesModule } from "angular-datatables";
 import { FormsModule } from '@angular/forms';
 import { SideItemComponent } from './components/side-item/side-item.component';
+import { CardLineComponent } from './components/card-line/card-line.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { SideItemComponent } from './components/side-item/side-item.component';
     LinksListComponent,
     SideNavComponent,
     SideItemComponent,
+    CardLineComponent,
   ],
   imports: [
 
