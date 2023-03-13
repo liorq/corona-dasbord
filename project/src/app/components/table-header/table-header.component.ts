@@ -12,122 +12,118 @@ export class TableHeaderComponent {
 @Input()isDarkModeActive?:boolean;
 clickCounterObj=clickCounterObj;
 currentSort = { column: 'id', direction: 'asc' };
-clickCounterObjRec=[
-  {'arrow-down': this.clickCounterObj.address == 1, 'arrow-up': this.clickCounterObj.address == 2},
-  {'arrow-down': this.clickCounterObj.phone == 1, 'arrow-up': this.clickCounterObj.phone == 2},
-  {'arrow-down': this.clickCounterObj.email == 1, 'arrow-up': this.clickCounterObj.email == 2},
-  {'arrow-down': this.clickCounterObj.age == 1, 'arrow-up': this.clickCounterObj.age == 2},
-  {'arrow-down': this.clickCounterObj.name == 1, 'arrow-up': this.clickCounterObj.name == 2},
-  {'arrow-down': this.clickCounterObj.id == 1, 'arrow-up': this.clickCounterObj.id == 2},
-]
 
- componentObjects = [
+headersOfLightTable =[
+  {
+    ContainerNgClass: { 'deep-blue': this.isDarkModeActive },
+    graphName: 'lights',
+    sortField: 'address',
+    ContainerClass: 'align-div cell title',
+    text: "חולים פעילים"
+  },
+  {
+    ContainerNgClass: { 'deep-blue': this.isDarkModeActive },
+    graphName: 'lights',
+    sortField: 'phone',
+    ContainerClass: 'align-div cell title',
+    text: "שיעור שינוי מאומתים"
+  },
+
+
+
+    {
+      ContainerNgClass: { 'deep-blue': this.isDarkModeActive },
+      graphName: 'lights',
+      sortField: 'email',
+      ContainerClass: 'align-div cell title',
+      text: "% הבדיקות החיוביות"
+    },
+
+
+
+    {
+      ContainerNgClass: { 'deep-blue': this.isDarkModeActive },
+      graphName: 'lights',
+      sortField: 'age',
+      ContainerClass: 'align-div cell title',
+      text: "חולים חדשים לכל 10,000 נפש"
+    },
+
+
+    {
+      ContainerNgClass: { 'deep-blue': this.isDarkModeActive },
+      graphName: 'lights',
+      sortField: 'name',
+      ContainerClass: 'align-div cell title',
+      text: "ציון וצבע יומי"
+    },
+
+
+    {
+      ContainerNgClass: { 'deep-blue': this.isDarkModeActive },
+      graphName: 'lights',
+      sortField: 'id',
+      ContainerClass: 'align-div cell title',
+      text: "ציון וצבע יומי"
+    },
+
+
+
+]
+headersOfVaccinationTable = [
+
   {
     ContainerNgClass: { 'lavender-background': true,'deep-blue':this.isDarkModeActive },
-    clickFunction: this.resortTableData,
     graphName: 'Vaccination',
-    rectangleNgClass: this.clickCounterObjRec[0],
+    sortField: 'address',
     ContainerClass: 'align-div cell title',
-    text: 'ישוב',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.address == 1,
-      'arrow-up': clickCounterObj.address == 2
-    }
+    text: "ישוב"
   },
-  {
-    ContainerNgClass: { 'deep-blue':this.isDarkModeActive },
-    clickFunction: this.resortTableData,
-    graphName: 'lights',
-    rectangleNgClass: this.clickCounterObjRec[0],
-    ContainerClass: 'align-div cell title',
-    text: 'חולים פעילים',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.address == 1,
-      'arrow-up': clickCounterObj.address == 2
-    }
-  },
-  {
-    clickFunction: this.resortTableData,
-    graphName: 'Vaccination',
-    rectangleNgClass: this.clickCounterObjRec[1],
-    text: 'מתחסנים במנה ראשונה %',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.phone == 1,
-      'arrow-up': clickCounterObj.phone == 2
-    }
-  },
-  {
-    ContainerNgClass: { 'deep-blue':this.isDarkModeActive },
-    clickFunction: this.resortTableData,
-    graphName: 'lights',
-    rectangleNgClass: this.clickCounterObjRec[1],
-    text: 'שיעור שינוי מאומתים',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.phone == 1,
-      'arrow-up': clickCounterObj.phone == 2
-    }
-  },
-  {
-    clickFunction: this.resortTableData,
-    graphName: 'Vaccination',
-    rectangleNgClass: this.clickCounterObjRec[2],
-    text: '% מתחסנים מנה שנייה',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.email == 1,
-      'arrow-up': clickCounterObj.email == 2
-    }
-  },
-  {
-    clickFunction: this.resortTableData,
-    graphName: 'lights',
-    rectangleNgClass: this.clickCounterObjRec[2],
-    text: '% הבדיקות החיוביות',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.email == 1,
-      'arrow-up': clickCounterObj.email == 2
-    }
-  },
-  {
-    clickFunction: this.resortTableData,
-    graphName: 'Vaccination',
-    rectangleNgClass: this.clickCounterObjRec[3],
-    text: '% מתחסנים מנה שלישית',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.age == 1,
-      'arrow-up': clickCounterObj.age == 2
-    }
-  },{
-    clickFunction: this.resortTableData,
-    graphName: 'Vaccination',
-    rectangleNgClass: this.clickCounterObjRec[3],
-    text: '% מתחסנים מנה שלישית',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.age == 1,
-      'arrow-up': clickCounterObj.age == 2
-    }
-  },
-  {
-    clickFunction: this.resortTableData,
-    graphName: 'Hospitalization',
-    rectangleNgClass: this.clickCounterObjRec[4],
-    text: 'מאומתים מאושפזים',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.hospitalized == 1,
-      'arrow-up': clickCounterObj.hospitalized == 2
-    }
-  },
-  {
-    clickFunction: this.resortTableData,
-    graphName: 'Mortality',
-    rectangleNgClass: this.clickCounterObjRec[5],
-    text: 'תמותה לפי קבוצת גיל',
-    arrowNgClass: {
-      'arrow-down': clickCounterObj.mortality == 1,
-      'arrow-up': clickCounterObj.mortality == 2
-    }
-  }
-];
 
+    {
+      ContainerNgClass:{ 'lavender-background': true, 'deep-blue': this.isDarkModeActive },
+      graphName: 'Vaccination',
+      sortField: 'phone',
+      ContainerClass: 'align-div cell title',
+      text:"מתחסנים במנה ראשונה %"
+    },
+
+    {
+        ContainerNgClass: { 'lavender-background': true, 'deep-blue': this.isDarkModeActive },
+        graphName: 'Vaccination',
+        sortField: 'email',
+        ContainerClass: 'align-div cell title',
+        text: "% מתחסנים מנה שנייה"
+      },
+
+      {
+        ContainerNgClass: { 'lavender-background': true, 'deep-blue': this.isDarkModeActive },
+        graphName: 'Vaccination',
+        sortField: 'age',
+        ContainerClass: 'align-div cell title',
+        text: "% מתחסנים מנה שלישית"
+      },
+
+
+      {
+        ContainerNgClass: { 'lavender-background': true, 'deep-blue': this.isDarkModeActive },
+        graphName: 'Vaccination',
+        sortField: 'name',
+        ContainerClass: 'align-div cell title',
+        text: "חולים פעילים לכל 10,000 נפש"
+      },
+
+      {
+        ContainerNgClass: { 'lavender-background': true, 'deep-blue': this.isDarkModeActive },
+        graphName: 'Vaccination',
+        sortField: 'id',
+        ContainerClass: 'align-div cell title',
+        text: "חולים פעילים לכל 10,000 נפש"
+      },
+
+
+];
+headers=this.graphName==='lights'?this.headersOfLightTable:this.headersOfVaccinationTable;
 
 
 resortTableData(column: string) {
