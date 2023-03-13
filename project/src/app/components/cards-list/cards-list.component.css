@@ -110,8 +110,13 @@
   margin-left: 10px;
 }
 .container-little-line-2 {
-}
 
+}
+.container-little-line3{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 #c6 .container-little-line-2 {
   position: absolute;
   top: 100px;
