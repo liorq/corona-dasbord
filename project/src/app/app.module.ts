@@ -33,6 +33,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { DataTablesModule } from "angular-datatables";
 import { FormsModule } from '@angular/forms';
+import { SideItemComponent } from './components/side-item/side-item.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { FormsModule } from '@angular/forms';
     LightsInSettlementsComponent,
     LinksListComponent,
     SideNavComponent,
+    SideItemComponent,
   ],
   imports: [
 

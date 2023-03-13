@@ -1,0 +1,162 @@
+
+
+html {
+  font-size: 18px;
+}
+body {
+  margin: 0;
+}
+body * {
+  box-sizing: border-box;
+}
+/* default styles */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+.horizontal-nav {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: 80px;
+  height: 3.5em;
+  background-color: #3b5998;
+}
+.horizontal-nav #nav-toggle-btn {
+  position: absolute;
+  width: 3.5em;
+  top: 0;
+  width: 190px;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.horizontal-nav #nav-toggle-btn:hover {
+  background-color: #2d4373;
+}
+
+.closebtn {
+  flex: 0 0 1.2em;
+  font-size: 2.2em;
+  width: 1.5em;
+  height: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+ .side-nav-items {
+  overflow-y: auto;
+  width: 100%;
+  font-size: 14px;
+  color: #111;
+  padding: 1em 0.5em 1em 1em;
+}
+.side-item {
+  margin-top: 1.3em;
+  border-bottom: 1px solid #dce1e3;
+  color: #111;
+}
+.side-item:first-child {
+  margin-top: 0;
+}
+.show {
+  transform: translateX(0);
+  animation: slide-in 0.5s forwards; /* Add the animation */
+  overflow: hidden;
+}
+ .dropdown {
+  color: #b3b3b3;
+  position: relative;
+}
+.dropdown > a::after {
+
+  display: inline-block;
+  font-size: 0.7em;
+  transform: translate(0.5em, -0.25em) rotateZ(45deg);
+}
+ .dropdown .dropdown-items {
+  padding: 0.3em 0 0.3em 0.5em;
+  max-height: 0;
+  /* overflow-x: hidden; */
+  overflow-y: scroll;
+  transition: all 0.7s;
+}
+ .dropdown .dropdown-items .dropdown-item {
+  padding-top: 0.3em;
+
+}
+
+.half-rectangele{
+  background: url('../../../assets/images/half-rec.png');
+  height: 20px;
+  width: 20px;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 99px;
+
+}
+li{
+  position: relative;
+}
+#firstDiv,#secondDiv,#thirdDiv{
+  overflow: hidden;
+}
+#thirdDiv,#secondDiv{
+  position: relative;
+  top:27px;
+  right:1px;
+}
+#secondDiv{
+  height: 180px;
+}
+.borderNone{
+  border-bottom: none;
+}
+.dropdown .openOptions{
+  max-height: 120px;
+  height: 120px;
+}
+
+
+
+a {
+  color: #111;
+}
+
+
+ .dropdown .dropdown-items .openOptions {
+  max-height: 6em;
+  overflow-y: auto;
+}
+
+ .dropdown .dropdown-items .openOptions a {
+  display: block;
+  padding: 0.3em 0.5em;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: #fff;
+  opacity: 0;
+}
+.rotate{
+  transform: translate(0.5em, 0.25em) rotateZ(-90deg);
+  transition: transform 0.5s ease-in-out;
+
+}
+
+
+
+

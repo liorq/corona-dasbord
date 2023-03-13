@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoronaService } from '../../corona.service';
-
+import { SideItemComponent } from '../side-item/side-item.component';
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
