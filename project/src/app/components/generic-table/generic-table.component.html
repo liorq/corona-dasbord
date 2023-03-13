@@ -321,11 +321,12 @@
 
  -->
 
+ <app-table-body  *ngIf="isTable && this.graphName === 'lights'" [isTable]="isTable"  [tablesData]="tablesData" [isDarkModeActive]="isDarkModeActive"  [graphName]="'lights'"></app-table-body>
+
+ <app-table-body  *ngIf="isTable && this.graphName === 'Vaccination'" [isTable]="isTable" [tablesData]="tablesData" [isDarkModeActive]="isDarkModeActive" [graphName]="'Vaccination'"></app-table-body>
 
 
-
-
-    <div
+    <!-- <div
       *ngIf="isTable"
       class="tbody"
       [ngClass]="{ TableWidth100: graphName == 'Vaccination' }"
@@ -374,6 +375,9 @@
 
 
       </ng-container>
-    </div>
+    </div> -->
+
+
+
   </div>
 </div>

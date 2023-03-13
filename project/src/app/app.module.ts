@@ -38,6 +38,7 @@ import { CardLineComponent } from './components/card-line/card-line.component';
 import { TableHeaderComponent } from './components/table-header/table-header.component';
 import { TableHeaderTitleComponent } from './components/table-header-title/table-header-title.component';
 import { CardHeaderComponent } from './components/card-header/card-header.component';
+import { TableBodyComponent } from './components/table-body/table-body.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { CardHeaderComponent } from './components/card-header/card-header.compon
     TableHeaderComponent,
     TableHeaderTitleComponent,
     CardHeaderComponent,
+    TableBodyComponent,
   ],
   imports: [
 

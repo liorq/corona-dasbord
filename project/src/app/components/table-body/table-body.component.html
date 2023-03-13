@@ -1,0 +1,56 @@
+<div
+      *ngIf="isTable"
+      class="tbody"
+      [ngClass]="{ TableWidth100: graphName == 'Vaccination' }"
+    >
+      <ng-container *ngFor="let row of tablesData">
+        <div *ngIf="isTable" class="row">
+          <div class="cell fontWeight400">{{ row.id }}</div>
+          <div class="cell fontWeight400">{{ row.name }}</div>
+          <div class="cell fontWeight400">{{ row.age }}
+         <div *ngIf="graphName !== 'lights'" class="squre-gold" [ngClass]="{'solomon-rec':isDarkModeActive}"></div>
+          </div>
+
+          <div class="cell fontWeight400">{{ row.email }}
+            <div *ngIf="graphName !== 'lights'" class="squre-Cyan" [ngClass]="{'cync-rec':isDarkModeActive}"></div>
+          </div>
+
+          <div class="cell weight">
+            <div
+              [ngClass]="{
+                green: row.phone < 4.5,
+                yellow: row.phone > 4.5 && row.phone < 6,
+                orange: row.phone > 6 && row.phone < 7.5,
+                red: row.phone > 7.5,
+                color: graphName == 'lights',
+                fontWeight400: graphName == 'Vaccination'
+              }"
+            >
+              {{ row.phone }}
+            </div>
+          </div>
+          <div class="cell weight">
+            <div
+              class="color"
+              [ngClass]="{
+                color2: graphName == 'Vaccination',
+                lightgreen: row.id < 4.5,
+                yellow: row.id > 4.6 && row.id < 5.9,
+                orange: row.id > 6.1 && row.id < 6.8
+              }"
+            >
+              {{ row.address }}
+            </div>
+          </div>
+        </div>
+
+
+
+      </ng-container>
+    </div>
+
+
+
+
+
+
