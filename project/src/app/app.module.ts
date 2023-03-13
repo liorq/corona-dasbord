@@ -29,7 +29,7 @@ import { TableHeaderComponent } from './components/table-header/table-header.com
 import { TableHeaderTitleComponent } from './components/table-header-title/table-header-title.component';
 import { CardHeaderComponent } from './components/card-header/card-header.component';
 import { TableBodyComponent } from './components/table-body/table-body.component';
-import { ColorSquaresComponent } from './components/color-squares/color-squares.component';
+import { ScoredColorSquaresComponent } from './components/scored-color-squares/scored-color-squares.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,7 @@ import { ColorSquaresComponent } from './components/color-squares/color-squares.
     TableHeaderTitleComponent,
     CardHeaderComponent,
     TableBodyComponent,
-    ColorSquaresComponent,
+    ScoredColorSquaresComponent,
   ],
   imports: [
 
