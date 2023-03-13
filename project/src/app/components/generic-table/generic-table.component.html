@@ -93,18 +93,13 @@
         תאריך
       </div>
 
-      <div class="testByDates1" *ngIf="this.graphName == 'main'">
+      <!-- <div class="testByDates1" *ngIf="this.graphName == 'main'">
         מספר נפטרים
+      </div> -->
+    <div [class]="this.ClassTextAboveGraph">
+    {{textAboveGraph}}
       </div>
-      <div class="testByDates4" *ngIf="this.graphName == 'main4'">
-        קבוצת גיל
-      </div>
-      <div class="testByDates3" *ngIf="this.graphName == 'main1'">
-        מספר הבדיקות
-      </div>
-      <div class="testByDates2" *ngIf="this.graphName == 'main3'">
-        חולים פעילים
-      </div>
+
     </div>
 
     <div

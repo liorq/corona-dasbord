@@ -11,6 +11,9 @@ import { CoronaService } from 'src/app/corona.service';
 
 
 export class GenericTableComponent implements OnInit{
+  @Input()textAboveGraph?:string;
+  @Input()ClassTextAboveGraph?:string;
+
   @Input()title?:string;
   @Input() chart: echarts.ECharts | null = null;
   @Input() resizeTimeoutId: any;
@@ -116,7 +119,7 @@ export class GenericTableComponent implements OnInit{
 
     timePeriods[location]=this.periodOfTime;
     this.coronaSvc.timePeriodsInDays.next(timePeriods)
-  
+
     setTimeout(()=>{
     this.ngAfterViewInit(timePeriods[location])
     },500)
