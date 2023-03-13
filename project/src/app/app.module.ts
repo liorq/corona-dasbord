@@ -37,6 +37,7 @@ import { SideItemComponent } from './components/side-item/side-item.component';
 import { CardLineComponent } from './components/card-line/card-line.component';
 import { TableHeaderComponent } from './components/table-header/table-header.component';
 import { TableHeaderTitleComponent } from './components/table-header-title/table-header-title.component';
+import { CardHeaderComponent } from './components/card-header/card-header.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { TableHeaderTitleComponent } from './components/table-header-title/table
     CardLineComponent,
     TableHeaderComponent,
     TableHeaderTitleComponent,
+    CardHeaderComponent,
   ],
   imports: [
 

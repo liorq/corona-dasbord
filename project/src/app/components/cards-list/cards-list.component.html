@@ -1,12 +1,7 @@
  <div class="container">
   <div *ngFor="let data of dataToDisplay; let i = index" [ngClass]="{ 'background-dark-mode': isDarkModeActive }" class="card" [id]="data.id">
-    <div class="title-container">
-      <div [ngClass]="{'i-icon-dark': isDarkModeActive, 'i-icon': !isDarkModeActive}"></div>
-      <div class="text-i-icon">
-        <div class="text-i-icon-container">{{ openWindowsIIcon[i] }}</div>
-      </div>
-      <div>{{ data.title }}</div>
-    </div>
+<app-card-header [isDarkModeActive]="isDarkModeActive" [text]="data.title" [openWindowsIIcon]="openWindowsIIcon[i]"></app-card-header>
+
     <app-card-line [classNum]="'bigNumber'" [num]="data.bigNumber"></app-card-line>
     <div class="container-little-line">
       <app-card-line [classNum]="'littleNumber'" [num]="data.firstLittleNum"></app-card-line>
@@ -21,7 +16,7 @@
     <div *ngIf="data.title == 'חולים קשה'" class="container-little-line-3">
       <div class="container-3">
         <app-card-line [classText]="'littleLine'" [classNum]="'littleNumber'" [num]="data.thirdLittleNum" [text]="data.thirdLittleLine"></app-card-line>
-        <div *ngIf="data.title == 'חולים קשה'" class="circle yellow"></div>
+        <div class="circle yellow"></div>
       </div>
       <app-card-line [classText]="'littleLine'" [classContainer]="'container-3 margin'" [classNum]="'littleNumber'" [num]="data.fourLittleNum" [text]="data.fourLittleLine"></app-card-line>
       <app-card-line [classText]="'littleLine'" [classContainer]="'container-3 margin'" [classNum]="'littleNumber'" [num]="data.fiveLittleNum" [text]="data.fiveLittleLine"></app-card-line>
