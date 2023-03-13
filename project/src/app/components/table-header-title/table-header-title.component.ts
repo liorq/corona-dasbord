@@ -21,17 +21,11 @@ export class TableHeaderTitleComponent implements OnInit{
 @Input() graphName?:string;
 @Input()isDarkModeActive?:boolean;
 @Input() tablesData?:any=[];
+
 clickCounterObj=clickCounterObj;
 currentSort = { column: 'id', direction: 'asc' };
 @Input() PositionRectangleNgClass?:number;
-clickCounterObjRec=[
-  {'arrow-down': clickCounterObj.address == 1, 'arrow-up': clickCounterObj.address == 2},
-  {'arrow-down': clickCounterObj.phone == 1, 'arrow-up': clickCounterObj.phone == 2},
-  {'arrow-down': clickCounterObj.email == 1, 'arrow-up': clickCounterObj.email == 2},
-  {'arrow-down': clickCounterObj.age == 1, 'arrow-up': clickCounterObj.age == 2},
-  {'arrow-down': clickCounterObj.name == 1, 'arrow-up': clickCounterObj.name == 2},
-  {'arrow-down': clickCounterObj.id == 1, 'arrow-up':clickCounterObj.id == 2},
-]
+
 constructor(coronaSvc:CoronaService){}
 resortTableData(column: string) {
   if(this.clickCounterObj[column]==2)
