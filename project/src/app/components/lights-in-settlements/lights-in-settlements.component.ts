@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tableData1 } from 'src/app/utils/app.arrays';
+import { linksListData, tableData1 } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-lights-in-settlements',
@@ -7,5 +7,6 @@ import { tableData1 } from 'src/app/utils/app.arrays';
   styleUrls: ['./lights-in-settlements.component.css','../deads/deads.component.css']
 })
 export class LightsInSettlementsComponent {
-  tableData1 = tableData1
+  tableData1 = tableData1;
+  linksListData = linksListData;
 }

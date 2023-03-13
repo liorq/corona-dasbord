@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tableData2 } from 'src/app/utils/app.arrays';
+import { links4, tableData2 } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-vaccination-of-the-population',
@@ -8,5 +8,5 @@ import { tableData2 } from 'src/app/utils/app.arrays';
 })
 export class VaccinationOfThePopulationComponent {
   tableData2 =tableData2
-
+   links = links4;
 }

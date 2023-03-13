@@ -17,8 +17,6 @@ constructor(private coronaSvc:CoronaService,private router: Router,private eleme
     this.coronaSvc.componentNameActive.subscribe((newName)=>{
       this.componentNameActive=newName;
     })
-
-
   }
  onclick(anchor:string){
   this.coronaSvc.componentNameActive.next(anchor)

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-import { emphasisStyle } from 'src/app/utils/app.arrays';
+import { emphasisStyle, links3 } from 'src/app/utils/app.arrays';
 import { secondOption } from 'src/app/app.graphData';
 import { CoronaService } from 'src/app/corona.service';
 
@@ -17,6 +17,7 @@ export class TestsComponent implements AfterViewInit{
   timePeriod?:number=25;
   isDarkModeActive?:boolean;
   private chart: echarts.ECharts | null = null;
+  links = links3;
 
   private emphasisStyle = emphasisStyle
   public option:any=secondOption(this.emphasisStyle,this.timePeriod,false);

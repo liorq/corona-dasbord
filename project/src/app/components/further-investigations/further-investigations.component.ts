@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { fourOption } from 'src/app/app.graphData';
 import { CoronaService } from 'src/app/corona.service';
+import { linksData } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-further-investigations',
@@ -11,6 +12,8 @@ export class FurtherInvestigationsComponent {
   option?: echarts.EChartsOption|any= fourOption(25,false);
   timePeriod?:number=25;
   isDarkModeActive?:boolean;
+
+  linksData = linksData;
   constructor(private coronaSvc:CoronaService){}
 
 ngOnInit(): void {

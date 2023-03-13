@@ -18,27 +18,14 @@
   </app-generic-table>
 </div>
 
-<app-links-list
-  [pictureClass]="'greenIsrael'"
-  [link]="'experience.arcgis.com'"
-  [title]="'מפת מדדי רמזור'"
-  [description]="'מדדי תחלואה וציוני רמזור, בחלוקה לפי יישובים ורובעים'"
-></app-links-list>
 
-<app-links-list
-  [pictureClass]="'littlePurpleIsrael'"
-  [link]="'maps.arcgis.com'"
-  [title]="'רובעי רמזור'"
-  [description]="
-    'תמונת מצב מובחנת אודות האוכלוסיה, בתוך תשעת היישובים הגדולים בארץ, רובעי רמזור'
-  "
-></app-links-list>
 
-<app-links-list
-  [pictureClass]="'turkizIsrael'"
-  [link]="'experience.arcgis.com'"
-  [title]="'נתוני תחלואה לפי יישוב'"
-  [description]="
-    'תמונת מצב לפי יישוב בקטגוריות- חולים פעילים, מבודדים, מאושפזים, נפטרים ומחוסנים בתוקף'
-  "
-></app-links-list>
+
+<ng-container *ngFor="let link of linksListData">
+  <app-links-list
+    [pictureClass]="link.pictureClass"
+    [link]="link.link"
+    [title]="link.title"
+    [description]="link.description"
+  ></app-links-list>
+</ng-container>

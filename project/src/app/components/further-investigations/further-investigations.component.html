@@ -29,23 +29,15 @@
   </app-generic-table>
 </div>
 
-<app-links-list
-  [pictureClass]="'littlePurpleIsrael'"
-  [link]="'maps.arcgis.com'"
-  [title]="'מבודדים לפי רשות מקומית וגיל'"
-  [description]="'תמונת מצב אודות נתוני בידודים פעילים, לפי רשות מקומית וגיל'"
-></app-links-list>
 
-<app-links-list
-  [pictureClass]="'exelPic'"
-  [link]="'data.gov.il'"
-  [title]="'נתוני מבודדים'"
-  [description]="'נתונים אודות בדודים פעילים'"
-></app-links-list>
 
-<app-links-list
-  [pictureClass]="'exelPic'"
-  [link]="'health.gov.il'"
-  [title]="'נתוני קורונה לפי אזורים'"
-  [description]="'נתוני הלמ״ס לפי אזורים'"
-></app-links-list>
+
+
+<ng-container *ngFor="let link of linksData">
+  <app-links-list
+    [pictureClass]="link.pictureClass"
+    [link]="link.link"
+    [title]="link.title"
+    [description]="link.description"
+  ></app-links-list>
+</ng-container>

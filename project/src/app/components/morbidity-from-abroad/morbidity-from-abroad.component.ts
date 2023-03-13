@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { linksData2 } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-morbidity-from-abroad',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./morbidity-from-abroad.component.css','../deads/deads.component.css']
 })
 export class MorbidityFromAbroadComponent {
-
+  links = linksData2;
 }

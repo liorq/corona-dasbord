@@ -10,7 +10,7 @@ import { CoronaService } from 'src/app/corona.service';
   styleUrls: ['./deads.component.css']
 })
 export class DeadsComponent implements OnInit{
-   timePeriod?:number=25;
+  timePeriodsInDays?:number=25;
    option?: echarts.EChartsOption | any;
    isDarkModeActive?:boolean;
 
@@ -19,11 +19,11 @@ export class DeadsComponent implements OnInit{
   ngOnInit(): void {
   this.coronaSvc.isDarkModeActive.subscribe((newStatus)=>{
     this.isDarkModeActive=newStatus;
-    this.option= firstOption(this.timePeriod,this.isDarkModeActive);
+    this.option= firstOption(this.timePeriodsInDays,this.isDarkModeActive);
   })
   this.coronaSvc.timePeriodsInDays.subscribe((newTimePeriods)=>{
-    this.timePeriod=newTimePeriods[0];
-    this.option= firstOption(this.timePeriod,this.isDarkModeActive);
+    this.timePeriodsInDays=newTimePeriods[0];
+    this.option= firstOption(this.timePeriodsInDays,this.isDarkModeActive);
   })
 }
 

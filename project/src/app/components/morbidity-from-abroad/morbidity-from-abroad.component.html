@@ -16,7 +16,20 @@
   </app-generic-table>
 </div>
 
-<app-links-list
+
+
+<ng-container *ngFor="let link of links">
+  <app-links-list
+    [pictureClass]="link.pictureClass"
+    [link]="link.link"
+    [title]="link.title"
+    [description]="link.description"
+  ></app-links-list>
+</ng-container>
+
+
+
+<!-- <app-links-list
   [pictureClass]="'greenEarth'"
   [link]="'experience.arcgis.com'"
   [title]="'תעופה בזמן קורונה'"
@@ -35,4 +48,4 @@
   [link]="'experience.arcgis.com'"
   [title]="'נתוני תחלואה בעולם Who'"
   [description]="'תמונת מצב בעולם מוצגת ע&quot;י ארגון הבריאות העולמי'"
-></app-links-list>
+></app-links-list> -->

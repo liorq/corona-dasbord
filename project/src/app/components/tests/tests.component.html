@@ -23,25 +23,14 @@
   ></app-generic-table>
 </div>
 
-<app-links-list
-  [pictureClass]="'purpleIsrael'"
-  [link]="'health.gov.il'"
-  [title]="'בדיקות מהירות'"
-  [description]="
-    'מפת בדיקות מהירות לקורונה, כולל נתונים אודות שעות פתיחה וניווט'
-  "
-></app-links-list>
 
-<app-links-list
-  [pictureClass]="'orangeIsrael'"
-  [link]="'ourworldindata.org'"
-  [title]="'בדיקות יומיות בעולם'"
-  [description]="'תמונת מצב אודות בדיקות יומיות, במדינות העולם'"
-></app-links-list>
 
-<app-links-list
-  [pictureClass]="'labPic'"
-  [link]="'health.gov.il'"
-  [title]="'סוגי בדיקות'"
-  [description]="'מרכז המידע לקורונה של משרד הבריאות'"
-></app-links-list>
+<ng-container *ngFor="let link of links">
+  <app-links-list
+    [pictureClass]="link.pictureClass"
+    [link]="link.link"
+    [title]="link.title"
+    [description]="link.description"
+  ></app-links-list>
+</ng-container>
+
