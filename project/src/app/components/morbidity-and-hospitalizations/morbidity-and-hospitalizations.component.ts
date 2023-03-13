@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { titles1 } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-morbidity-and-hospitalizations',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./morbidity-and-hospitalizations.component.css','../deads/deads.component.css']
 })
 export class MorbidityAndHospitalizationsComponent {
-
+  titles=titles1;
 }

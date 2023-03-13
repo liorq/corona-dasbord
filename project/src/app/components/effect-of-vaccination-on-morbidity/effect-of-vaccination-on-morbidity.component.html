@@ -4,7 +4,7 @@
 
 <div class="graph-container">
   <app-generic-table
-    *ngFor="let title of ['מאומתים יומי - התחסנות', 'חולים קשה - התחסנות']"
+    *ngFor="let title of titles"
     [title]="title"
   >
   </app-generic-table>
@@ -12,11 +12,8 @@
     [graphSize]="'width: 100%; height: 325px;'"
     [title]="'חולים פעילים - גיל והתחסנות'"
     [graphName]="'main3'"
-
     [textAboveGraph]="'חולים פעילים'"
     [ClassTextAboveGraph]="'testByDates2'"
-
-
     [optionObj]="this.option"
   ></app-generic-table>
 </div>

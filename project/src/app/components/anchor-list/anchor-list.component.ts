@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import { NavigationEnd, Router } from '@angular/router';
 import { idAnchors } from 'src/app/utils/app.data';
 import { CoronaService } from 'src/app/corona.service';
+import { pages } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-anchor-list',
@@ -11,7 +12,7 @@ import { CoronaService } from 'src/app/corona.service';
 export class AnchorListComponent  implements OnInit{
   componentNameActive:string='';
   anchors=idAnchors;
-
+  pages=pages ;
 constructor(private coronaSvc:CoronaService,private router: Router,private elementRef: ElementRef){}
   ngOnInit(): void {
     this.coronaSvc.componentNameActive.subscribe((newName)=>{

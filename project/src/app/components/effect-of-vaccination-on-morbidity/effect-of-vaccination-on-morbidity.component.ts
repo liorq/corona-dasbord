@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { threeOption } from 'src/app/app.graphData';
 import { CoronaService } from 'src/app/corona.service';
+import { titles4 } from 'src/app/utils/app.arrays';
 
 @Component({
   selector: 'app-effect-of-vaccination-on-morbidity',
@@ -10,6 +11,7 @@ import { CoronaService } from 'src/app/corona.service';
 export class EffectOfVaccinationOnMorbidityComponent {
   option: echarts.EChartsOption|any=threeOption(25,false);
   timePeriod?:number=25;
+  titles=titles4
   isDarkModeActive?:boolean;
   constructor(private coronaSvc:CoronaService){}
 ngOnInit(): void {

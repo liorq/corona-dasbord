@@ -4,12 +4,7 @@
 <div class="graph-container">
   <app-generic-table
     *ngFor="
-      let title of [
-        'מספר מאושפזים – יומי',
-        'ממוצע מאומתים שבועי',
-        'מאומתים חדשים יומי'
-      ]
-    "
+      let title of titles"
     [title]="title"
   >
   </app-generic-table>
