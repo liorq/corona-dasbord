@@ -11,6 +11,34 @@ import { CoronaService } from 'src/app/corona.service';
 
 
 export class GenericTableComponent implements OnInit{
+
+
+
+   tableColumns = ['address', 'phone', 'email', 'age', 'name', 'id'];
+
+  // Define the column labels for non-"lights" graphs
+   columnLabels = {
+    'address': 'ישוב',
+    'phone': 'מתחסנים במנה ראשונה %',
+    'email': '% מתחסנים מנה שנייה',
+    'age': '% מתחסנים מנה שלישית',
+    'name': 'חולים פעילים לכל 10,000 נפש',
+    'id': 'ציון יומי מחושב'
+  };
+
+  // Define the column labels for "lights" graphs
+   columnLabelsLights = {
+    'address': 'חולים פעילים',
+    'phone': 'שיעור שינוי מאומתים',
+    'email': '% הבדיקות החיוביות',
+    'age': 'חולים חדשים לכל 10,000 נפש',
+    'name': 'ציון וצבע יומי',
+    'id': 'ישוב'
+  };
+
+
+
+
   @Input()textAboveGraph?:string;
   @Input()ClassTextAboveGraph?:string;
 
@@ -42,7 +70,7 @@ export class GenericTableComponent implements OnInit{
   clickCounterObj=clickCounterObj;
   currentSort = { column: 'id', direction: 'asc' };
   sortDirection: string="";
-  tableColumns: any;
+
 
   constructor(private coronaSvc:CoronaService) {
     this.filteredData = this.data;

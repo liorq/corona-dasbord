@@ -1,0 +1,58 @@
+<!-- מעל הטבלה table header -->
+<div class="row header">
+
+  <app-table-header-title [ContainerNgClass]="{ 'lavender-background': true,'deep-blue':isDarkModeActive }" (click)="resortTableData('address')" [graphName]="'Vaccination'" [rectangleNgClass]="clickCounterObjRec[0]" [ContainerClass]='"align-div cell title"'
+  [text]='"ישוב"'  ></app-table-header-title>
+
+  <app-table-header-title [ContainerNgClass]="{'deep-blue':isDarkModeActive }" (click)="resortTableData('address')" [graphName]="'lights'" [rectangleNgClass]="clickCounterObjRec[0]" [ContainerClass]='"align-div cell title"'
+  [text]='"חולים פעילים"'  ></app-table-header-title>
+
+
+
+  <app-table-header-title  (click)="resortTableData('phone')" [graphName]="'Vaccination'" [rectangleNgClass]="clickCounterObjRec[1]"
+  [text]='"מתחסנים במנה ראשונה %"'  ></app-table-header-title>
+
+  <app-table-header-title [ContainerNgClass]="{'deep-blue':isDarkModeActive }" (click)="resortTableData('phone')" [graphName]="'lights'" [rectangleNgClass]="clickCounterObjRec[1]"
+  [text]='"שיעור שינוי מאומתים"'  ></app-table-header-title>
+
+
+
+  <app-table-header-title  (click)="resortTableData('email')" [graphName]="'Vaccination'" [rectangleNgClass]="clickCounterObjRec[2]"
+  [text]='"% מתחסנים מנה שנייה"'  ></app-table-header-title>
+
+  <app-table-header-title  (click)="resortTableData('email')" [graphName]="'lights'" [rectangleNgClass]="clickCounterObjRec[2]"
+  [text]='"% הבדיקות החיוביות"'  ></app-table-header-title>
+
+
+ <app-table-header-title  (click)="resortTableData('age')" [graphName]="'Vaccination'" [rectangleNgClass]="clickCounterObjRec[3]"
+[text]='"% מתחסנים מנה שלישית"' ></app-table-header-title>
+
+<app-table-header-title  (click)="resortTableData('age')" [graphName]="'lights'" [rectangleNgClass]="clickCounterObjRec[3]"
+[text]='"חולים חדשים לכל 10,000 נפש"'  ></app-table-header-title>
+
+
+  <app-table-header-title [ContainerNgClass]="{'lavender-background': true,'deep-blue':isDarkModeActive}" (click)="resortTableData('name')" [graphName]="'Vaccination'" [rectangleNgClass]="clickCounterObjRec[4]" [ContainerClass]='"align-div cell title "'
+  [text]='"חולים פעילים לכל 10,000 נפש"'  ></app-table-header-title>
+
+  <app-table-header-title  (click)="resortTableData('name')" [graphName]="'lights'" [rectangleNgClass]="{
+    'arrow-down': clickCounterObj.name == 1,
+    'arrow-up': clickCounterObj.name == 2
+  }" [ContainerClass]='"align-div cell title"'
+  [text]='"ציון וצבע יומי"' ></app-table-header-title>
+
+
+
+  <app-table-header-title [ContainerNgClass]="{'lavender-background': true,'deep-blue':isDarkModeActive}" (click)="resortTableData('id')" [graphName]="'Vaccination'" [rectangleNgClass]="{
+    'arrow-down': clickCounterObj.id == 1,
+    'arrow-up': clickCounterObj.id == 2
+  }" [ContainerClass]='"align-div cell title "'
+  [text]='"חולים פעילים לכל 10,000 נפש"'  ></app-table-header-title>
+
+  <app-table-header-title  (click)="resortTableData('id')" [graphName]="'lights'" [rectangleNgClass]="{
+    'arrow-down': clickCounterObj.id == 1,
+    'arrow-up': clickCounterObj.id == 2
+  }" [ContainerClass]='"align-div cell title"'
+  [text]='"ציון וצבע יומי"'  ></app-table-header-title>
+
+
+</div>

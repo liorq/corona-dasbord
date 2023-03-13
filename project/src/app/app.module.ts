@@ -35,6 +35,8 @@ import { DataTablesModule } from "angular-datatables";
 import { FormsModule } from '@angular/forms';
 import { SideItemComponent } from './components/side-item/side-item.component';
 import { CardLineComponent } from './components/card-line/card-line.component';
+import { TableHeaderComponent } from './components/table-header/table-header.component';
+import { TableHeaderTitleComponent } from './components/table-header-title/table-header-title.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { CardLineComponent } from './components/card-line/card-line.component';
     SideNavComponent,
     SideItemComponent,
     CardLineComponent,
+    TableHeaderComponent,
+    TableHeaderTitleComponent,
   ],
   imports: [
 
