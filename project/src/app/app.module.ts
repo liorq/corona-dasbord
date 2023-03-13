@@ -8,7 +8,6 @@ import { ViewOnComponent } from './components/view-on/view-on.component';
 import { CardsComponent } from './components/cards-list/cards-list.component';
 import { SummaryOf7DaysComponent } from './components/summary-of7-days/summary-of7-days.component';
 import { MajorIndicatorsComponent } from './components/major-indicators/major-indicators.component';
-import { NgChartsModule } from 'ng2-charts';
 import { GenericTableComponent } from './components/generic-table/generic-table.component';
 import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-general-morbidity/indices-of-general-morbidity.component';
 import { MorbidityAndHospitalizationsComponent } from './components/morbidity-and-hospitalizations/morbidity-and-hospitalizations.component';
@@ -21,17 +20,8 @@ import { FurtherInvestigationsComponent } from './components/further-investigati
 import { RecurrentMorbidityAndRecoveryComponent } from './components/recurrent-morbidity-and-recovery/recurrent-morbidity-and-recovery.component';
 import { VaccinationOfThePopulationComponent } from './components/vaccination-of-the-population/vaccination-of-the-population.component';
 import { LightsInSettlementsComponent } from './components/lights-in-settlements/lights-in-settlements.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
 import { LinksListComponent } from './components/links-list/links-list.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { DataTablesModule } from "angular-datatables";
 import { FormsModule } from '@angular/forms';
 import { SideItemComponent } from './components/side-item/side-item.component';
 import { CardLineComponent } from './components/card-line/card-line.component';
@@ -39,6 +29,7 @@ import { TableHeaderComponent } from './components/table-header/table-header.com
 import { TableHeaderTitleComponent } from './components/table-header-title/table-header-title.component';
 import { CardHeaderComponent } from './components/card-header/card-header.component';
 import { TableBodyComponent } from './components/table-body/table-body.component';
+import { ColorSquaresComponent } from './components/color-squares/color-squares.component';
 
 @NgModule({
   declarations: [
@@ -71,12 +62,13 @@ import { TableBodyComponent } from './components/table-body/table-body.component
     TableHeaderTitleComponent,
     CardHeaderComponent,
     TableBodyComponent,
+    ColorSquaresComponent,
   ],
   imports: [
 
-    BrowserModule/*,TableModule*/,MatToolbarModule,MatIconModule,MatMenuModule,
-    AppRoutingModule,NgChartsModule,MatTableModule,MatSortModule,BrowserAnimationsModule
-    ,MatSelectModule,MatButtonModule,DataTablesModule,FormsModule,
+    BrowserModule,
+    AppRoutingModule,
+   FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

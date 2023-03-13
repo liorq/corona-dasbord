@@ -104,10 +104,7 @@
 
     <div
       class="align-graph"
-      [ngClass]="{
-        container2: this.graphName == 'main',
-        container7: this.graphName == 'main3'
-      }"
+
     >
       <div *ngIf="isTable">
         <div [class]="graphName=='lights'?'select-box-container-table1':'select-box-container'" (click)="toggleDropdown()">
@@ -161,6 +158,9 @@
         [ngClass]="{ 'pic-graph-light-dark': isDarkModeActive }"
       ></div>
 
+
+
+
       <div *ngFor="let color of colors" class="little-container-text-and-color">
         <div *ngIf="this.graphName == 'lights'" class="flex-cloumn-color">
           <div class="text-color">{{ color.name }}</div>
@@ -171,6 +171,9 @@
           class="squre {{ color.class }}"
         ></div>
       </div>
+
+
+
     </div>
 
 
