@@ -30,36 +30,26 @@
         (click)="toggleDropdown()"
       >
 
+      <app-select-box [selectedOption]="selectedOption" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
 
-        <button class="selected-option" [ngClass]="{'selected-option-darkMode':isDarkModeActive}">
+        <!-- <button class="selected-option" [ngClass]="{'selected-option-darkMode':isDarkModeActive}">
           <div
             [ngClass]="{ rotate: dropdownVisible,'half-rectangle-dark':isDarkModeActive}"
             class="half-rectangle"
 
           ></div>
           {{ selectedOption }}
-        </button>
+        </button> -->
 
 
-        <ul class="options-list" [ngClass]="{'deep-blue-option':isDarkModeActive}" [hidden]="!dropdownVisible">
-          <div class="time">זמן</div>
-          <!-- myOptions -->
-          <li *ngFor="let option of options">
-            <label class="option-label">
-              <input
-                required
-                type="radio"
-                name="myOptions"
-                class="option-button"
-                (click)="selectOption(option.label)"
-              />
-              <div class="text-options">{{ option.label }}</div>
-            </label>
-          </li>
-          <button class="btnSelect" [ngClass]="{'deep-blue-btn':isDarkModeActive}" (click)="confirmSelect('no')">ביטול</button>
 
-          <button class="btnSelect" [ngClass]="{'deep-blue-btn':isDarkModeActive}" (click)="confirmSelect('ok')">אישור</button>
-        </ul>
+
+
+
+
+<app-my-options [dropdownVisible]="dropdownVisible" [isDarkModeActive]="isDarkModeActive" [options]="options"></app-my-options>
+
+
       </div>
 
     </div>
@@ -77,23 +67,14 @@
 
 
     <div class="graph-header">
-      <div
-        *ngIf="this.graphName == 'main1'"
-        class="pic-graph"
-        [ngClass]="{ 'pic-graph-dark': isDarkModeActive }"
-      ></div>
-      <ul
-        class="ul"
-        id="circle-container"
-        [ngClass]="{ 'align-circle': this.graphName == 'main1' }"
-      >
-        <ng-container *ngFor="let item of items">
-          <li class="li bent" *ngIf="item.graphName == graphName && item.isDarkMode">
-            <div>{{ item.title }}</div>
-            <div class="circle {{ item.color }}"></div>
-          </li>
-        </ng-container>
-      </ul>
+
+      <app-clarification *ngIf="graphName == 'main1'" [className]="'pic-graph'" [ngClassObJ]="{ 'pic-graph-dark': this.isDarkModeActive }"  [isDarkModeActive]="isDarkModeActive"></app-clarification>
+
+
+<app-variable-graph-label [items]="items" [graphName]="graphName"></app-variable-graph-label>
+
+
+
       <div
         *ngIf="this.graphName == 'main' || this.graphName == 'main1'"
         class="date"
@@ -116,13 +97,25 @@
 
       <div *ngIf="isTable">
         <div [class]="graphName=='lights'?'select-box-container-table1':'select-box-container'" (click)="toggleDropdown()">
-          <button class="selected-option " [ngClass]="{'selected-option-table':graphName=='Vaccination','flex-and-center':graphName=='lights','selected-option-darkMode':isDarkModeActive}">
+
+
+
+
+
+<app-select-box [selectedOption]="selectedOption2" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
+          <!-- <button class="selected-option " [ngClass]="{'selected-option-table':graphName=='Vaccination','flex-and-center':graphName=='lights','selected-option-darkMode':isDarkModeActive}">
             {{ selectedOption2 }}
             <div
             class="center-half-rectangle"
               [ngClass]="{ rotate: dropdownVisible,'center-half-rectangle-dark':isDarkModeActive }"
             ></div>
-          </button>
+          </button> -->
+
+
+
+
+
+
           <ul *ngIf="dropdownVisible" [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}"  >
             <div class="search-input">
               <div  class="x-input" [ngClass]="{'x-input-dark':isDarkModeActive}" *ngIf="this.searchText.length>0" (click)="this.searchText=''" ></div>
@@ -152,7 +145,13 @@
             <button [ngClass]="{'deep-blue-btn': isDarkModeActive}" class="btnSelect" (click)="confirmSelectTable('no')">ביטול</button>
           </ul>
         </div>
+
+
+
       </div>
+
+
+
       <div
         *ngIf="!isTable"
         id="{{ this.graphName }}"
@@ -162,21 +161,17 @@
 
     <div *ngIf="isTable" class="container-color">
 
-<app-clarification *ngIf="graphName == 'lights'" [isDarkModeActive]="isDarkModeActive"></app-clarification>
+<app-clarification *ngIf="graphName == 'lights'"  [className]="'pic-graph-light'" [isDarkModeActive]="isDarkModeActive"></app-clarification>
 <app-color-squares class="little-container-text-and-color" *ngIf="this.graphName == 'lights'" [colors]="colors"></app-color-squares>
-
     </div>
-
 <div class="row header">
     <app-table-header *ngIf="isTable && this.graphName === 'lights'" [graphName]="'lights'" [isDarkModeActive]="isDarkModeActive"></app-table-header>
     <app-table-header *ngIf="isTable && this.graphName === 'Vaccination'" [graphName]="'Vaccination'" [isDarkModeActive]="isDarkModeActive"></app-table-header>
 </div>
 
-
  <app-table-body  *ngIf="isTable && this.graphName === 'lights'" [isTable]="isTable"  [tablesData]="tablesData" [isDarkModeActive]="isDarkModeActive"  [graphName]="'lights'"></app-table-body>
 
  <app-table-body  *ngIf="isTable && this.graphName === 'Vaccination'" [isTable]="isTable" [tablesData]="tablesData" [isDarkModeActive]="isDarkModeActive" [graphName]="'Vaccination'"></app-table-body>
-
 
   </div>
 </div>

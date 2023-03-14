@@ -1,0 +1,17 @@
+<ul class="options-list" [ngClass]="{'deep-blue-option':isDarkModeActive}" [hidden]="!dropdownVisible">
+  <div class="time">זמן</div>
+  <li *ngFor="let option of options">
+    <label class="option-label">
+      <input
+        required
+        type="radio"
+        name="myOptions"
+        class="option-button"
+      />
+      <div class="text-options">{{ option.label }}</div>
+    </label>
+  </li>
+  <button class="btnSelect" [ngClass]="ngClassForBtns" >ביטול</button>
+
+  <button class="btnSelect" [ngClass]="ngClassForBtns" >אישור</button>
+</ul>

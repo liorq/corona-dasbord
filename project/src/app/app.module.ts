@@ -33,6 +33,10 @@ import { ScoredColorSquaresComponent } from './components/scored-color-squares/s
 import { TableHeaderIconsComponent } from './components/table-header-icons/table-header-icons.component';
 import { EllipsisIconComponent } from './components/ellipsis-icon/ellipsis-icon.component';
 import { ClarificationComponent } from './components/clarification/clarification.component';
+import { VaribleGraphLabelComponent } from './components/varible-graph-label/variable-graph-label.component';
+import { MyOptionsComponent } from './components/my-options/my-options.component';
+import { MySearchOptionsComponent } from './components/my-search-options/my-search-options.component';
+import { SelectBoxComponent } from './components/select-box/select-box.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +73,10 @@ import { ClarificationComponent } from './components/clarification/clarification
     TableHeaderIconsComponent,
     EllipsisIconComponent,
     ClarificationComponent,
+    VaribleGraphLabelComponent,
+    MyOptionsComponent,
+    MySearchOptionsComponent,
+    SelectBoxComponent,
   ],
   imports: [
 

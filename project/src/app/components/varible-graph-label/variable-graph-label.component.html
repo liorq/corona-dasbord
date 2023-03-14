@@ -1,0 +1,12 @@
+<ul
+class="ul"
+id="circle-container"
+[ngClass]="{ 'align-circle': this.graphName == 'main1' }"
+>
+<ng-container *ngFor="let item of items">
+  <li class="li bent" *ngIf="item.graphName == graphName && item.isDarkMode">
+    <div>{{ item.title }}</div>
+    <div class="circle {{ item.color }}"></div>
+  </li>
+</ng-container>
+</ul>

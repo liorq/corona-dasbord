@@ -9,5 +9,6 @@ export class ClarificationComponent {
 @Input()graphName?:string;
 @Input()isDarkModeActive?:boolean;
 @Input()isTable?:boolean;
-@Input()ngClassObJ={ 'pic-graph-light-dark': this.isDarkModeActive };
+@Input()className:string="";
+@Input()ngClassObJ:any={ 'pic-graph-light-dark': this.isDarkModeActive };
 }
