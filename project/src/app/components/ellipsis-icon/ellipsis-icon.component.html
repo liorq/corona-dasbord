@@ -1,0 +1,13 @@
+<div
+class="dots-container"
+(click)="isActiveShareAndDownload = !isActiveShareAndDownload"
+>
+<span
+  [ngClass]="{
+    'dot-dark-mode': isDarkModeActive,
+    dot: !isDarkModeActive
+  }"
+  *ngFor="let i of [1, 2, 3]"
+  (click)="isActiveShareAndDownload = !isActiveShareAndDownload"
+></span>
+</div>

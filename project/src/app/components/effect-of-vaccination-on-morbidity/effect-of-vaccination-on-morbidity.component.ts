@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { threeOption } from 'src/app/app.graphData';
-import { CoronaService } from 'src/app/corona.service';
+import { CoronaService } from 'src/app/services/corona.service';
 import { titles4 } from 'src/app/utils/app.arrays';
 
 @Component({

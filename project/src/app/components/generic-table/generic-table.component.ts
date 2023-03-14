@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-import { clickCounterObj, colors, data, options } from 'src/app/utils/app.arrays';
-import { CoronaService } from 'src/app/corona.service';
+import { clickCounterObj, colors, columnLabels, columnLabelsLights, data, options, tableColumns } from 'src/app/utils/app.arrays';
+import { CoronaService } from 'src/app/services/corona.service';
 
 @Component({
   selector: 'app-generic-table',
@@ -14,34 +14,9 @@ export class GenericTableComponent implements OnInit{
 
 
 
-   tableColumns = ['address', 'phone', 'email', 'age', 'name', 'id'];
-
-  // Define the column labels for non-"lights" graphs
-   columnLabels = {
-    'address': 'ישוב',
-    'phone': 'מתחסנים במנה ראשונה %',
-    'email': '% מתחסנים מנה שנייה',
-    'age': '% מתחסנים מנה שלישית',
-    'name': 'חולים פעילים לכל 10,000 נפש',
-    'id': 'ציון יומי מחושב'
-  };
-
-  // Define the column labels for "lights" graphs
-   columnLabelsLights = {
-    'address': 'חולים פעילים',
-    'phone': 'שיעור שינוי מאומתים',
-    'email': '% הבדיקות החיוביות',
-    'age': 'חולים חדשים לכל 10,000 נפש',
-    'name': 'ציון וצבע יומי',
-    'id': 'ישוב'
-  };
-
-
-
 
   @Input()textAboveGraph?:string;
   @Input()ClassTextAboveGraph?:string;
-
   @Input()title?:string;
   @Input() chart: echarts.ECharts | null = null;
   @Input() resizeTimeoutId: any;
@@ -53,7 +28,9 @@ export class GenericTableComponent implements OnInit{
   @Input() tablesTitle?:{};
   @Input() tablesData?:any=[];
   isHovering = false;
-
+  tableColumns =tableColumns
+  columnLabels =columnLabels
+  columnLabelsLights = columnLabelsLights
   isDarkModeActive?:boolean=this.coronaSvc.isDarkModeActive.getValue()
   items = [  { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'salmon',isDarkMode:this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'blue',isDarkMode:this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'salmon' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'turkiz' ,isDarkMode:this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'gold',isDarkMode:this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'blue' ,isDarkMode:this.isDarkModeActive },
   { graphName: 'main1', title: 'ממוצע נע סך הבדיקות', color: 'orange',isDarkMode:!this.isDarkModeActive },  { graphName: 'main1', title: 'אנטיגן מוסדי', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main1', title: 'בדיקות PCR', color: 'aqua',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main', title: 'ממוצע נע נפטרים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main', title: 'נפטרים', color: 'goldenrod' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים', color: 'lightgreen' ,isDarkMode:!this.isDarkModeActive },  { graphName: 'main3', title: 'מחוסנים ללא תוקף', color: 'salmon',isDarkMode:!this.isDarkModeActive  },  { graphName: 'main3', title: 'לא מחוסנים', color: 'aqua' ,isDarkMode:!this.isDarkModeActive },];
@@ -152,6 +129,33 @@ export class GenericTableComponent implements OnInit{
     this.ngAfterViewInit(timePeriods[location])
     },500)
     }
+
+
+
+
+    // if (type === 'ok') {
+    //   console.log(this.selectedOption);
+    //   const periods = {
+    //     'עד עכשיו': 365,
+    //     'שנה': 300,
+    //     'חצי שנה': 150,
+    //     '3 חודשים': 70,
+    //     'חודש אחרון': 25
+    //   };
+    //   this.periodOfTime = periods[this.selectedOption];
+    //   const location: number = {
+    //     'main': 0,
+    //     'main1': 1,
+    //     'main3': 2,
+    //     'main4': 3
+    //   }[this.graphName] || 0;
+    //   const timePeriods:any = this.coronaSvc.timePeriodsInDays.getValue();
+    //   timePeriods[location] = this.periodOfTime;
+    //   this.coronaSvc.timePeriodsInDays.next(timePeriods);
+    //   setTimeout(() => {
+    //     this.ngAfterViewInit(timePeriods[location]);
+    //   }, 500);
+    // }
 
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoronaService } from 'src/app/corona.service';
+import { CoronaService } from 'src/app/services/corona.service';
 
 @Component({
   selector: 'app-header',

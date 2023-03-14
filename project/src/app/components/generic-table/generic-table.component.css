@@ -87,6 +87,22 @@ flex-direction: row-reverse;
  left: 18px;
   z-index: 20;
 }
+
+.share-and-download-dark{
+  display: none;
+
+ border: 1px solid rgba(128, 128, 128, 0.328);
+ background: url('../../../assets/images/share-and-downland-dark.png');
+ height: 100px;
+ width: 90px;
+ background-size: cover;
+ background-position: center center;
+ cursor: pointer;
+ position: absolute;
+ top:40px;
+ left: 18px;
+  z-index: 20;
+}
 .active {
   display: block;
 }

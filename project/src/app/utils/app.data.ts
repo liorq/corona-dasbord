@@ -144,3 +144,20 @@ export const fiveLine=
      "מספר הנפטרים מנגיף COVID-19 ב-7 הימים האחרונים (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים.",
      "ליאור דניאל, מספר הנבדקים בבדיקות לגילוי נגיף COVID-19 מסוג PCR או אנטיגן ב-7 הימים האחרונים (לא כולל את יום העדכון) והשינוי באחוזים לעומת 7 הימים הקודמים. הנתון אינו כולל נבדקים בבדיקות נלוות לקביעת החלמה. נבדקים חיוביים - אחוז הנבדקים שנמצאו חיוביים לנגיף COVID-19 מתוך מספר הנבדקים לגילוי הנגיף ב 7 הימים האחרונים."
     ];
+   export function getNgClassColor(row:any,position:number,graphName:string){
+      const firstObj={
+        green: row.phone < 4.5,
+        yellow: row.phone > 4.5 && row.phone < 6,
+        orange: row.phone > 6 && row.phone < 7.5,
+        red: row.phone > 7.5,
+        color: graphName == 'lights',
+        fontWeight400: graphName == 'Vaccination'
+      }
+      const secondObj={
+        'color2': graphName == 'Vaccination',
+        'lightgreen': row.id < 4.5,
+        'yellow': row.id > 4.6 && row.id < 5.9,
+        'orange': row.id > 6.1 && row.id < 6.8
+    }
+    return position==2?secondObj:firstObj;
+    }

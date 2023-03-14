@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoronaService } from '../../corona.service';
+import { CoronaService } from '../../services/corona.service';
 import { SideItemComponent } from '../side-item/side-item.component';
 import { sideNavData } from 'src/app/utils/app.arrays';
 @Component({

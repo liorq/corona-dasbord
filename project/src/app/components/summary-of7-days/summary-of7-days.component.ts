@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoronaService } from 'src/app/corona.service';
+import { CoronaService } from 'src/app/services/corona.service';
 import { SummaryOf7DaysObj } from '../../utils/app.data';
 
 @Component({

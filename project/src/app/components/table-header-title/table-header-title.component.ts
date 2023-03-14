@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CoronaService } from 'src/app/corona.service';
+import { CoronaService } from 'src/app/services/corona.service';
 import { clickCounterObj } from 'src/app/utils/app.arrays';
 
 @Component({

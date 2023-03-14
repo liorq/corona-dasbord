@@ -2,7 +2,7 @@ import {  Component, OnInit } from '@angular/core';
 
 import * as echarts from 'echarts';
 import { firstOption } from 'src/app/app.graphData';
-import { CoronaService } from 'src/app/corona.service';
+import { CoronaService } from 'src/app/services/corona.service';
 
 @Component({
   selector: 'app-deads',

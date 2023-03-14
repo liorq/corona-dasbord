@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { CoronaService } from './corona.service';
+import { CoronaService } from './services/corona.service';
 import {  ranges } from './utils/app.arrays';
 import { IndicesOfGeneralMorbidityComponent } from './components/indices-of-general-morbidity/indices-of-general-morbidity.component';
 import { idAnchors } from './utils/app.data';

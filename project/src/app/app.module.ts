@@ -30,6 +30,9 @@ import { TableHeaderTitleComponent } from './components/table-header-title/table
 import { CardHeaderComponent } from './components/card-header/card-header.component';
 import { TableBodyComponent } from './components/table-body/table-body.component';
 import { ScoredColorSquaresComponent } from './components/scored-color-squares/scored-color-squares.component';
+import { TableHeaderIconsComponent } from './components/table-header-icons/table-header-icons.component';
+import { EllipsisIconComponent } from './components/ellipsis-icon/ellipsis-icon.component';
+import { ClarificationComponent } from './components/clarification/clarification.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,9 @@ import { ScoredColorSquaresComponent } from './components/scored-color-squares/s
     CardHeaderComponent,
     TableBodyComponent,
     ScoredColorSquaresComponent,
+    TableHeaderIconsComponent,
+    EllipsisIconComponent,
+    ClarificationComponent,
   ],
   imports: [
 
