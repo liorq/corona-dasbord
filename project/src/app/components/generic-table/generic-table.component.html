@@ -9,29 +9,7 @@
 
   <div class="table" [ngClass]="{ 'background-dark-mode': isDarkModeActive }">
 
-    <div class="little-container">
-      <div
-        [ngClass]="{
-          'i-icon-dark': isDarkModeActive,
-          'i-icon': !isDarkModeActive
-        }"
-      ></div>
-
-      <span class="title">{{ title }}</span>
-
-      <div
-        *ngIf="!isTable && this.graphName.length > 0"
-        class="select-box-container"
-        (click)="toggleDropdown()"
-      >
-
-      <app-select-box [selectedOption]="selectedOption" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
-
-
-<app-my-options [dropdownVisible]="dropdownVisible" [isDarkModeActive]="isDarkModeActive" [options]="options"></app-my-options>
-      </div>
-    </div>
-
+  <app-table-header-icons [dropdownVisible]="dropdownVisible" [isDarkModeActive]="isDarkModeActive" [graphName]="graphName" [selectedOption]="selectedOption" [title]="title" [isTable]="isTable" [options]="options"></app-table-header-icons>
 
 <app-ellipsis-icon [isDarkModeActive]="isDarkModeActive" (click)="isActiveShareAndDownload = !isActiveShareAndDownload"></app-ellipsis-icon>
 
@@ -41,14 +19,10 @@
     ></div>
 
     <div class="graph-header">
-
       <app-clarification *ngIf="graphName == 'main1'" [className]="'pic-graph'" [ngClassObJ]="{ 'pic-graph-dark': this.isDarkModeActive }"  [isDarkModeActive]="isDarkModeActive"></app-clarification>
 
-
 <app-variable-graph-label [items]="items" [graphName]="graphName"></app-variable-graph-label>
-
       <div class="date" > {{textDownGraph}} </div>
-
 
     <div [class]="this.ClassTextAboveGraph">
     {{textAboveGraph}}
@@ -60,26 +34,12 @@
 
       <div *ngIf="isTable">
         <div [class]="graphName=='lights'?'select-box-container-table1':'select-box-container'" (click)="toggleDropdown()">
-
 <app-select-box  [selectedOption]="selectedOption2" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
-
-
-
 <app-my-search-options [showResults]="showResults" [filteredData]="filteredData" [isDarkModeActive]="isDarkModeActive" [dropdownVisible]="dropdownVisible"></app-my-search-options>
-
         </div>
-
-
-
       </div>
 
-
-
-      <div
-        *ngIf="!isTable"
-        id="{{ this.graphName }}"
-        [style]="this.graphSize"
-      ></div>
+      <div *ngIf="!isTable"id="{{ this.graphName }}" [style]="this.graphSize" ></div>
     </div>
 
     <div *ngIf="isTable" class="container-color">

@@ -1,1 +1,42 @@
-<p>table-header-icons works!</p>
+<!-- 
+    <div class="little-container">
+  <app-info-icon></app-info-icon>
+
+
+      <span class="title">{{ title }}</span>
+
+      <div
+        *ngIf="!isTable && this.graphName.length > 0"
+        class="select-box-container"
+        (click)="toggleDropdown()"
+      >
+
+      <app-select-box [selectedOption]="selectedOption" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
+
+
+<app-my-options [dropdownVisible]="dropdownVisible" [isDarkModeActive]="isDarkModeActive" [options]="options"></app-my-options>
+      </div>
+    </div>
+ -->
+
+
+
+
+
+    <div class="little-container">
+      <app-info-icon></app-info-icon>
+
+            <span class="title">{{ title }}</span>
+
+            <div
+              *ngIf="!isTable && this.graphName.length > 0"
+              class="select-box-container"
+              (click)="toggleDropdown()"
+            >
+
+            <app-select-box [selectedOption]="selectedOption" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
+
+
+      <app-my-options [dropdownVisible]="dropdownVisible" [isDarkModeActive]="isDarkModeActive" [options]="options"></app-my-options>
+            </div>
+          </div>
