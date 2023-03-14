@@ -1,8 +1,8 @@
-<button class="{{btnClass}}" [ngClass]="btnNgClass">
+<button [class]="this.btnClass" [ngClass]="this.btnNgClass">
   {{ this.selectedOption }}
   <div
-  class="{{RecClass}}"
-    [ngClass]="RecNgClass"
+  [class]="this.RecClass"
+    [ngClass]="this.RecNgClass"
   ></div>
 </button>
 

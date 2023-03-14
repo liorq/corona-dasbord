@@ -9,6 +9,9 @@
 
 
   <div class="table" [ngClass]="{ 'background-dark-mode': isDarkModeActive }">
+
+
+
     <div class="little-container">
       <div
         [ngClass]="{
@@ -75,12 +78,10 @@
 
 
 
-      <div
-        *ngIf="this.graphName == 'main' || this.graphName == 'main1'"
-        class="date"
-      >
-        תאריך
+      <div class="date" >
+        {{textDownGraph}}
       </div>
+
 
     <div [class]="this.ClassTextAboveGraph">
     {{textAboveGraph}}
@@ -102,7 +103,7 @@
 
 
 
-<app-select-box [selectedOption]="selectedOption2" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
+<app-select-box  [selectedOption]="selectedOption2" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
           <!-- <button class="selected-option " [ngClass]="{'selected-option-table':graphName=='Vaccination','flex-and-center':graphName=='lights','selected-option-darkMode':isDarkModeActive}">
             {{ selectedOption2 }}
             <div

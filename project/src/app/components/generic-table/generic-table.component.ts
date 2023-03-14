@@ -27,6 +27,8 @@ export class GenericTableComponent implements OnInit{
   @Input() periodOfTime?:number=25;
   @Input() tablesTitle?:{};
   @Input() tablesData?:any=[];
+  @Input() textDownGraph?:string;
+
   isHovering = false;
   tableColumns =tableColumns
   columnLabels =columnLabels

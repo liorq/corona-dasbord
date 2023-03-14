@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-select-box',
@@ -6,14 +6,18 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['../generic-table/generic-table.component.css','./select-box.component.css']
 })
 export class SelectBoxComponent {
-  @Input()btnClass?:string='selected-option';
-  @Input()isDarkModeActive?:boolean;
+  @Input()btnClass:string='selected-option';
+  @Input()isDarkModeActive?:boolean=false;
   @Input()graphName?:string;
-  @Input()dropdownVisible?:boolean;
-  
-  @Input()btnNgClass?:{}={'selected-option-table':this.graphName=='Vaccination','flex-and-center':this.graphName=='lights','selected-option-darkMode':this.isDarkModeActive};
-  @Input()selectedOption?:string;
-  @Input()RecClass?:string='center-half-rectangle';
-  @Input()RecNgClass?:{}={ rotate: this.dropdownVisible,'center-half-rectangle-dark':this.isDarkModeActive };
+  @Input()dropdownVisible?:boolean=false;
 
+  @Input()btnNgClass:{}={'selected-option-darkMode':this.isDarkModeActive};
+  @Input()selectedOption?:string;
+  @Input()RecClass:string='center-half-rectangle';
+  @Input()RecNgClass:{}={ 'rotate': this.dropdownVisible,'half-rectangle-dark':this.isDarkModeActive};
+
+ngAfterViewInit(){
+  console.log('RecClass'+this.RecClass)
+  console.log(this.RecNgClass)
+}
 }

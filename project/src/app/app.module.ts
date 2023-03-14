@@ -37,6 +37,7 @@ import { VaribleGraphLabelComponent } from './components/varible-graph-label/var
 import { MyOptionsComponent } from './components/my-options/my-options.component';
 import { MySearchOptionsComponent } from './components/my-search-options/my-search-options.component';
 import { SelectBoxComponent } from './components/select-box/select-box.component';
+import { GenericGraphComponent } from './components/generic-graph/generic-graph.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { SelectBoxComponent } from './components/select-box/select-box.component
     MyOptionsComponent,
     MySearchOptionsComponent,
     SelectBoxComponent,
+    GenericGraphComponent,
   ],
   imports: [
 
