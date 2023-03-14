@@ -16,7 +16,6 @@ export class AppComponent implements AfterViewInit  {
 
   isNavBarOpen?:boolean;
   isDarkModeActive?:boolean;
-  ranges:any[]=[];
   constructor(public coronaSvc: CoronaService) { }
   currentPosition?: number;
   ngAfterViewInit() {
@@ -39,7 +38,7 @@ export class AppComponent implements AfterViewInit  {
       const start = Math.floor(scrollY + (rect?.top ?? 0)); // Use optional chaining and nullish coalescing
       const end = Math.floor(scrollY + (rect?.bottom ?? 0)); // Use optional chaining and nullish coalescing
 
-      newArray.push([start+265, end,this.componentsId[this.componentsId.length-1-index]]);
+      newArray.push([start, end,this.componentsId[this.componentsId.length-1-index]]);
       index++;
     });
 
@@ -51,7 +50,7 @@ export class AppComponent implements AfterViewInit  {
 
 
 
-    for (const range of ranges) {
+    for (const range of newArray) {
       if (range == null) continue;
 
       if (this.currentPosition >= range[0] && this.currentPosition < range[1]) {

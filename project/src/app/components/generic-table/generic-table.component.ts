@@ -28,6 +28,11 @@ export class GenericTableComponent implements OnInit{
   @Input() tablesTitle?:{};
   @Input() tablesData?:any=[];
   @Input() textDownGraph?:string;
+  ngClassContainer ={
+    'white-color': this.isDarkModeActive,
+    TableWidth: this.isTable,
+    TableWidth100: this.graphName == 'Vaccination'
+  }
 
   isHovering = false;
   tableColumns =tableColumns

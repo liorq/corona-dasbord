@@ -1,32 +1,175 @@
- <div class="container">
-  <div *ngFor="let data of dataToDisplay; let i = index" [ngClass]="{ 'background-dark-mode': isDarkModeActive }" class="card" [id]="data.id">
-<app-card-header [isDarkModeActive]="isDarkModeActive" [text]="data.title" [openWindowsIIcon]="openWindowsIIcon[i]"></app-card-header>
+<div class="container">
 
-    <app-card-line [classNum]="'bigNumber'" [num]="data.bigNumber"></app-card-line>
-      <div class="container-little-line">
-      <app-card-line [classNum]="'littleNumber'" [num]="data.firstLittleNum"></app-card-line>
-      <app-card-line [classText]="'littleLine'" [text]="data.firstLittleLine"></app-card-line>
+  <div
+    *ngFor="let data of dataToDisplay; let i = index"
+    [ngClass]="{ 'background-dark-mode': isDarkModeActive }"
+    class="card"
+    [id]="data.id"
+  >
+<!-- לעשות אובייקט בתוך מערך של אובייקטים עם השם מחלקה של המספר והשורה -->
+    <app-card-header
+      [isDarkModeActive]="isDarkModeActive"
+      [text]="data.title"
+      [openWindowsIIcon]="openWindowsIIcon[i]"
+    ></app-card-header>
+
+    <app-card-line
+      [classNum]="'bigNumber'"
+      [num]="data.bigNumber"
+    ></app-card-line>
+
+
+    <div class="container-little-line">
+
+      <app-card-line
+        [classNum]="'littleNumber'"
+        [num]="data.firstLittleNum"
+      ></app-card-line>
+
+      <app-card-line
+        [classText]="'littleLine'"
+        [text]="data.firstLittleLine"
+      ></app-card-line>
+
       <div *ngIf="data.title == 'חולים קשה'" class="circle red"></div>
+
     </div>
+
     <div class="container-little-line-2">
-      <app-card-line [classNum]="'littleNumber'" [num]="data.secondLittleNum"></app-card-line>
-      <app-card-line [classText]="'littleLine'" [text]="data.secondLittleLine"></app-card-line>
-      <div *ngIf="data.title == 'חולים קשה'" class="circle red"></div>
-    </div>
 
+      <app-card-line
+        [classNum]="'littleNumber'"
+        [num]="data.secondLittleNum"
+      ></app-card-line>
+
+      <app-card-line
+        [classText]="'littleLine'"
+        [text]="data.secondLittleLine"
+      ></app-card-line>
+
+      <div *ngIf="data.title == 'חולים קשה'" class="circle red"></div>
+
+    </div>
 
     <div *ngIf="data.title == 'חולים קשה'" class="container-little-line-3">
+
       <div class="container-3">
-        <app-card-line [classText]="'littleLine'" [classNum]="'littleNumber'" [num]="data.thirdLittleNum" [text]="data.thirdLittleLine"></app-card-line>
+
+        <app-card-line
+          [classText]="'littleLine'"
+          [classNum]="'littleNumber'"
+          [num]="data.thirdLittleNum"
+          [text]="data.thirdLittleLine"
+        ></app-card-line>
+
         <div class="circle yellow"></div>
+
       </div>
-      <app-card-line [classText]="'littleLine'" [classContainer]="'container-3 margin'" [classNum]="'littleNumber'" [num]="data.fourLittleNum" [text]="data.fourLittleLine"></app-card-line>
-      <app-card-line [classText]="'littleLine'" [classContainer]="'container-3 margin'" [classNum]="'littleNumber'" [num]="data.fiveLittleNum" [text]="data.fiveLittleLine"></app-card-line>
+
+      <app-card-line
+        [classText]="'littleLine'"
+        [classContainer]="'container-3 margin'"
+        [classNum]="'littleNumber'"
+        [num]="data.fourLittleNum"
+        [text]="data.fourLittleLine"
+      ></app-card-line>
+
+      <app-card-line
+        [classText]="'littleLine'"
+        [classContainer]="'container-3 margin'"
+        [classNum]="'littleNumber'"
+        [num]="data.fiveLittleNum"
+        [text]="data.fiveLittleLine"
+      ></app-card-line>
+
     </div>
+
     <div class="container-5-line-big">
       <ng-container *ngFor="let item of dataArray">
-        <app-card-line [classContainer]="'container-5-line'" [classNum]="'bigger-num'" [num]="data[item.num]" [text]="data[item.line]"></app-card-line>
+        <app-card-line
+          [classContainer]="'container-5-line'"
+          [classNum]="'bigger-num'"
+          [num]="data[item.num]"
+          [text]="data[item.line]"
+        ></app-card-line>
       </ng-container>
     </div>
+
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <app-container-header></app-container-header>
+  <ng-content></ng-content>
+</div>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container>
+
+<app-container>
+  <div class="">174</div>
+  <h4>137 njmu,</h4>
+  <h4>40,000,000 xl vfk</h4>
+</app-container> -->

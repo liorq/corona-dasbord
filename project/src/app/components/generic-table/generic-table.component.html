@@ -1,11 +1,6 @@
 <div
   class="container"
-  [ngClass]="{
-    'white-color': isDarkModeActive,
-    TableWidth: isTable,
-    TableWidth100: graphName == 'Vaccination'
-  }"
->
+  [ngClass]="ngClassContainer">
 
   <div class="table" [ngClass]="{ 'background-dark-mode': isDarkModeActive }">
 
@@ -53,7 +48,6 @@
 </div>
 
  <app-table-body  *ngIf="isTable && this.graphName === 'lights'" [isTable]="isTable"  [tablesData]="tablesData" [isDarkModeActive]="isDarkModeActive"  [graphName]="'lights'"></app-table-body>
-
  <app-table-body  *ngIf="isTable && this.graphName === 'Vaccination'" [isTable]="isTable" [tablesData]="tablesData" [isDarkModeActive]="isDarkModeActive" [graphName]="'Vaccination'"></app-table-body>
 
   </div>
