@@ -7,10 +7,7 @@
   }"
 >
 
-
   <div class="table" [ngClass]="{ 'background-dark-mode': isDarkModeActive }">
-
-
 
     <div class="little-container">
       <div
@@ -22,11 +19,6 @@
 
       <span class="title">{{ title }}</span>
 
-
-
-
-
-      <!--new component select-box-container  -->
       <div
         *ngIf="!isTable && this.graphName.length > 0"
         class="select-box-container"
@@ -35,39 +27,18 @@
 
       <app-select-box [selectedOption]="selectedOption" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
 
-        <!-- <button class="selected-option" [ngClass]="{'selected-option-darkMode':isDarkModeActive}">
-          <div
-            [ngClass]="{ rotate: dropdownVisible,'half-rectangle-dark':isDarkModeActive}"
-            class="half-rectangle"
-
-          ></div>
-          {{ selectedOption }}
-        </button> -->
-
-
-
-
-
-
 
 <app-my-options [dropdownVisible]="dropdownVisible" [isDarkModeActive]="isDarkModeActive" [options]="options"></app-my-options>
-
-
       </div>
-
     </div>
 
 
 <app-ellipsis-icon [isDarkModeActive]="isDarkModeActive" (click)="isActiveShareAndDownload = !isActiveShareAndDownload"></app-ellipsis-icon>
 
-
     <div
       [class]="isDarkModeActive?'share-and-download-dark':'share-and-download'"
       [ngClass]="{ active: isActiveShareAndDownload }"
     ></div>
-
-
-
 
     <div class="graph-header">
 
@@ -76,11 +47,7 @@
 
 <app-variable-graph-label [items]="items" [graphName]="graphName"></app-variable-graph-label>
 
-
-
-      <div class="date" >
-        {{textDownGraph}}
-      </div>
+      <div class="date" > {{textDownGraph}} </div>
 
 
     <div [class]="this.ClassTextAboveGraph">
@@ -89,62 +56,17 @@
 
     </div>
 
-    <div
-      class="align-graph"
-
-    >
-
-
+    <div  class="align-graph" >
 
       <div *ngIf="isTable">
         <div [class]="graphName=='lights'?'select-box-container-table1':'select-box-container'" (click)="toggleDropdown()">
 
-
-
-
-
 <app-select-box  [selectedOption]="selectedOption2" [dropdownVisible]="dropdownVisible" [graphName]="graphName" [isDarkModeActive]="isDarkModeActive"></app-select-box>
-          <!-- <button class="selected-option " [ngClass]="{'selected-option-table':graphName=='Vaccination','flex-and-center':graphName=='lights','selected-option-darkMode':isDarkModeActive}">
-            {{ selectedOption2 }}
-            <div
-            class="center-half-rectangle"
-              [ngClass]="{ rotate: dropdownVisible,'center-half-rectangle-dark':isDarkModeActive }"
-            ></div>
-          </button> -->
 
 
 
+<app-my-search-options [showResults]="showResults" [filteredData]="filteredData" [isDarkModeActive]="isDarkModeActive" [dropdownVisible]="dropdownVisible"></app-my-search-options>
 
-
-
-          <ul *ngIf="dropdownVisible" [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}"  >
-            <div class="search-input">
-              <div  class="x-input" [ngClass]="{'x-input-dark':isDarkModeActive}" *ngIf="this.searchText.length>0" (click)="this.searchText=''" ></div>
-              <input
-                class="input"
-                type="text"
-                [ngClass]="{'deep-blue-option': isDarkModeActive}"
-
-                placeholder="חיפוש לפי ישוב"
-                [(ngModel)]="searchText"
-                (input)="onInput()"
-                (click)="onInputClick($event)"
-              />
-              <div class="search-results" *ngIf="showResults">
-                <ul>
-                  <li
-                    *ngFor="let item of this.filteredData"
-                    (click)="onResultClick(item,$event)"
-                  >
-                    {{ graphName=='lights'?item.address:item.id }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <button  [ngClass]="{'deep-blue-btn': isDarkModeActive}" class="btnSelect" (click)="confirmSelectTable('ok')">אישור</button>
-            <button [ngClass]="{'deep-blue-btn': isDarkModeActive}" class="btnSelect" (click)="confirmSelectTable('no')">ביטול</button>
-          </ul>
         </div>
 
 

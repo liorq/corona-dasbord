@@ -1,1 +1,28 @@
-<p>my-search-options works!</p>
+<ul *ngIf="dropdownVisible" [ngClass]="{'options-list-for-table1':graphName=='Vaccination','options-list-for-table2':graphName!='Vaccination'}"  >
+  <div class="search-input">
+    <div  class="x-input" [ngClass]="{'x-input-dark':isDarkModeActive}" *ngIf="this.searchText.length>0" (click)="this.searchText=''" ></div>
+    <input
+      class="input"
+      type="text"
+      [ngClass]="{'deep-blue-option': isDarkModeActive}"
+
+      placeholder="חיפוש לפי ישוב"
+      [(ngModel)]="searchText"
+      (input)="onInput()"
+      (click)="onInputClick($event)"
+    />
+    <div class="search-results" *ngIf="showResults">
+      <ul>
+        <li
+          *ngFor="let item of this.filteredData"
+          (click)="onResultClick(item,$event)"
+        >
+          {{ graphName=='lights'?item.address:item.id }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <button  [ngClass]="{'deep-blue-btn': isDarkModeActive}" class="btnSelect" (click)="confirmSelectTable('ok')">אישור</button>
+  <button [ngClass]="{'deep-blue-btn': isDarkModeActive}" class="btnSelect" (click)="confirmSelectTable('no')">ביטול</button>
+</ul>

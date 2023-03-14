@@ -14,7 +14,7 @@ export class SelectBoxComponent {
   @Input()btnNgClass:{}={'selected-option-darkMode':this.isDarkModeActive};
   @Input()selectedOption?:string;
   @Input()RecClass:string='center-half-rectangle';
-  @Input()RecNgClass:{}={ 'rotate': this.dropdownVisible,'half-rectangle-dark':this.isDarkModeActive};
+  @Input()RecNgClass:{}={ rotate: this.dropdownVisible,'half-rectangle-dark':this.isDarkModeActive};
 
 ngAfterViewInit(){
   console.log('RecClass'+this.RecClass)
